@@ -1,0 +1,37 @@
+{
+    "vsicons.associations.folders": [
+        { "icon": "gcp", "extensions": ["functions"], "format": "svg" },
+        { "icon": "test", "extensions": ["local"], "format": "svg" },
+        { "icon": "bloc", "extensions": ["apps"], "format": "svg" }
+    ],
+    "cSpell.words": [
+        "Aasavmp",
+        "appspot",
+        "barnander",
+        "captainapp",
+        "crewlet",
+        "edsu",
+        "fpant",
+        "getenv",
+        "Getx",
+        "Greenboi",
+        "jaduplessis",
+        "katiemarieek",
+        "livehare",
+        "lucide",
+        "luscombencut",
+        "Macieeej",
+        "Openai",
+        "Ouyangmimiko",
+        "pilip",
+        "pilipb",
+        "predeploy",
+        "pubspec",
+        "remoteconfig",
+        "rhetora",
+        "swanepoel",
+        "venv",
+        "Xinyue",
+        "xinyuefeng"
+    ]
+}

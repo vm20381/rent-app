@@ -1,0 +1,69 @@
+{
+  "projects": {
+    "crew_sites": "captainapp-crew-2024"
+  },
+  "targets": {
+    "captainapp-crew-2024": {
+      "hosting": {
+        "example": [
+          "crew-example-2024"
+        ],
+        "dashboard": [
+          "captainapp-crew-2024"
+        ],
+        "pilipb": [
+          "crew-pilipb-2024"
+        ],
+        "aasavmp": [
+          "crew-aasavmp-2024"
+        ],
+        "jaduplessis": [
+          "crew-jaduplessis-2024"
+        ],
+        "edsu03": [
+          "crew-edsu03-2024"
+        ],
+        "macieeej": [
+          "crew-macieeej-2024"
+        ],
+        "chris_c3a": [
+          "crew-chris-c3a-2024"
+        ],
+        "xinyuefeng99": [
+          "crew-xinyuefeng99-2024"
+        ],
+        "ouyangmimiko": [
+          "crew-ouyangmimiko-2024"
+        ],
+        "vm20381": [
+          "crew-vm20381-2024"
+        ],
+        "greenboi123": [
+          "crew-greenboi123-2024"
+        ],
+        "fpant1": [
+          "crew-fpant1-2024"
+        ],
+        "luscombencut": [
+          "crew-luscombencut-2024"
+        ],
+        "bb20460": [
+          "crew-bb20460-2024"
+        ],
+        "barnander": [
+          "crew-barnander-2024"
+        ],
+        "rhetora": [
+          "crew-rhetora-2024"
+        ],
+        "louis_swanepoel": [
+          "crew-louis-swanepoel-2024"
+        ],
+        "katiemarieek": [
+          "crew-katiemarieek-2024"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

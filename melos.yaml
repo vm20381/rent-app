@@ -1,0 +1,4 @@
+name: captainapp_crew
+packages:
+  - apps/**
+  - packages/**

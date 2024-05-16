@@ -1,0 +1,32 @@
+# .gcloudignore
+.gcloudignore
+# This file specifies files that are *not* uploaded to Google Cloud Platform
+# Generated at https://cloud.google.com/sdk/gcloud/reference/meta/active-config
+# Lines that start with # are comments
+
+# .gcloudignore format syntax can be found at:
+# https://cloud.google.com/sdk/gcloud/reference/meta/active-config#synthax
+
+# Ignore common files that are generally not necessary to deploy
+node_modules/
+npm-debug.log
+yarn-error.log
+test/
+tests/
+__tests__/
+coverage/
+tmp/
+temp/
+.DS_Store
+*.log
+.idea/
+.vscode/
+.git
+.gitignore
+# Ignore other unnecessary files
+*.md
+*.markdown
+docs/
+# Ignore build files
+dist/
+build/

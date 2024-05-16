@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "892922730613",
+    "project_id": "captainapp-crew-2024",
+    "storage_bucket": "captainapp-crew-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892922730613:android:a079986690ea538f60c03c",
+        "android_client_info": {
+          "package_name": "com.captainapp.crew_example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy0ZzhFH_ueUCMAs-RjCpAX0I_3UJaXbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

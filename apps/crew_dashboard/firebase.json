@@ -1,0 +1,40 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "captainapp-crew-2024",
+                    "appId": "1:892922730613:android:9c05bc3376a54bc960c03c",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "captainapp-crew-2024",
+                    "appId": "1:892922730613:ios:9af4af8d96a7949260c03c",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                }
+            },
+            "macos": {
+                "default": {
+                    "projectId": "captainapp-crew-2024",
+                    "appId": "1:892922730613:ios:9af4af8d96a7949260c03c",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "macos/Runner/GoogleService-Info.plist"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "captainapp-crew-2024",
+                    "configurations": {
+                        "android": "1:892922730613:android:9c05bc3376a54bc960c03c",
+                        "ios": "1:892922730613:ios:9af4af8d96a7949260c03c",
+                        "macos": "1:892922730613:ios:9af4af8d96a7949260c03c",
+                        "web": "1:892922730613:web:5456c1bc453f33c160c03c"
+                    }
+                }
+            }
+        }
+    }
+}

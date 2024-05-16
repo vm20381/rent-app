@@ -1,0 +1,28 @@
+[
+  {
+    "version": "0.0.3",
+    "date": "2024-05-15",
+    "description": "This is a description of the version 0.0.3",
+    "logs": [
+      "Added new pages and features",
+      "Fixed some bugs"
+    ]
+  },
+  {
+    "version": "0.0.2 [In Development]",
+    "date": "2024-05-07",
+    "description": "This is a description of the version 0.0.2",
+    "logs": [
+      "Profile updating",
+      "Added new pages and features"
+    ]
+  },
+  {
+    "version": "0.0.1",
+    "date": "2024-04-15",
+    "description": "This is a description of the version 0.0.1",
+    "logs": [
+      "Initial release of the app. Auth and Routing."
+    ]
+  }
+]

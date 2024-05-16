@@ -1,0 +1,38 @@
+[
+  {
+      "id": "user001",
+      "email": "john.doe@example.com",
+      "displayName": "John Doe",
+      "role": "Administrator",
+      "lastSignInTime": "2024-05-01T12:34:56Z",
+      "creationTime": "2023-01-01T09:00:00Z",
+      "photoURL": "https://example.com/photos/user001.jpg"
+  },
+  {
+      "id": "user002",
+      "email": "jane.doe@example.com",
+      "displayName": "Jane Doe",
+      "role": "User",
+      "lastSignInTime": "2024-04-30T11:22:33Z",
+      "creationTime": "2023-01-02T10:00:00Z",
+      "photoURL": "https://example.com/photos/user002.jpg"
+  },
+  {
+      "id": "user003",
+      "email": "sam.smith@example.com",
+      "displayName": "Sam Smith",
+      "role": "Manager",
+      "lastSignInTime": "2024-04-29T10:11:12Z",
+      "creationTime": "2023-01-03T11:00:00Z",
+      "photoURL": "https://example.com/photos/user003.jpg"
+  },
+  {
+      "id": "user004",
+      "email": "alice.jones@example.com",
+      "displayName": "Alice Jones",
+      "role": "Developer",
+      "lastSignInTime": "2024-04-28T09:45:00Z",
+      "creationTime": "2023-01-04T12:00:00Z",
+      "photoURL": "https://example.com/photos/user004.jpg"
+  }
+]

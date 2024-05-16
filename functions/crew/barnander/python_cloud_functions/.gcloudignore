@@ -1,0 +1,66 @@
+# .gcloudignore
+.gcloudignore
+# This file specifies files that are *not* uploaded to Google Cloud Platform
+# Generated at https://cloud.google.com/sdk/gcloud/reference/meta/active-config
+# Lines that start with # are comments
+
+# .gcloudignore format syntax can be found at:
+# https://cloud.google.com/sdk/gcloud/reference/meta/active-config#synthax
+
+# Ignore common files that are generally not necessary to deploy
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the binary.
+#  Generated files are usually not necessary to include in source control.
+*.manifest
+*.spec
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+# Ignore all test files and folders
+test/
+tests/
+# Ignore documentation files
+docs/
+*.md
+# Ignore virtual environment
+venv/
+# Ignore git files
+.git
+.gitignore
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

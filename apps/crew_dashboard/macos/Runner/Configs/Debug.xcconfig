@@ -1,0 +1,2 @@
+#include "package:crew_example/Flutter/Flutter-Debug.xcconfig"
+#include "Warnings.xcconfig"

@@ -1,0 +1,782 @@
+{
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    },
+    "functions": [
+        {
+            "source": "functions/examples/python_cloud_functions",
+            "codebase": "example-python",
+            "ignore": [".git", "firebase-debug.log", "firebase-debug.*.log"],
+            "predeploy": [
+                "cd functions/examples/python_cloud_functions && python -m venv venv",
+                "source functions/examples/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/examples/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/examples/node_cloud_functions",
+            "codebase": "example-node",
+            "ignore": [".git", "firebase-debug.log", "firebase-debug.*.log"],
+            "predeploy": [
+                "cd functions/examples/node_cloud_functions && npm run lint-fix",
+                "cd functions/examples/node_cloud_functions && npm run lint",
+                "cd functions/examples/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/user_management",
+            "codebase": "user_management",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/user_management && npm run lint-fix",
+                "cd functions/user_management && npm run lint",
+                "cd functions/user_management && npm run build"
+            ]
+        },
+        // Crew:
+        // - Aasavmp
+        // - barnander
+        // - bb20460
+        // - Chris-C3A
+        // - EdSu03
+        // - fpant1
+        // - Greenboi123
+        // - jaduplessis
+        // - katiemarieek
+        // - louis-swanepoel
+        // - lusCombeNCut
+        // - Macieeej
+        // - Ouyangmimiko
+        // - Pilipb
+        // - Rhetora
+        // - Vm20381
+        // - XinyueFeng99
+        {
+            "source": "functions/crew/aasavmp/node_cloud_functions",
+            "codebase": "aasavmp-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/aasavmp/node_cloud_functions && pnpm i",
+                "cd functions/crew/aasavmp/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/aasavmp/node_cloud_functions && npm run lint",
+                "cd functions/crew/aasavmp/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/aasavmp/python_cloud_functions",
+            "codebase": "aasavmp-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/aasavmp/python_cloud_functions && python -m venv venv",
+                "source functions/crew/aasavmp/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/aasavmp/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/barnander/node_cloud_functions",
+            "codebase": "barnander-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/barnander/node_cloud_functions && pnpm i",
+                "cd functions/crew/barnander/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/barnander/node_cloud_functions && npm run lint",
+                "cd functions/crew/barnander/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/barnander/python_cloud_functions",
+            "codebase": "barnander-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/barnander/python_cloud_functions && python -m venv venv",
+                "source functions/crew/barnander/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/barnander/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/bb20460/node_cloud_functions",
+            "codebase": "bb20460-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/bb20460/node_cloud_functions && pnpm i",
+                "cd functions/crew/bb20460/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/bb20460/node_cloud_functions && npm run lint",
+                "cd functions/crew/bb20460/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/bb20460/python_cloud_functions",
+            "codebase": "bb20460-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/bb20460/python_cloud_functions && python -m venv venv",
+                "source functions/crew/bb20460/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/bb20460/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/chris_c3a/node_cloud_functions",
+            "codebase": "chris-c3a-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/chris_c3a/node_cloud_functions && pnpm i",
+                "cd functions/crew/chris_c3a/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/chris_c3a/node_cloud_functions && npm run lint",
+                "cd functions/crew/chris_c3a/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/chris_c3a/python_cloud_functions",
+            "codebase": "chris-c3a-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/chris_c3a/python_cloud_functions && python -m venv venv",
+                "source functions/crew/chris_c3a/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/chris_c3a/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/edsu03/node_cloud_functions",
+            "codebase": "edsu03-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/edsu03/node_cloud_functions && pnpm i",
+                "cd functions/crew/edsu03/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/edsu03/node_cloud_functions && npm run lint",
+                "cd functions/crew/edsu03/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/edsu03/python_cloud_functions",
+            "codebase": "edsu03-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/edsu03/python_cloud_functions && python -m venv venv",
+                "source functions/crew/edsu03/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/edsu03/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/fpant1/node_cloud_functions",
+            "codebase": "fpant1-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/fpant1/node_cloud_functions && pnpm i",
+                "cd functions/crew/fpant1/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/fpant1/node_cloud_functions && npm run lint",
+                "cd functions/crew/fpant1/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/fpant1/python_cloud_functions",
+            "codebase": "fpant1-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/fpant1/python_cloud_functions && python -m venv venv",
+                "source functions/crew/fpant1/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/fpant1/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/greenboi123/node_cloud_functions",
+            "codebase": "greenboi123-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/greenboi123/node_cloud_functions && pnpm i",
+                "cd functions/crew/greenboi123/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/greenboi123/node_cloud_functions && npm run lint",
+                "cd functions/crew/greenboi123/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/greenboi123/python_cloud_functions",
+            "codebase": "greenboi123-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/greenboi123/python_cloud_functions && python -m venv venv",
+                "source functions/crew/greenboi123/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/greenboi123/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/jaduplessis/node_cloud_functions",
+            "codebase": "jaduplessis-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/jaduplessis/node_cloud_functions && pnpm i",
+                "cd functions/crew/jaduplessis/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/jaduplessis/node_cloud_functions && npm run lint",
+                "cd functions/crew/jaduplessis/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/jaduplessis/python_cloud_functions",
+            "codebase": "jaduplessis-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/jaduplessis/python_cloud_functions && python -m venv venv",
+                "source functions/crew/jaduplessis/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/jaduplessis/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/katiemarieek/node_cloud_functions",
+            "codebase": "katiemarieek-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/katiemarieek/node_cloud_functions && pnpm i",
+                "cd functions/crew/katiemarieek/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/katiemarieek/node_cloud_functions && npm run lint",
+                "cd functions/crew/katiemarieek/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/katiemarieek/python_cloud_functions",
+            "codebase": "katiemarieek-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/katiemarieek/python_cloud_functions && python -m venv venv",
+                "source functions/crew/katiemarieek/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/katiemarieek/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/louis_swanepoel/node_cloud_functions",
+            "codebase": "louis-swanepoel-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/louis_swanepoel/node_cloud_functions && pnpm i",
+                "cd functions/crew/louis_swanepoel/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/louis_swanepoel/node_cloud_functions && npm run lint",
+                "cd functions/crew/louis_swanepoel/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/louis_swanepoel/python_cloud_functions",
+            "codebase": "louis-swanepoel-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/louis_swanepoel/python_cloud_functions && python -m venv venv",
+                "source functions/crew/louis_swanepoel/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/louis_swanepoel/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/luscombencut/node_cloud_functions",
+            "codebase": "luscombencut-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/luscombencut/node_cloud_functions && pnpm i",
+                "cd functions/crew/luscombencut/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/luscombencut/node_cloud_functions && npm run lint",
+                "cd functions/crew/luscombencut/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/luscombencut/python_cloud_functions",
+            "codebase": "luscombencut-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/luscombencut/python_cloud_functions && python -m venv venv",
+                "source functions/crew/luscombencut/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/luscombencut/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/macieeej/node_cloud_functions",
+            "codebase": "macieeej-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/macieeej/node_cloud_functions && pnpm i",
+                "cd functions/crew/macieeej/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/macieeej/node_cloud_functions && npm run lint",
+                "cd functions/crew/macieeej/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/macieeej/python_cloud_functions",
+            "codebase": "macieeej-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/macieeej/python_cloud_functions && python -m venv venv",
+                "source functions/crew/macieeej/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/macieeej/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/ouyangmimiko/node_cloud_functions",
+            "codebase": "ouyangmimiko-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/ouyangmimiko/node_cloud_functions && pnpm i",
+                "cd functions/crew/ouyangmimiko/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/ouyangmimiko/node_cloud_functions && npm run lint",
+                "cd functions/crew/ouyangmimiko/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/ouyangmimiko/python_cloud_functions",
+            "codebase": "ouyangmimiko-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/ouyangmimiko/python_cloud_functions && python -m venv venv",
+                "source functions/crew/ouyangmimiko/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/ouyangmimiko/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/pilipb/node_cloud_functions",
+            "codebase": "pilipb-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/pilipb/node_cloud_functions && pnpm i",
+                "cd functions/crew/pilipb/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/pilipb/node_cloud_functions && npm run lint",
+                "cd functions/crew/pilipb/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/pilipb/python_cloud_functions",
+            "codebase": "pilipb-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/pilipb/python_cloud_functions && python -m venv venv",
+                "source functions/crew/pilipb/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/pilipb/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/rhetora/node_cloud_functions",
+            "codebase": "rhetora-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/rhetora/node_cloud_functions && pnpm i",
+                "cd functions/crew/rhetora/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/rhetora/node_cloud_functions && npm run lint",
+                "cd functions/crew/rhetora/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/rhetora/python_cloud_functions",
+            "codebase": "rhetora-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/rhetora/python_cloud_functions && python -m venv venv",
+                "source functions/crew/rhetora/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/rhetora/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/vm20381/node_cloud_functions",
+            "codebase": "vm20381-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/vm20381/node_cloud_functions && pnpm i",
+                "cd functions/crew/vm20381/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/vm20381/node_cloud_functions && npm run lint",
+                "cd functions/crew/vm20381/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/vm20381/python_cloud_functions",
+            "codebase": "vm20381-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/vm20381/python_cloud_functions && python -m venv venv",
+                "source functions/crew/vm20381/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/vm20381/python_cloud_functions/requirements.txt"
+            ]
+        },
+        {
+            "source": "functions/crew/xinyuefeng99/node_cloud_functions",
+            "codebase": "xinyuefeng99-node",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/xinyuefeng99/node_cloud_functions && pnpm i",
+                "cd functions/crew/xinyuefeng99/node_cloud_functions && npm run lint-fix",
+                "cd functions/crew/xinyuefeng99/node_cloud_functions && npm run lint",
+                "cd functions/crew/xinyuefeng99/node_cloud_functions && npm run build"
+            ]
+        },
+        {
+            "source": "functions/crew/xinyuefeng99/python_cloud_functions",
+            "codebase": "xinyuefeng99-python",
+            "ignore": [
+                "node_modules",
+                ".git",
+                "firebase-debug.log",
+                "firebase-debug.*.log"
+            ],
+            "predeploy": [
+                "cd functions/crew/xinyuefeng99/python_cloud_functions && python -m venv venv",
+                "source functions/crew/xinyuefeng99/python_cloud_functions/venv/bin/activate",
+                "pip install -r functions/crew/xinyuefeng99/python_cloud_functions/requirements.txt"
+            ]
+        }
+    ],
+    "hosting": [
+        {
+            "target": "dashboard",
+            "source": "apps/crew_dashboard",
+            "predeploy": [],
+            "rewrites": [
+                {
+                    "source": "/api/users/**",
+                    "function": "functions/user_management:userRolesApi"
+                },
+                {
+                    "source": "**",
+                    "destination": "/index.html"
+                }
+            ],
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "example",
+            "source": "apps/crew_example",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "pilipb",
+            "source": "apps/crew/pilipb",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "aasavmp",
+            "source": "apps/crew/aasavmp",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "jaduplessis",
+            "source": "apps/crew/jaduplessis",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "edsu03",
+            "source": "apps/crew/edsu03",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "macieeej",
+            "source": "apps/crew/macieeej",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "chris_c3a",
+            "source": "apps/crew/chris_c3a",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "xinyuefeng99",
+            "source": "apps/crew/xinyuefeng99",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "ouyangmimiko",
+            "source": "apps/crew/ouyangmimiko",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "vm20381",
+            "source": "apps/crew/vm20381",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "greenboi123",
+            "source": "apps/crew/greenboi123",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "fpant1",
+            "source": "apps/crew/fpant1",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "luscombencut",
+            "source": "apps/crew/luscombencut",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "bb20460",
+            "source": "apps/crew/bb20460",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "barnander",
+            "source": "apps/crew/barnander",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "rhetora",
+            "source": "apps/crew/rhetora",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "louis_swanepoel",
+            "source": "apps/crew/louis_swanepoel",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        },
+        {
+            "target": "katiemarieek",
+            "source": "apps/crew/katiemarieek",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "frameworksBackend": {
+                "region": "europe-west1"
+            }
+        }
+    ],
+    "emulators": {
+        "auth": {
+            "port": 9099
+        },
+        "functions": {
+            "port": 5001
+        },
+        "firestore": {
+            "port": 8080
+        },
+        "hosting": {
+            "port": 5000
+        },
+        "pubsub": {
+            "port": 8085
+        },
+        "storage": {
+            "port": 9199
+        },
+        "ui": {
+            "enabled": true,
+            "port": 69420
+        },
+        "singleProjectMode": true
+    },
+    "remoteconfig": {
+        "template": "remoteconfig.template.json"
+    }
+    // "extensions": {}
+}
