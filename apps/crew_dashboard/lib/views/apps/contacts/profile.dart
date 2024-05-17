@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/contact/profile_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -21,9 +16,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -53,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Profile",
                       fontWeight: 600,
                     ),
@@ -136,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      MyText.bodyMedium(
+                                      const MyText.bodyMedium(
                                         "Amanda Smith",
                                         fontWeight: 600,
                                         fontSize: 16,
@@ -153,7 +153,7 @@ class _ProfilePageState extends State<ProfilePage>
                                       ),
                                     ],
                                   ),
-                                  MyText.bodyMedium("@amandasmith"),
+                                  const MyText.bodyMedium("@amandasmith"),
                                 ],
                               ),
                             ),
@@ -198,13 +198,13 @@ class _ProfilePageState extends State<ProfilePage>
                                 children: [
                                   const Icon(LucideIcons.users, size: 16),
                                   MySpacing.width(8),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "128 Contacts",
                                   ),
                                   MySpacing.width(12),
-                                  Icon(LucideIcons.folderGit, size: 16),
+                                  const Icon(LucideIcons.folderGit, size: 16),
                                   MySpacing.width(8),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "14 entities",
                                   ),
                                 ],
@@ -215,7 +215,7 @@ class _ProfilePageState extends State<ProfilePage>
                             ),
                             Padding(
                               padding: MySpacing.left(20),
-                              child: MyText.titleMedium("Inbox"),
+                              child: const MyText.titleMedium("Inbox"),
                             ),
                             // MySpacing.height(12),
                             Padding(
@@ -231,11 +231,9 @@ class _ProfilePageState extends State<ProfilePage>
                                       onPressed: () {},
                                       elevation: 0,
                                       borderRadiusAll: 8,
-                                      backgroundColor: theme
-                                          .colorScheme.background
+                                      backgroundColor: theme.colorScheme.surface
                                           .withAlpha(5),
-                                      splashColor: theme
-                                          .colorScheme.onBackground
+                                      splashColor: theme.colorScheme.onSurface
                                           .withAlpha(10),
                                       child: SizedBox(
                                         height: 60,
@@ -322,7 +320,7 @@ class _ProfilePageState extends State<ProfilePage>
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                MyText.bodyLarge(
+                                const MyText.bodyLarge(
                                   "About Us",
                                   fontSize: 20,
                                   fontWeight: 600,
@@ -347,7 +345,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 size: 20,
                                               ),
                                               MySpacing.width(8),
-                                              MyText.bodyMedium(
+                                              const MyText.bodyMedium(
                                                 "Live at Andorra",
                                               ),
                                             ],
@@ -360,7 +358,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 size: 20,
                                               ),
                                               MySpacing.width(8),
-                                              MyText.bodyMedium(
+                                              const MyText.bodyMedium(
                                                 "demo@gmail.com",
                                               ),
                                             ],
@@ -379,7 +377,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 size: 20,
                                               ),
                                               MySpacing.width(8),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "Data Analyst at Gleichner, Mueller and Tromp",
                                                   overflow:
@@ -396,7 +394,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 size: 20,
                                               ),
                                               MySpacing.width(8),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "Studied at Nikolaus - Leuschke",
                                                   overflow:
@@ -419,7 +417,7 @@ class _ProfilePageState extends State<ProfilePage>
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                MyText.titleLarge(
+                                const MyText.titleLarge(
                                   "Social",
                                   fontWeight: 600,
                                 ),
@@ -437,7 +435,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 color: Color(0xff3b5998),
                                               ),
                                               MySpacing.width(12),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "https://www.facebook.com/caitlyn.kerluke",
                                                   overflow:
@@ -454,7 +452,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 color: Color(0xffE4405F),
                                               ),
                                               MySpacing.width(12),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "https://www.instagram.com/caitlyn.kerluke",
                                                   overflow:
@@ -477,7 +475,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 color: Color(0xff0A66C2),
                                               ),
                                               MySpacing.width(8),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "https://www.linkedIn.com/caitlyn.kerluke",
                                                   overflow:
@@ -494,7 +492,7 @@ class _ProfilePageState extends State<ProfilePage>
                                                 color: Color(0xff00acee),
                                               ),
                                               MySpacing.width(8),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "https://www.twitter.com/caitlyn.kerluke",
                                                   overflow:
@@ -517,17 +515,19 @@ class _ProfilePageState extends State<ProfilePage>
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                MyText.bodyLarge(
+                                const MyText.bodyLarge(
                                   "Reviews",
                                   fontSize: 20,
                                   fontWeight: 600,
                                 ),
                                 MySpacing.height(12),
                                 SfCartesianChart(
-                                  primaryXAxis: NumericAxis(isInversed: true),
-                                  primaryYAxis: NumericAxis(isInversed: true),
+                                  primaryXAxis:
+                                      const NumericAxis(isInversed: true),
+                                  primaryYAxis:
+                                      const NumericAxis(isInversed: true),
                                   tooltipBehavior: controller.tool,
-                                  series: <ChartSeries<ChartData, double>>[
+                                  series: <CartesianSeries<ChartData, double>>[
                                     LineSeries<ChartData, double>(
                                       dataSource: controller.chartData,
                                       markerSettings:

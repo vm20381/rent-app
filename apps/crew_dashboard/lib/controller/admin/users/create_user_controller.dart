@@ -1,11 +1,8 @@
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/firebase_functions_service.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_form_validator.dart';
-import 'package:captainapp_crew_dashboard/models/firebase_auth_user.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_functions/cloud_functions.dart';
 
 class CreateUserController extends MyController {
   final MyFormValidator validator = MyFormValidator();

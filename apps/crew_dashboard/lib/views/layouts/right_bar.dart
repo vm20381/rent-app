@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/theme_customizer.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/widgets/custom_switch.dart';
+import 'package:flutter/material.dart';
 
 // typedef void OnLeftBarColorSchemeChange(LeftBarThemeType leftBarThemeType);
 // typedef void OnTopBarColorSchemeChange(TopBarThemeType topBarThemeType);
@@ -22,14 +22,14 @@ class RightBar extends StatefulWidget {
   // final OnContentSchemeChange onContentSchemeChange;
 
   const RightBar({
-    Key? key, // this.leftBarThemeType,
+    super.key, // this.leftBarThemeType,
     // this.topBarThemeType,
     // this.contentThemeType,
     // this.onLeftBarColorSchemeChange,
     // this.onTopBarColorSchemeChange,
     // this.onContentSchemeChange,
     // this.onRightBarColorSchemeChange
-  }) : super(key: key);
+  });
 
   @override
   _RightBarState createState() => _RightBarState();
@@ -49,7 +49,7 @@ class _RightBarState extends State<RightBar>
     customizer = ThemeCustomizer.instance;
     return Container(
       width: 280,
-      color: theme.colorScheme.background,
+      color: theme.colorScheme.surface,
       child: Column(
         children: [
           Container(
@@ -85,8 +85,8 @@ class _RightBarState extends State<RightBar>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MyText.labelMedium("Color Scheme"),
-                  Divider(),
+                  const MyText.labelMedium("Color Scheme"),
+                  const Divider(),
                   MySpacing.height(8),
                   Row(
                     children: [
@@ -97,7 +97,7 @@ class _RightBarState extends State<RightBar>
                         },
                       ),
                       MySpacing.width(12),
-                      Text(
+                      const Text(
                         "Light",
                       ),
                     ],
@@ -112,7 +112,7 @@ class _RightBarState extends State<RightBar>
                         },
                       ),
                       MySpacing.width(12),
-                      Text(
+                      const Text(
                         "Dark",
                       ),
                     ],
@@ -146,7 +146,7 @@ class _RightBarState extends State<RightBar>
                   // Text("Left Bar",
                   //     style: AppTheme.getTextStyle(themeData.textTheme.bodyText1,
                   //         color: rightBarTheme.onBackground, fontWeight: 600)),
-                  Divider(),
+                  const Divider(),
                   // Spacing.height(8),
                   // Row(
                   //   children: [
@@ -198,8 +198,8 @@ class _RightBarState extends State<RightBar>
                   //   ],
                   // ),
                   // Spacing.height(36),
-                  Text("Top Bar"),
-                  Divider(),
+                  const Text("Top Bar"),
+                  const Divider(),
                   // Spacing.height(8),
                   // Row(
                   //   children: [

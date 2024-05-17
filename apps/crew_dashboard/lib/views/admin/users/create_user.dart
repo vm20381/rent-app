@@ -1,14 +1,8 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/admin/users/create_user_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
-import 'package:captainapp_crew_dashboard/helpers/utils/my_string_utils.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb_item.dart';
@@ -23,6 +17,11 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class CreateUser extends StatefulWidget {
   const CreateUser({super.key});
@@ -58,7 +57,7 @@ class _CreateUserState extends State<CreateUser>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "New User",
                       fontWeight: 600,
                     ),
@@ -126,7 +125,7 @@ class _CreateUserState extends State<CreateUser>
                               children: [
                                 TextFormField(
                                   controller: controller.displayNameController,
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     labelText: 'Display Name',
                                     hintText: 'Enter display name',
                                   ),
@@ -184,19 +183,19 @@ class _CreateUserState extends State<CreateUser>
                                       context: context,
                                       builder: (BuildContext context) {
                                         return AlertDialog(
-                                          title: Text("Confirmation"),
-                                          content: Text(
+                                          title: const Text("Confirmation"),
+                                          content: const Text(
                                             "Are you sure you want to create this user?",
                                           ),
                                           actions: [
                                             TextButton(
-                                              child: Text("Cancel"),
+                                              child: const Text("Cancel"),
                                               onPressed: () {
                                                 Navigator.of(context).pop();
                                               },
                                             ),
                                             TextButton(
-                                              child: Text("Create"),
+                                              child: const Text("Create"),
                                               onPressed: () {
                                                 controller.createUser();
                                                 // Perform create user action here

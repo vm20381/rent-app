@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/forgot_password_2_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -11,6 +8,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout_2.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ForgotPassword2 extends StatefulWidget {
   const ForgotPassword2({super.key});
@@ -49,25 +49,25 @@ class _ForgotPassword2State extends State<ForgotPassword2>
                         color: contentTheme.primary,
                       ),
                       MySpacing.width(16),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Captain App",
                         fontSize: 24,
                         fontWeight: 600,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     height: 40,
                   ),
                   Column(
                     children: [
-                      MyText.bodyLarge(
+                      const MyText.bodyLarge(
                         "Forgot Password",
                         fontSize: 20,
                         fontWeight: 600,
                       ),
                       MySpacing.height(12),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Enter your email and we'll send you instructions to reset your password",
                         textAlign: TextAlign.center,
                         fontSize: 12,
@@ -78,7 +78,7 @@ class _ForgotPassword2State extends State<ForgotPassword2>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          MyText.labelMedium("Email Address"),
+                          const MyText.labelMedium("Email Address"),
                           MySpacing.height(8),
                           TextFormField(
                             validator: controller.basicValidator

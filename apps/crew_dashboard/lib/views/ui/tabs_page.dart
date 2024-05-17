@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/tabs_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -14,9 +11,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_tab_indicator_style
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 class TabsPage extends StatefulWidget {
-  const TabsPage({Key? key}) : super(key: key);
+  const TabsPage({super.key});
 
   @override
   State<TabsPage> createState() => _TabsPageState();
@@ -45,7 +45,7 @@ class _TabsPageState extends State<TabsPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Tabs",
                       fontSize: 18,
                       fontWeight: 600,
@@ -503,7 +503,7 @@ class _TabsPageState extends State<TabsPage>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               "Custom Indicator #2",
                               fontWeight: 600,
                             ),

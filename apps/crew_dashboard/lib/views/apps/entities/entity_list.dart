@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/entities/entity_list_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -17,9 +14,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class EntityListPage extends StatefulWidget {
-  const EntityListPage({Key? key}) : super(key: key);
+  const EntityListPage({super.key});
 
   @override
   State<EntityListPage> createState() => _EntityListPageState();
@@ -49,7 +49,7 @@ class _EntityListPageState extends State<EntityListPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Entity List",
                       fontSize: 18,
                       fontWeight: 600,
@@ -121,22 +121,22 @@ class _EntityListPageState extends State<EntityListPage>
                                         PopupMenuItem(
                                           padding: MySpacing.xy(16, 8),
                                           height: 10,
-                                          child: MyText.bodySmall("Edit"),
+                                          child: const MyText.bodySmall("Edit"),
                                         ),
                                         PopupMenuItem(
                                           padding: MySpacing.xy(16, 8),
                                           height: 10,
-                                          child: MyText.bodySmall("Delete"),
+                                          child: const MyText.bodySmall("Delete"),
                                         ),
                                         PopupMenuItem(
                                           padding: MySpacing.xy(16, 8),
                                           height: 10,
-                                          child: MyText.bodySmall("Add Member"),
+                                          child: const MyText.bodySmall("Add Member"),
                                         ),
                                         PopupMenuItem(
                                           padding: MySpacing.xy(16, 8),
                                           height: 10,
-                                          child: MyText.bodySmall(
+                                          child: const MyText.bodySmall(
                                             "Add Due Date",
                                           ),
                                         ),
@@ -162,7 +162,7 @@ class _EntityListPageState extends State<EntityListPage>
                                     ),
                                   ),
                                   MySpacing.width(12),
-                                  MyText.bodyMedium("PWC"),
+                                  const MyText.bodyMedium("PWC"),
                                 ],
                               ),
                               MyContainer(
@@ -237,7 +237,7 @@ class _EntityListPageState extends State<EntityListPage>
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "Task Complete",
                                   ),
                                   MySpacing.height(12),

@@ -7,7 +7,7 @@ class MyDashedDivider extends StatelessWidget {
   final double dashSpace;
 
   const MyDashedDivider(
-      {this.height = 1,
+      {super.key, this.height = 1,
       this.color = Colors.black,
       this.dashWidth = 10,
       this.dashSpace = 10,});

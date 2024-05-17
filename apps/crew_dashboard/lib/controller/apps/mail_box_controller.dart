@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/admin_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_button.dart';
@@ -7,6 +5,8 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/models/mail_model.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MailBoxController extends MyController {
   List<MailModel> mail = [];
@@ -87,7 +87,7 @@ class MailBoxController extends MyController {
     ContentTheme contentTheme = AdminTheme.theme.contentTheme;
     Get.dialog(
       AlertDialog(
-        title: MyText.titleMedium("New Message", fontWeight: 600),
+        title: const MyText.titleMedium("New Message", fontWeight: 600),
         content: SizedBox(
           width: 300,
           child: Column(
@@ -136,7 +136,7 @@ class MailBoxController extends MyController {
               Expanded(
                 child: MyButton.text(
                   onPressed: () => Get.back(),
-                  child: MyText.bodyMedium("Cancel", fontWeight: 600),
+                  child: const MyText.bodyMedium("Cancel", fontWeight: 600),
                 ),
               ),
               Expanded(

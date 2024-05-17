@@ -46,7 +46,6 @@ dependencies:
   feather_icons: ^1.2.0
   url_strategy: ^0.2.0
   intl: ^0.19.0
-  flutter_colorpicker: ^1.0.3
   quill_html_editor: ^2.1.9
   flutter_pagination: ^0.0.8
   qr_flutter: ^4.1.0
@@ -78,6 +77,8 @@ dependencies:
   cloud_functions: ^4.7.3
   # captainapp_crew_shared_ui:
 
+  http_parser: any
+  flutter_hsvcolor_picker: ^1.5.0
 dev_dependencies:
   json_serializable: ^6.8.0
   build_runner: ^2.4.9

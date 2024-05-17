@@ -127,7 +127,7 @@ class Generator {
                         color: Colors.transparent,
                         width: overlayBorderThickness,),
                     shape: BoxShape.circle,)
-                : BoxDecoration(),
+                : const BoxDecoration(),
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(size / 2)),
               child: Image(
@@ -152,7 +152,7 @@ class Generator {
                         color: overlayBorderColor,
                         width: overlayBorderThickness,),
                     shape: BoxShape.circle,)
-                : BoxDecoration(),
+                : const BoxDecoration(),
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(size / 2)),
               child: Image(

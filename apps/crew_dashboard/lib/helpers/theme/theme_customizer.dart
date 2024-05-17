@@ -5,8 +5,6 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:captainapp_crew_dashboard/helpers/localizations/language.dart';
 import 'package:captainapp_crew_dashboard/helpers/localizations/translator.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/json_decoder.dart';
@@ -14,6 +12,8 @@ import 'package:captainapp_crew_dashboard/helpers/services/navigation_service.da
 import 'package:captainapp_crew_dashboard/helpers/theme/admin_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_notifier.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 typedef ThemeChangeCallback = void Function(
   ThemeCustomizer oldVal,

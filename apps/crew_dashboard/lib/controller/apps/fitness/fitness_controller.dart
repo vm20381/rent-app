@@ -1,7 +1,7 @@
+import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 
 class ChartSampleData {
   ChartSampleData({

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/admin_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_dashed_divider.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_navigation_mixin.dart';
+import 'package:flutter/material.dart';
 
 mixin UIMixin {
   // ThemeData get theme => AppStyle.theme;
@@ -15,28 +15,28 @@ mixin UIMixin {
   ContentTheme get contentTheme => AdminTheme.theme.contentTheme;
 
   VisualDensity get getCompactDensity =>
-      VisualDensity(horizontal: -4, vertical: -4);
+      const VisualDensity(horizontal: -4, vertical: -4);
 
   // theme.colorScheme. get theme.colorScheme. => theme.theme.colorScheme.;
 
   OutlineInputBorder get outlineInputBorder => OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(4)),
+        borderRadius: const BorderRadius.all(Radius.circular(4)),
         borderSide: BorderSide(
           width: 1,
           strokeAlign: 0,
-          color: theme.colorScheme.onBackground.withAlpha(80),
+          color: theme.colorScheme.onSurface.withAlpha(80),
         ),
       );
 
   OutlineInputBorder focusedInputBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.all(Radius.circular(4)),
+    borderRadius: const BorderRadius.all(Radius.circular(4)),
     borderSide: BorderSide(width: 1, color: theme.colorScheme.primary),
   );
 
   OutlineInputBorder generateOutlineInputBorder({double radius = 4}) =>
       OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(radius)),
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: Colors.transparent,
         ),
       );
@@ -54,7 +54,7 @@ mixin UIMixin {
         child: Icon(
           Icons.chevron_left_rounded,
           size: 26,
-          color: theme.colorScheme.onBackground,
+          color: theme.colorScheme.onSurface,
         ),
       ),
     );
@@ -64,7 +64,7 @@ mixin UIMixin {
     return MyDashedDivider(
       dashWidth: 6,
       dashSpace: 4,
-      color: theme.colorScheme.onBackground.withAlpha(64),
+      color: theme.colorScheme.onSurface.withAlpha(64),
       height: 0.5,
     );
   }

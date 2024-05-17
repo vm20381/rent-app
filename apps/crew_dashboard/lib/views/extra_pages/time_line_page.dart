@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:timelines/timelines.dart';
 import 'package:captainapp_crew_dashboard/controller/extra_pages/time_line_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
@@ -10,9 +7,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:timelines/timelines.dart';
 
 class TimeLinePage extends StatefulWidget {
-  const TimeLinePage({Key? key}) : super(key: key);
+  const TimeLinePage({super.key});
 
   @override
   State<TimeLinePage> createState() => _TimeLinePageState();
@@ -41,7 +41,7 @@ class _TimeLinePageState extends State<TimeLinePage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Time Line",
                       fontWeight: 600,
                     ),

@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:captainapp_crew_dashboard/helpers/localizations/language.dart';
 import 'package:flutter/services.dart';
 import 'package:get/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:captainapp_crew_dashboard/helpers/localizations/language.dart';
 
 class Translator {
   static Map<String, String>? _localizedStrings;

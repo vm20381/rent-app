@@ -1,8 +1,3 @@
-import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/app_constant.dart';
 import 'package:captainapp_crew_dashboard/controller/forms/wizard_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
@@ -19,9 +14,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:feather_icons/feather_icons.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class Wizard extends StatefulWidget {
-  const Wizard({Key? key}) : super(key: key);
+  const Wizard({super.key});
 
   @override
   State<Wizard> createState() => _WizardState();
@@ -185,7 +185,7 @@ class _WizardState extends State<Wizard>
                 border: outlineInputBorder,
                 enabledBorder: outlineInputBorder,
                 focusedBorder: focusedInputBorder,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   FeatherIcons.user,
                   size: 16,
                 ),
@@ -209,7 +209,7 @@ class _WizardState extends State<Wizard>
                 border: outlineInputBorder,
                 enabledBorder: outlineInputBorder,
                 focusedBorder: focusedInputBorder,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   FeatherIcons.mail,
                   size: 16,
                 ),
@@ -234,7 +234,7 @@ class _WizardState extends State<Wizard>
                 border: outlineInputBorder,
                 enabledBorder: outlineInputBorder,
                 focusedBorder: focusedInputBorder,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   FeatherIcons.lock,
                   size: 16,
                 ),
@@ -317,7 +317,7 @@ class _WizardState extends State<Wizard>
                           border: outlineInputBorder,
                           enabledBorder: outlineInputBorder,
                           focusedBorder: focusedInputBorder,
-                          prefixIcon: Icon(
+                          prefixIcon: const Icon(
                             LucideIcons.user,
                             size: 20,
                           ),
@@ -350,7 +350,7 @@ class _WizardState extends State<Wizard>
                           border: outlineInputBorder,
                           enabledBorder: outlineInputBorder,
                           focusedBorder: focusedInputBorder,
-                          prefixIcon: Icon(
+                          prefixIcon: const Icon(
                             LucideIcons.user,
                             size: 20,
                           ),
@@ -381,7 +381,7 @@ class _WizardState extends State<Wizard>
                 border: outlineInputBorder,
                 enabledBorder: outlineInputBorder,
                 focusedBorder: focusedInputBorder,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   LucideIcons.mail,
                   size: 20,
                 ),

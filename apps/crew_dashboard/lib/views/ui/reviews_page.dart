@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/reviews_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -15,9 +10,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ReviewsPage extends StatefulWidget {
-  const ReviewsPage({Key? key}) : super(key: key);
+  const ReviewsPage({super.key});
 
   @override
   State<ReviewsPage> createState() => _ReviewsPageState();
@@ -46,7 +46,7 @@ class _ReviewsPageState extends State<ReviewsPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Reviews",
                       fontWeight: 600,
                       fontSize: 18,
@@ -69,7 +69,7 @@ class _ReviewsPageState extends State<ReviewsPage>
                     MyFlex(
                       contentPadding: false,
                       children: [
-                        MyFlexItem(
+                        const MyFlexItem(
                           sizes: "xxl-3",
                           child: MyContainer(
                             height: 200,
@@ -90,7 +90,7 @@ class _ReviewsPageState extends State<ReviewsPage>
                             ),
                           ),
                         ),
-                        MyFlexItem(
+                        const MyFlexItem(
                           sizes: "xxl-3",
                           child: MyContainer(
                             height: 200,
@@ -126,7 +126,7 @@ class _ReviewsPageState extends State<ReviewsPage>
                             paddingAll: 4,
                             height: 200,
                             child: SfCircularChart(
-                              legend: Legend(
+                              legend: const Legend(
                                 isVisible: true,
                                 overflowMode: LegendItemOverflowMode.wrap,
                                 position: LegendPosition.left,
@@ -155,7 +155,7 @@ class _ReviewsPageState extends State<ReviewsPage>
                       ],
                     ),
                     MySpacing.height(16),
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Review Growth",
                       fontWeight: 600,
                     ),
@@ -169,13 +169,13 @@ class _ReviewsPageState extends State<ReviewsPage>
                             children: [
                               Row(
                                 children: [
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "2.1K",
                                     fontWeight: 600,
                                     fontSize: 24,
                                   ),
                                   MySpacing.width(8),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "Reviews",
                                     muted: true,
                                   ),
@@ -196,7 +196,7 @@ class _ReviewsPageState extends State<ReviewsPage>
                                       height: 32,
                                       child: MyText.bodySmall(
                                         behavior.toString(),
-                                        color: theme.colorScheme.onBackground,
+                                        color: theme.colorScheme.onSurface,
                                         fontWeight: 600,
                                       ),
                                     );
@@ -212,12 +212,12 @@ class _ReviewsPageState extends State<ReviewsPage>
                                       MyText.labelMedium(
                                         controller.selectedTimeDesign
                                             .toString(),
-                                        color: theme.colorScheme.onBackground,
+                                        color: theme.colorScheme.onSurface,
                                       ),
                                       Icon(
                                         LucideIcons.chevronDown,
                                         size: 22,
-                                        color: theme.colorScheme.onBackground,
+                                        color: theme.colorScheme.onSurface,
                                       ),
                                     ],
                                   ),
@@ -226,20 +226,20 @@ class _ReviewsPageState extends State<ReviewsPage>
                             ],
                           ),
                           MySpacing.height(16),
-                          MyText.bodyMedium(
+                          const MyText.bodyMedium(
                             "+500 (+88.55%)",
                             fontWeight: 600,
                             xMuted: true,
                           ),
                           MySpacing.height(16),
                           SfCartesianChart(
-                            legend: Legend(
+                            legend: const Legend(
                               isVisible: true,
                               overflowMode: LegendItemOverflowMode.wrap,
                               position: LegendPosition.top,
                             ),
                             tooltipBehavior: controller.tooltipBehavior,
-                            series: <ChartSeries>[
+                            series: <CartesianSeries>[
                               SplineSeries<ChartSampleData, int>(
                                 dataSource: controller.chartData1,
                                 // Type of spline

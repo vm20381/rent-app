@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
+import 'package:flutter/material.dart';
 
 class ButtonsController extends MyController {
   List<bool> selected = List.filled(3, false);

@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/CRM/opportunities_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -19,9 +15,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class OpportunitiesPage extends StatefulWidget {
-  const OpportunitiesPage({Key? key}) : super(key: key);
+  const OpportunitiesPage({super.key});
 
   @override
   State<OpportunitiesPage> createState() => _OpportunitiesPageState();
@@ -50,7 +50,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Opportunities",
                       fontWeight: 600,
                     ),
@@ -79,11 +79,11 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleLarge(
+                                  const MyText.titleLarge(
                                     "Status Chart",
                                   ),
                                   SfCircularChart(
-                                    legend: Legend(
+                                    legend: const Legend(
                                       isVisible: true,
                                       position: LegendPosition.bottom,
                                     ),
@@ -114,12 +114,12 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.bodyMedium("Leads Statics"),
+                                  const MyText.bodyMedium("Leads Statics"),
                                   MySpacing.height(16),
                                   SfCartesianChart(
-                                    primaryXAxis: CategoryAxis(),
+                                    primaryXAxis: const CategoryAxis(),
                                     tooltipBehavior: controller.chartData,
-                                    series: <ChartSeries>[
+                                    series: <CartesianSeries>[
                                       StackedColumnSeries<ChartData2, double>(
                                         dataSource: controller.chartData2,
                                         xValueMapper: (ChartData2 data, _) =>
@@ -156,7 +156,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                               children: [
                                 Row(
                                   children: [
-                                    MyText.bodyMedium("Sort By"),
+                                    const MyText.bodyMedium("Sort By"),
                                     MySpacing.width(16),
                                     PopupMenuButton(
                                       itemBuilder: (BuildContext context) {
@@ -173,8 +173,8 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                             height: 32,
                                             child: MyText.bodySmall(
                                               behavior.toString(),
-                                              color: theme
-                                                  .colorScheme.onBackground,
+                                              color:
+                                                  theme.colorScheme.onSurface,
                                               fontWeight: 600,
                                             ),
                                           );
@@ -187,8 +187,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                         children: <Widget>[
                                           MyText.labelMedium(
                                             controller.selectSize.toString(),
-                                            color:
-                                                theme.colorScheme.onBackground,
+                                            color: theme.colorScheme.onSurface,
                                           ),
                                           Container(
                                             margin:
@@ -196,8 +195,8 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                             child: Icon(
                                               LucideIcons.chevronDown,
                                               size: 22,
-                                              color: theme
-                                                  .colorScheme.onBackground,
+                                              color:
+                                                  theme.colorScheme.onSurface,
                                             ),
                                           ),
                                         ],
@@ -210,7 +209,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                     context: context,
                                     builder: (context) => AlertDialog(
                                       clipBehavior: Clip.antiAliasWithSaveLayer,
-                                      title: MyText.titleMedium(
+                                      title: const MyText.titleMedium(
                                         "Add item",
                                       ),
                                       titlePadding: MySpacing.xy(16, 12),
@@ -221,7 +220,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          MyText.bodyMedium("Name"),
+                                          const MyText.bodyMedium("Name"),
                                           MySpacing.height(8),
                                           TextFormField(
                                             keyboardType:
@@ -239,7 +238,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                             ),
                                           ),
                                           MySpacing.height(16),
-                                          MyText.bodyMedium("Email"),
+                                          const MyText.bodyMedium("Email"),
                                           MySpacing.height(8),
                                           TextFormField(
                                             keyboardType:
@@ -257,7 +256,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage>
                                             ),
                                           ),
                                           MySpacing.height(16),
-                                          MyText.bodyMedium("Phone"),
+                                          const MyText.bodyMedium("Phone"),
                                           MySpacing.height(8),
                                           TextFormField(
                                             keyboardType:

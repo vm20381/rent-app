@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/register_2_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -11,6 +8,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout_2.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class Register2 extends StatefulWidget {
   const Register2({super.key});
@@ -50,25 +50,25 @@ class _Register2State extends State<Register2>
                         color: contentTheme.primary,
                       ),
                       MySpacing.width(16),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Captain App",
                         fontSize: 24,
                         fontWeight: 600,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     height: 40,
                   ),
                   Column(
                     children: [
-                      MyText.bodyLarge(
+                      const MyText.bodyLarge(
                         "Register",
                         fontSize: 20,
                         fontWeight: 600,
                       ),
                       MySpacing.height(12),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Make your app management easy and fun!",
                         fontSize: 12,
                         fontWeight: 600,
@@ -84,7 +84,7 @@ class _Register2State extends State<Register2>
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.labelMedium(
+                                    const MyText.labelMedium(
                                       "First Name",
                                     ),
                                     MySpacing.height(4),
@@ -117,7 +117,7 @@ class _Register2State extends State<Register2>
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.labelMedium(
+                                    const MyText.labelMedium(
                                       "Last Name",
                                     ),
                                     MySpacing.height(4),
@@ -152,7 +152,7 @@ class _Register2State extends State<Register2>
                     ],
                   ),
                   MySpacing.height(20),
-                  MyText.labelMedium(
+                  const MyText.labelMedium(
                     "Emial Address",
                   ),
                   MySpacing.height(4),
@@ -175,7 +175,7 @@ class _Register2State extends State<Register2>
                     ),
                   ),
                   MySpacing.height(20),
-                  MyText.labelMedium(
+                  const MyText.labelMedium(
                     "Email Password",
                   ),
                   MySpacing.height(4),

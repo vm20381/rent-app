@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:captainapp_crew_dashboard/controller/other/sfmap_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -14,9 +10,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:syncfusion_flutter_maps/maps.dart';
 
 class SfMapPage extends StatefulWidget {
-  const SfMapPage({Key? key}) : super(key: key);
+  const SfMapPage({super.key});
 
   @override
   State<SfMapPage> createState() => _SfMapPageState();
@@ -45,7 +45,7 @@ class _SfMapPageState extends State<SfMapPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "SFMaps",
                       fontSize: 18,
                       fontWeight: 600,
@@ -69,7 +69,7 @@ class _SfMapPageState extends State<SfMapPage>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               'Data Labels',
                               fontWeight: 600,
                             ),
@@ -94,7 +94,7 @@ class _SfMapPageState extends State<SfMapPage>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               "European Time Zones",
                               fontWeight: 600,
                             ),
@@ -143,7 +143,7 @@ class _SfMapPageState extends State<SfMapPage>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               "World Population Density (per sq. km.)",
                               fontWeight: 600,
                             ),
@@ -216,7 +216,7 @@ class _SfMapPageState extends State<SfMapPage>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               'World Clock',
                               fontWeight: 600,
                             ),

@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/assets/product_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -16,9 +12,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/models/product.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({Key? key}) : super(key: key);
+  const ProductPage({super.key});
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -70,7 +70,7 @@ class _ProductPageState extends State<ProductPage>
                     header: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        MyText.titleMedium(
+                        const MyText.titleMedium(
                           "Product List",
                           fontWeight: 600,
                           fontSize: 20,
@@ -84,7 +84,7 @@ class _ProductPageState extends State<ProductPage>
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(
+                              const Icon(
                                 LucideIcons.plus,
                                 color: Color(0xffffffff),
                               ),
@@ -98,7 +98,7 @@ class _ProductPageState extends State<ProductPage>
                         ),
                       ],
                     ),
-                    columns: [
+                    columns: const [
                       DataColumn(
                         label: MyText.titleMedium(
                           'Id',

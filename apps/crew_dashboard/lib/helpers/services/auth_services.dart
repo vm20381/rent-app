@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:cloud_functions/cloud_functions.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/firebase_functions_service.dart';
 import 'package:captainapp_crew_dashboard/models/firebase_auth_user.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart'; //

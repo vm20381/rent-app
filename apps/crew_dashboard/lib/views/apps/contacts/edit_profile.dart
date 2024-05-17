@@ -1,10 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/contact/edit_profile_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
@@ -23,6 +18,11 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -58,7 +58,7 @@ class _EditProfileState extends State<EditProfile>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Edit Profile",
                       fontWeight: 600,
                     ),
@@ -134,7 +134,7 @@ class _EditProfileState extends State<EditProfile>
                                   "Enter your Last Name",
                                 ),
                                 MySpacing.height(20),
-                                MyText.labelMedium(
+                                const MyText.labelMedium(
                                   "Email address",
                                 ),
                                 MySpacing.height(8),
@@ -165,7 +165,7 @@ class _EditProfileState extends State<EditProfile>
                                   ),
                                 ),
                                 MySpacing.height(20),
-                                MyText.labelMedium(
+                                const MyText.labelMedium(
                                   "Contact Number",
                                 ),
                                 MySpacing.height(8),
@@ -188,7 +188,7 @@ class _EditProfileState extends State<EditProfile>
                                 MySpacing.height(20),
                                 buildTextField("Address", "Enter Address"),
                                 MySpacing.height(20),
-                                MyText.labelMedium(
+                                const MyText.labelMedium(
                                   "password",
                                 ),
                                 MySpacing.height(8),

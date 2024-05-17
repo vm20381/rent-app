@@ -1,9 +1,9 @@
+import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_utils.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/models/entity_item.dart';
-import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
+import 'package:get/get.dart';
 // import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_utils.dart';
 // import 'package:captainapp_crew_dashboard/images.dart';
 

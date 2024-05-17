@@ -1,12 +1,12 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_pages.dart';
+import 'package:flutter/material.dart';
 
 class MyPagerIndicator extends StatelessWidget {
   final PagerIndicatorViewModel? viewModel;
 
-  MyPagerIndicator({
+  const MyPagerIndicator({super.key, 
     this.viewModel,
   });
 
@@ -61,7 +61,7 @@ class MyPagerIndicator extends StatelessWidget {
       children: <Widget>[
         Expanded(child: Container()),
         Container(
-          margin: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -142,12 +142,12 @@ class PagerIndicatorViewModel {
 class PageBubble extends StatelessWidget {
   final PageBubbleViewModel? viewModel;
 
-  PageBubble({this.viewModel});
+  const PageBubble({super.key, this.viewModel});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 2),
+      margin: const EdgeInsets.only(right: 2),
       width: lerpDouble(25.0, 75.0, viewModel!.activePercent!),
       height: 4,
       child: Row(

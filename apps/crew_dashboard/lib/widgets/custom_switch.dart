@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
+import 'package:flutter/material.dart';
 
 class CustomSwitch extends StatefulWidget {
   final bool value;
@@ -17,8 +17,8 @@ class CustomSwitch extends StatefulWidget {
 
   final Color? activeBorderColor, inactiveBorderColor;
 
-  CustomSwitch({
-    Key? key,
+  const CustomSwitch({
+    super.key,
     required this.value,
     this.onChanged,
     this.width = 56,
@@ -30,10 +30,10 @@ class CustomSwitch extends StatefulWidget {
     this.spacingOfThumbTrack = 4,
     this.activeBorderColor,
     this.inactiveBorderColor,
-  }) : super(key: key);
+  });
 
-  CustomSwitch.normal({
-    Key? key,
+  const CustomSwitch.normal({
+    super.key,
     required this.value,
     this.onChanged,
     this.width = 48,
@@ -45,10 +45,10 @@ class CustomSwitch extends StatefulWidget {
     this.spacingOfThumbTrack = 4,
     this.activeBorderColor,
     this.inactiveBorderColor,
-  }) : super(key: key);
+  });
 
-  CustomSwitch.small({
-    Key? key,
+  const CustomSwitch.small({
+    super.key,
     required this.value,
     this.onChanged,
     this.width = 32,
@@ -60,7 +60,7 @@ class CustomSwitch extends StatefulWidget {
     this.spacingOfThumbTrack = 2.5,
     this.activeBorderColor,
     this.inactiveBorderColor,
-  }) : super(key: key);
+  });
 
   @override
   _CustomSwitchState createState() => _CustomSwitchState();

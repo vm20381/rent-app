@@ -3,8 +3,8 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_page_indicator.dart';
+import 'package:flutter/material.dart';
 
 class MyPageDragger extends StatefulWidget {
   final canDragLeftToRight;
@@ -12,7 +12,7 @@ class MyPageDragger extends StatefulWidget {
 
   final StreamController<SlideUpdate>? slideUpdateStream;
 
-  MyPageDragger({
+  const MyPageDragger({super.key, 
     this.canDragLeftToRight,
     this.canDragRightToLeft,
     this.slideUpdateStream,

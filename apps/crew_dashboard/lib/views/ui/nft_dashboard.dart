@@ -1,8 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/nft_dashboard_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
@@ -19,6 +16,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class NFTDashboardScreen extends StatefulWidget {
   const NFTDashboardScreen({super.key});
@@ -77,7 +77,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "NFT Dashboard",
                       fontSize: 18,
                       fontWeight: 600,
@@ -121,7 +121,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                MyText.titleLarge(
+                                                const MyText.titleLarge(
                                                   "Blue and Coral Abstract",
                                                   fontSize: 28,
                                                   overflow:
@@ -130,7 +130,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                                 MySpacing.height(12),
                                                 Row(
                                                   children: [
-                                                    Column(
+                                                    const Column(
                                                       crossAxisAlignment:
                                                           CrossAxisAlignment
                                                               .start,
@@ -152,7 +152,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                                     MySpacing.width(20),
                                                     Column(
                                                       children: [
-                                                        MyText.bodyMedium(
+                                                        const MyText.bodyMedium(
                                                           "Action Ending in",
                                                           fontWeight: 600,
                                                         ),
@@ -214,7 +214,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Hot Collection",
                                       fontSize: 20,
                                       fontWeight: 600,
@@ -259,7 +259,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Hot Bids",
                                       fontSize: 20,
                                       fontWeight: 600,
@@ -314,7 +314,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      MyText.bodyMedium(
+                                      const MyText.bodyMedium(
                                         "History",
                                         fontSize: 20,
                                         fontWeight: 600,
@@ -384,7 +384,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                                         );
                                       },
                                       separatorBuilder: (context, index) {
-                                        return SizedBox(
+                                        return const SizedBox(
                                           height: 16,
                                         );
                                       },
@@ -464,7 +464,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
           ),
         ),
         MySpacing.width(8),
-        MyText.bodySmall(":"),
+        const MyText.bodySmall(":"),
         MySpacing.width(8),
         MyContainer.bordered(
           height: 28,
@@ -475,7 +475,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
           ),
         ),
         MySpacing.width(8),
-        MyText.bodySmall(":"),
+        const MyText.bodySmall(":"),
         MySpacing.width(8),
         MyContainer.bordered(
           height: 28,
@@ -518,7 +518,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                       child: Image.asset(
                         controller.nftDashboards[index].image,
                         fit: BoxFit.fitWidth,
-                        opacity: AlwaysStoppedAnimation(0.7),
+                        opacity: const AlwaysStoppedAnimation(0.7),
                       ),
                     ),
                     MyContainer(
@@ -558,7 +558,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
           );
         },
         separatorBuilder: (context, index) {
-          return SizedBox(
+          return const SizedBox(
             width: 16,
           );
         },
@@ -644,7 +644,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                MyText.bodyMedium("Sale ends in"),
+                                const MyText.bodyMedium("Sale ends in"),
                                 MyText.bodyMedium(
                                   "${controller.nftDashboards[index].number} days",
                                   fontWeight: 600,
@@ -654,7 +654,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                MyText.bodyMedium("Current Bid"),
+                                const MyText.bodyMedium("Current Bid"),
                                 MyText.bodyMedium(
                                   "${controller.nftDashboards[index].ETH} ETH",
                                   fontWeight: 600,
@@ -672,7 +672,7 @@ class _NFTDashboardScreenState extends State<NFTDashboardScreen>
           );
         },
         separatorBuilder: (context, index) {
-          return SizedBox(
+          return const SizedBox(
             width: 16,
           );
         },

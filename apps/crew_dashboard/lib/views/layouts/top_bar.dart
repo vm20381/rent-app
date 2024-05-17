@@ -1,11 +1,6 @@
 import 'package:captainapp_crew_dashboard/controller/layouts/top_bar_controller.dart';
-import 'package:captainapp_crew_dashboard/helpers/storage/firebase_storage.dart';
-import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:provider/provider.dart';
 import 'package:captainapp_crew_dashboard/helpers/localizations/language.dart';
+import 'package:captainapp_crew_dashboard/helpers/storage/firebase_storage.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_notifier.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -19,8 +14,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_dashed_divider.dart
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
-import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/widgets/custom_pop_menu.dart';
+import 'package:feather_icons/feather_icons.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:provider/provider.dart';
 
 class TopBar extends StatefulWidget {
   const TopBar({
@@ -55,8 +54,8 @@ class _TopBarState extends State<TopBar>
           Row(
             children: [
               InkWell(
-                splashColor: theme.colorScheme.onBackground,
-                highlightColor: theme.colorScheme.onBackground,
+                splashColor: theme.colorScheme.onSurface,
+                highlightColor: theme.colorScheme.onSurface,
                 onTap: () {
                   ThemeCustomizer.toggleLeftBarCondensed();
                 },
@@ -264,7 +263,7 @@ class _TopBarState extends State<TopBar>
         children: [
           Padding(
             padding: MySpacing.xy(16, 12),
-            child: MyText.titleMedium("Notification", fontWeight: 600),
+            child: const MyText.titleMedium("Notification", fontWeight: 600),
           ),
           MyDashedDivider(
             height: 1,
@@ -345,7 +344,7 @@ class _TopBarState extends State<TopBar>
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   borderRadiusAll: AppStyle.buttonRadius.medium,
                   padding: MySpacing.xy(8, 4),
-                  splashColor: theme.colorScheme.onBackground.withAlpha(20),
+                  splashColor: theme.colorScheme.onSurface.withAlpha(20),
                   backgroundColor: Colors.transparent,
                   child: Row(
                     children: [
@@ -355,7 +354,7 @@ class _TopBarState extends State<TopBar>
                         color: contentTheme.onBackground,
                       ),
                       MySpacing.width(8),
-                      MyText.labelMedium(
+                      const MyText.labelMedium(
                         "My Profile",
                         fontWeight: 600,
                       ),

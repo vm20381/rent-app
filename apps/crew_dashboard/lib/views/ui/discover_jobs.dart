@@ -1,8 +1,4 @@
 import 'package:captainapp_crew_dashboard/controller/ui/discover_jobs_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
@@ -18,9 +14,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/models/discover.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class DiscoverJobs extends StatefulWidget {
-  const DiscoverJobs({Key? key}) : super(key: key);
+  const DiscoverJobs({super.key});
 
   @override
   State<DiscoverJobs> createState() => _DiscoverJobsState();
@@ -49,7 +49,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Discover",
                       fontWeight: 600,
                       fontSize: 18,
@@ -76,7 +76,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
                             paddingAll: 0,
                             child: ExpansionTile(
                               initiallyExpanded: true,
-                              title: MyText.titleMedium(
+                              title: const MyText.titleMedium(
                                 'Type of Employment',
                               ),
                               children: [
@@ -107,7 +107,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
                             paddingAll: 0,
                             child: ExpansionTile(
                               initiallyExpanded: true,
-                              title: MyText.titleMedium(
+                              title: const MyText.titleMedium(
                                 'Seniority Level',
                               ),
                               children: [
@@ -214,7 +214,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
                                         children: [
                                           Row(
                                             children: [
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "Amanda Smith",
                                                   textAlign: TextAlign.start,
@@ -283,7 +283,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "OverView",
                                     fontWeight: 600,
                                   ),
@@ -303,7 +303,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Job Description",
                                     fontWeight: 600,
                                   ),
@@ -387,7 +387,7 @@ class _DiscoverJobsState extends State<DiscoverJobs>
 class DiscoveryWidget extends StatefulWidget {
   final Discover discover;
 
-  const DiscoveryWidget({Key? key, required this.discover}) : super(key: key);
+  const DiscoveryWidget({super.key, required this.discover});
 
   @override
   State<DiscoveryWidget> createState() => _DiscoveryWidgetState();

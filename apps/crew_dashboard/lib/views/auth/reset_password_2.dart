@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/reset_password_2_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -11,6 +8,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout_2.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ResetPassword2 extends StatefulWidget {
   const ResetPassword2({super.key});
@@ -49,25 +49,25 @@ class _ResetPassword2State extends State<ResetPassword2>
                         color: contentTheme.primary,
                       ),
                       MySpacing.width(16),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Captain App",
                         fontSize: 24,
                         fontWeight: 600,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     height: 40,
                   ),
                   Column(
                     children: [
-                      MyText.bodyLarge(
+                      const MyText.bodyLarge(
                         "Reset Password",
                         fontSize: 20,
                         fontWeight: 600,
                       ),
                       MySpacing.height(12),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Your password will be reset",
                         fontSize: 12,
                         fontWeight: 600,
@@ -78,7 +78,7 @@ class _ResetPassword2State extends State<ResetPassword2>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          MyText.labelMedium("Password"),
+                          const MyText.labelMedium("Password"),
                           MySpacing.height(4),
                           TextFormField(
                             validator: controller.basicValidator
@@ -111,7 +111,7 @@ class _ResetPassword2State extends State<ResetPassword2>
                             ),
                           ),
                           MySpacing.height(15),
-                          MyText.labelMedium("Confirm Password"),
+                          const MyText.labelMedium("Confirm Password"),
                           MySpacing.height(4),
                           TextFormField(
                             validator: controller.basicValidator

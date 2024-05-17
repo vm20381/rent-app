@@ -1,10 +1,5 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:captainapp_crew_dashboard/controller/other/syncfusion_charts_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -18,9 +13,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class SyncFusionChart extends StatefulWidget {
-  const SyncFusionChart({Key? key}) : super(key: key);
+  const SyncFusionChart({super.key});
 
   @override
   State<SyncFusionChart> createState() => _SyncFusionChartState();
@@ -73,10 +73,10 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Animation delay"),
+                            const MyText.titleMedium("Animation delay"),
                             MySpacing.height(flexSpacing),
                             SfCartesianChart(
-                              primaryXAxis: CategoryAxis(),
+                              primaryXAxis: const CategoryAxis(),
                               tooltipBehavior: controller.chart,
                               axes: <ChartAxis>[
                                 NumericAxis(
@@ -90,7 +90,8 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                                   maximum: 7000,
                                 ),
                               ],
-                              series: <ChartSeries<ChartSampleData, String>>[
+                              series: <CartesianSeries<ChartSampleData,
+                                  String>>[
                                 ColumnSeries<ChartSampleData, String>(
                                   color: contentTheme.primary,
                                   animationDuration: 2000,
@@ -125,12 +126,13 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Gradient based on values"),
+                            const MyText.titleMedium("Gradient based on values"),
                             MySpacing.height(flexSpacing),
                             SfCartesianChart(
-                              primaryXAxis: CategoryAxis(),
+                              primaryXAxis: const CategoryAxis(),
                               tooltipBehavior: controller.gradient,
-                              series: <ChartSeries<ChartSampleData, String>>[
+                              series: <CartesianSeries<ChartSampleData,
+                                  String>>[
                                 AreaSeries<ChartSampleData, String>(
                                   dataSource: controller.gradientChartData,
                                   onCreateShader: (ShaderDetails details) {
@@ -172,12 +174,12 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Bubble Chart"),
+                            const MyText.titleMedium("Bubble Chart"),
                             MySpacing.height(flexSpacing),
                             SfCartesianChart(
                               plotAreaBorderWidth: 0,
-                              primaryXAxis: NumericAxis(
-                                majorGridLines: const MajorGridLines(width: 0),
+                              primaryXAxis: const NumericAxis(
+                                majorGridLines: MajorGridLines(width: 0),
                                 minimum: 60,
                                 maximum: 100,
                               ),
@@ -210,13 +212,13 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                             child: MyContainer(
                               child: Column(
                                 children: [
-                                  MyText.titleMedium("Vertical Line Chart"),
+                                  const MyText.titleMedium("Vertical Line Chart"),
                                   MySpacing.height(flexSpacing),
                                   SfCartesianChart(
                                     isTransposed: true,
                                     tooltipBehavior: controller.vertical,
-                                    primaryXAxis: CategoryAxis(),
-                                    series: <ChartSeries>[
+                                    primaryXAxis: const CategoryAxis(),
+                                    series: <CartesianSeries>[
                                       SplineSeries<ChartSampleData, String>(
                                         color: contentTheme.primary,
                                         dataSource:
@@ -237,11 +239,11 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                             child: MyContainer(
                               child: Column(
                                 children: [
-                                  MyText.titleMedium("Dashed Line Chart"),
+                                  const MyText.titleMedium("Dashed Line Chart"),
                                   MySpacing.height(flexSpacing),
                                   SfCartesianChart(
                                     tooltipBehavior: controller.dashedSpLine,
-                                    series: <ChartSeries>[
+                                    series: <CartesianSeries>[
                                       SplineSeries<ChartSampleData, int>(
                                         color: contentTheme.primary,
                                         dataSource:
@@ -266,12 +268,12 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Range Chart"),
+                            const MyText.titleMedium("Range Chart"),
                             MySpacing.height(flexSpacing),
                             SfCartesianChart(
-                              primaryXAxis: CategoryAxis(),
+                              primaryXAxis: const CategoryAxis(),
                               tooltipBehavior: controller.rangeSlider,
-                              series: <ChartSeries>[
+                              series: <CartesianSeries>[
                                 RangeColumnSeries<ChartSampleData, String>(
                                   color: contentTheme.primary,
                                   dataSource: controller.rangeColumnChart,
@@ -293,10 +295,10 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Doughnut Chart"),
+                            const MyText.titleMedium("Doughnut Chart"),
                             MySpacing.height(flexSpacing),
                             SfCircularChart(
-                              legend: Legend(
+                              legend: const Legend(
                                 isVisible: true,
                                 overflowMode: LegendItemOverflowMode.wrap,
                                 position: LegendPosition.bottom,
@@ -329,10 +331,10 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Pie Chart"),
+                            const MyText.titleMedium("Pie Chart"),
                             MySpacing.height(flexSpacing),
                             SfCircularChart(
-                              legend: Legend(
+                              legend: const Legend(
                                 isVisible: true,
                                 position: LegendPosition.bottom,
                               ),
@@ -365,7 +367,7 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Radial Chart"),
+                            const MyText.titleMedium("Radial Chart"),
                             MySpacing.height(flexSpacing),
                             SfCircularChart(
                               key: GlobalKey(),
@@ -404,7 +406,7 @@ class _SyncFusionChartState extends State<SyncFusionChart>
                       child: MyContainer(
                         child: Column(
                           children: [
-                            MyText.titleMedium("Radial Chart"),
+                            const MyText.titleMedium("Radial Chart"),
                             MySpacing.height(flexSpacing),
                             SfPyramidChart(
                               title: ChartTitle(

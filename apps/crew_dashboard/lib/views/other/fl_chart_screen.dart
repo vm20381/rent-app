@@ -1,7 +1,3 @@
-import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:captainapp_crew_dashboard/controller/other/fl_chart_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
@@ -13,6 +9,10 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class FlChartScreen extends StatefulWidget {
   const FlChartScreen({super.key});
@@ -44,7 +44,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Fl Charts",
                       fontSize: 18,
                       fontWeight: 600,
@@ -68,13 +68,13 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium("Line Chart 1", fontWeight: 600),
+                            const MyText.bodyMedium("Line Chart 1", fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
                               child: LineChart(
                                 controller.sampleData,
-                                duration: Duration(milliseconds: 600),
+                                duration: const Duration(milliseconds: 600),
                               ),
                             ),
                           ],
@@ -86,13 +86,13 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Line CHart 2', fontWeight: 600),
+                            const MyText.bodyMedium('Line CHart 2', fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
                               child: LineChart(
                                 controller.mainData(),
-                                duration: Duration(milliseconds: 600),
+                                duration: const Duration(milliseconds: 600),
                               ),
                             ),
                           ],
@@ -106,7 +106,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Center(
+                                  const Center(
                                     child: MyText.bodyMedium(
                                       'Line Chart 3',
                                       fontWeight: 600,
@@ -158,14 +158,14 @@ class _FlChartScreenState extends State<FlChartScreen>
                                 ],
                               ),
                             )
-                          : SizedBox(),
+                          : const SizedBox(),
                     ),
                     MyFlexItem(
                       sizes: "lg-6 md-12",
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Line Chart 4', fontWeight: 600),
+                            const MyText.bodyMedium('Line Chart 4', fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
@@ -218,7 +218,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                                       sideTitles: SideTitles(showTitles: false),
                                     ),
                                     bottomTitles: AxisTitles(
-                                      axisNameWidget: MyText.bodyMedium(
+                                      axisNameWidget: const MyText.bodyMedium(
                                         '2019',
                                         fontWeight: 600,
                                       ),
@@ -231,7 +231,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                                     ),
                                     leftTitles: AxisTitles(
                                       axisNameSize: 20,
-                                      axisNameWidget: MyText.bodyMedium(
+                                      axisNameWidget: const MyText.bodyMedium(
                                         'Value',
                                       ),
                                       sideTitles: SideTitles(
@@ -271,7 +271,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium("Bar Chart 1", fontWeight: 600),
+                            const MyText.bodyMedium("Bar Chart 1", fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
@@ -280,7 +280,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                                   maxY: 20,
                                   barTouchData: BarTouchData(
                                     touchTooltipData: BarTouchTooltipData(
-                                      tooltipBgColor: Colors.grey,
+                                      getTooltipColor: (spot) => Colors.grey,
                                       getTooltipItem: (a, b, c, d) => null,
                                     ),
                                     touchCallback:
@@ -381,7 +381,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Bar Chart 2', fontWeight: 600),
+                            const MyText.bodyMedium('Bar Chart 2', fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
@@ -396,7 +396,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Bar Chart 3', fontWeight: 600),
+                            const MyText.bodyMedium('Bar Chart 3', fontWeight: 600),
                             MySpacing.height(8),
                             // LegendsListWidget(
                             //   legends: [
@@ -519,7 +519,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Pie Chart 1', fontWeight: 600),
+                            const MyText.bodyMedium('Pie Chart 1', fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
@@ -559,7 +559,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Pie Chart 2', fontWeight: 600),
+                            const MyText.bodyMedium('Pie Chart 2', fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
@@ -598,7 +598,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium('Pie Chart 3', fontWeight: 600),
+                            const MyText.bodyMedium('Pie Chart 3', fontWeight: 600),
                             MySpacing.height(8),
                             SizedBox(
                               height: 300,
@@ -637,7 +637,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               'Scatter Chart 1',
                               fontWeight: 600,
                             ),
@@ -685,7 +685,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                       child: MyContainer.bordered(
                         child: Column(
                           children: [
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               'Scatter Chart 2',
                               fontWeight: 600,
                             ),
@@ -698,73 +698,90 @@ class _FlChartScreenState extends State<FlChartScreen>
                                     ScatterSpot(
                                       4,
                                       4,
-                                      color:
-                                          controller.selectedSpots.contains(0)
-                                              ? Colors.green
-                                              : Colors.blueGrey,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 8,
+                                        color:
+                                            controller.selectedSpots.contains(0)
+                                                ? Colors.green
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       2,
                                       5,
-                                      color:
-                                          controller.selectedSpots.contains(1)
-                                              ? Colors.yellow
-                                              : Colors.blueGrey,
-                                      radius: 12,
+                                      dotPainter: FlDotCirclePainter(
+                                        color:
+                                            controller.selectedSpots.contains(1)
+                                                ? Colors.yellow
+                                                : Colors.blueGrey,
+                                        radius: 12,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       4,
                                       5,
-                                      color:
-                                          controller.selectedSpots.contains(2)
-                                              ? Colors.pink
-                                              : Colors.blueGrey,
-                                      radius: 8,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 8,
+                                        color:
+                                            controller.selectedSpots.contains(2)
+                                                ? Colors.pink
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       8,
                                       6,
-                                      color:
-                                          controller.selectedSpots.contains(3)
-                                              ? Colors.orange
-                                              : Colors.blueGrey,
-                                      radius: 20,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 20,
+                                        color:
+                                            controller.selectedSpots.contains(3)
+                                                ? Colors.orange
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       5,
                                       7,
-                                      color:
-                                          controller.selectedSpots.contains(4)
-                                              ? Colors.purple
-                                              : Colors.blueGrey,
-                                      radius: 14,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 14,
+                                        color:
+                                            controller.selectedSpots.contains(4)
+                                                ? Colors.purple
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       7,
                                       2,
-                                      color:
-                                          controller.selectedSpots.contains(5)
-                                              ? Colors.blue
-                                              : Colors.blueGrey,
-                                      radius: 18,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 18,
+                                        color:
+                                            controller.selectedSpots.contains(5)
+                                                ? Colors.blue
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       3,
                                       2,
-                                      color:
-                                          controller.selectedSpots.contains(6)
-                                              ? Colors.red
-                                              : Colors.blueGrey,
-                                      radius: 36,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 36,
+                                        color:
+                                            controller.selectedSpots.contains(6)
+                                                ? Colors.red
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                     ScatterSpot(
                                       2,
                                       8,
-                                      color:
-                                          controller.selectedSpots.contains(7)
-                                              ? Colors.cyan
-                                              : Colors.blueGrey,
-                                      radius: 22,
+                                      dotPainter: FlDotCirclePainter(
+                                        radius: 22,
+                                        color:
+                                            controller.selectedSpots.contains(7)
+                                                ? Colors.cyan
+                                                : Colors.blueGrey,
+                                      ),
                                     ),
                                   ],
                                   minX: 0,
@@ -809,7 +826,8 @@ class _FlChartScreenState extends State<FlChartScreen>
                                           : SystemMouseCursors.click;
                                     },
                                     touchTooltipData: ScatterTouchTooltipData(
-                                      tooltipBgColor: Colors.black,
+                                      getTooltipColor: (touchedSpot) =>
+                                          Colors.black,
                                       getTooltipItems:
                                           (ScatterSpot touchedBarSpot) {
                                         return ScatterTooltipItem(
@@ -888,7 +906,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Center(
+                            const Center(
                               child: MyText.bodyMedium(
                                 'Radar Chart',
                                 fontWeight: 600,
@@ -1007,7 +1025,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                                     color: Colors.transparent,
                                   ),
                                   titlePositionPercentageOffset: 0.2,
-                                  titleTextStyle: TextStyle(
+                                  titleTextStyle: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 14,
                                   ),
@@ -1044,7 +1062,7 @@ class _FlChartScreenState extends State<FlChartScreen>
                                   tickBorderData: const BorderSide(
                                     color: Colors.transparent,
                                   ),
-                                  gridBorderData: BorderSide(
+                                  gridBorderData: const BorderSide(
                                     // color: widget.gridColor,
                                     width: 2,
                                   ),

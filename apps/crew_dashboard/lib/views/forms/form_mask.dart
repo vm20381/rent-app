@@ -1,10 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/forms/form_mask_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_string_utils.dart';
@@ -19,9 +14,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class FormMaskPage extends StatefulWidget {
-  const FormMaskPage({Key? key}) : super(key: key);
+  const FormMaskPage({super.key});
 
   @override
   State<FormMaskPage> createState() => _FormMaskPageState();
@@ -50,7 +50,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Form Masks",
                       fontSize: 18,
                       fontWeight: 600,
@@ -80,12 +80,12 @@ class _FormMaskPageState extends State<FormMaskPage>
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     LucideIcons.fileText,
                                     size: 16,
                                   ),
                                   MySpacing.width(12),
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Form Mask",
                                     fontWeight: 600,
                                   ),
@@ -98,7 +98,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.labelMedium(
+                                  const MyText.labelMedium(
                                     "Date Style 1",
                                   ),
                                   MySpacing.height(8),
@@ -122,7 +122,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                                     ),
                                   ),
                                   MySpacing.height(24),
-                                  MyText.labelMedium(
+                                  const MyText.labelMedium(
                                     "Phone Number 1",
                                   ),
                                   MySpacing.height(8),
@@ -147,7 +147,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                                     ),
                                   ),
                                   MySpacing.height(24),
-                                  MyText.labelMedium(
+                                  const MyText.labelMedium(
                                     "Date Style 2",
                                   ),
                                   MySpacing.height(8),
@@ -171,7 +171,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                                     ),
                                   ),
                                   MySpacing.height(24),
-                                  MyText.labelMedium(
+                                  const MyText.labelMedium(
                                     "Phone Number 2",
                                   ),
                                   MySpacing.height(8),
@@ -195,7 +195,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                                     ),
                                   ),
                                   MySpacing.height(24),
-                                  MyText.labelMedium(
+                                  const MyText.labelMedium(
                                     "IP address",
                                   ),
                                   MySpacing.height(8),
@@ -219,7 +219,7 @@ class _FormMaskPageState extends State<FormMaskPage>
                                     ),
                                   ),
                                   MySpacing.height(24),
-                                  MyText.labelMedium(
+                                  const MyText.labelMedium(
                                     "Email address",
                                   ),
                                   MySpacing.height(8),

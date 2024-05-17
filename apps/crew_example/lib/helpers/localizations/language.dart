@@ -8,15 +8,15 @@ class Language {
   final String languageName;
 
   static List<Language> languages = [
-    Language(Locale('en'), "English"),
-    Language(Locale('hi'), "हिंदी"),
-    Language(Locale('es'), "Español"),
+    Language(const Locale('en'), "English"),
+    Language(const Locale('hi'), "हिंदी"),
+    Language(const Locale('es'), "Español"),
     Language(
-      Locale('ar'),
+      const Locale('ar'),
       "عربي",
       true,
     ),
-    Language(Locale('fr'), "Français"),
+    Language(const Locale('fr'), "Français"),
   ];
 
   Language(this.locale, this.languageName, [this.supportRTL = false]);

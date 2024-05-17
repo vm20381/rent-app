@@ -6,8 +6,8 @@ class MyStarRating extends StatelessWidget {
   final bool inactiveStarFilled, showInactive;
   final IconData? activeIcon, halfIcon, inactiveIcon;
 
-  MyStarRating(
-      {this.rating = 5,
+  const MyStarRating(
+      {super.key, this.rating = 5,
       this.size = 16,
       this.spacing = 0,
       this.activeColor = Colors.yellow,

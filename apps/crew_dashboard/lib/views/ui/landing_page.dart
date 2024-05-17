@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/landing_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -16,9 +12,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({Key? key}) : super(key: key);
+  const LandingPage({super.key});
 
   @override
   State<LandingPage> createState() => _LandingPageState();
@@ -207,7 +207,7 @@ class _LandingPageState extends State<LandingPage>
                                             ),
                                           ),
                                           MySpacing.width(12),
-                                          Expanded(
+                                          const Expanded(
                                             child: MyText.bodyMedium(
                                               "Welcome to new landing page",
                                               muted: true,
@@ -217,12 +217,12 @@ class _LandingPageState extends State<LandingPage>
                                         ],
                                       ),
                                       MySpacing.height(40),
-                                      MyText.titleLarge(
+                                      const MyText.titleLarge(
                                         "Captain App - Responsive Web UI Kit & Dashboard Template",
                                         fontSize: 28,
                                       ),
                                       MySpacing.height(40),
-                                      MyText.titleMedium(
+                                      const MyText.titleMedium(
                                         "Captain App is a fully featured dashboard and admin template comes with tones of well designed UI elements, components, widgets and pages.",
                                       ),
                                       MySpacing.height(40),
@@ -542,7 +542,7 @@ class _LandingPageState extends State<LandingPage>
                           ),
                         ),
                         MySpacing.height(flexSpacing),
-                        MyText.bodyMedium(
+                        const MyText.bodyMedium(
                           "Captain App comes with next generation ui design and have multiple benefits",
                         ),
                         MySpacing.height(flexSpacing * 2),
@@ -561,7 +561,7 @@ class _LandingPageState extends State<LandingPage>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleLarge(
+                                  const MyText.titleLarge(
                                     "Inbuilt applications and pages",
                                   ),
                                   MySpacing.height(16),
@@ -624,7 +624,7 @@ class _LandingPageState extends State<LandingPage>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleLarge(
+                                  const MyText.titleLarge(
                                     "Inbuilt applications and pages",
                                   ),
                                   MySpacing.height(16),
@@ -1030,46 +1030,46 @@ class _LandingPageState extends State<LandingPage>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Customer Support:",
                                     fontWeight: 600,
                                     muted: true,
                                   ),
                                   MySpacing.height(4),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "+1 234 56 7894",
                                     muted: true,
                                   ),
                                   MySpacing.height(28),
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Email Address:",
                                     fontWeight: 600,
                                     muted: true,
                                   ),
                                   MySpacing.height(4),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "info@gmail.com",
                                     muted: true,
                                   ),
                                   MySpacing.height(28),
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Office Address:",
                                     fontWeight: 600,
                                     muted: true,
                                   ),
                                   MySpacing.height(4),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "4461 Cedar Street Moro, AR 72368",
                                     muted: true,
                                   ),
                                   MySpacing.height(28),
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Office Time:",
                                     fontWeight: 600,
                                     muted: true,
                                   ),
                                   MySpacing.height(4),
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "9:00AM To 6:00PM",
                                     muted: true,
                                   ),
@@ -1112,7 +1112,7 @@ class _LandingPageState extends State<LandingPage>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        MyText.bodyMedium(
+                                        const MyText.bodyMedium(
                                           "Message",
                                           fontWeight: 600,
                                           xMuted: true,
@@ -1475,9 +1475,9 @@ class _LandingPageState extends State<LandingPage>
         MySpacing.height(flexSpacing),
         MyText.bodyMedium(user),
         MySpacing.height(flexSpacing),
-        MyText.bodyMedium("Email Support"),
+        const MyText.bodyMedium("Email Support"),
         MySpacing.height(flexSpacing),
-        MyText.bodyMedium("24x7 Support"),
+        const MyText.bodyMedium("24x7 Support"),
         MySpacing.height(flexSpacing),
       ],
     );

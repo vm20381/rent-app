@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/login_2_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -11,6 +8,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout_2.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class Login2 extends StatefulWidget {
   const Login2({super.key});
@@ -51,26 +51,26 @@ class _Login2State extends State<Login2>
                         color: contentTheme.primary,
                       ),
                       MySpacing.width(16),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Captain App",
                         fontSize: 24,
                         fontWeight: 600,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     height: 40,
                   ),
                   Center(
                     child: Column(
                       children: [
-                        MyText.bodyLarge(
+                        const MyText.bodyLarge(
                           "Sign In",
                           fontSize: 20,
                           fontWeight: 600,
                         ),
                         MySpacing.height(8),
-                        MyText.bodyMedium(
+                        const MyText.bodyMedium(
                           "Stay updated on your professional world",
                           fontSize: 12,
                           fontWeight: 600,
@@ -80,7 +80,7 @@ class _Login2State extends State<Login2>
                     ),
                   ),
                   MySpacing.height(20),
-                  MyText.labelMedium(
+                  const MyText.labelMedium(
                     "Email Address",
                   ),
                   MySpacing.height(8),
@@ -103,7 +103,7 @@ class _Login2State extends State<Login2>
                     ),
                   ),
                   MySpacing.height(20),
-                  MyText.labelMedium(
+                  const MyText.labelMedium(
                     "Password",
                   ),
                   MySpacing.height(8),
@@ -153,7 +153,7 @@ class _Login2State extends State<Login2>
                               visualDensity: getCompactDensity,
                             ),
                             MySpacing.width(16),
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               "Remember Me",
                             ),
                           ],
@@ -200,7 +200,7 @@ class _Login2State extends State<Login2>
                       ),
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     height: 40,
                   ),
                   Row(
@@ -217,7 +217,7 @@ class _Login2State extends State<Login2>
                               color: Color(0xff4078c0),
                             ),
                             MySpacing.width(12),
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               "GitHub",
                               fontWeight: 600,
                             ),
@@ -237,7 +237,7 @@ class _Login2State extends State<Login2>
                               color: Color(0xff00acee),
                             ),
                             MySpacing.width(12),
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               "Twitter",
                               fontWeight: 600,
                             ),
@@ -255,7 +255,7 @@ class _Login2State extends State<Login2>
                               color: Color(0xff3b5998),
                             ),
                             MySpacing.width(12),
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               "Facebook",
                               fontWeight: 600,
                             ),

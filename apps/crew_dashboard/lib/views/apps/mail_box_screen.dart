@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/mail_box_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -17,6 +14,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/models/mail_model.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class MailBoxScreen extends StatefulWidget {
   const MailBoxScreen({super.key});
@@ -49,7 +49,7 @@ class _MailBoxScreenState extends State<MailBoxScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Mail Box",
                       fontSize: 18,
                       fontWeight: 600,
@@ -95,7 +95,7 @@ class _MailBoxScreenState extends State<MailBoxScreen>
                               height: 580,
                               shadow: MyShadow(elevation: 0.5),
                               child: controller.mail.isEmpty
-                                  ? Center(
+                                  ? const Center(
                                       child: MyText.titleMedium(
                                         "You have no new Mails",
                                         fontWeight: 600,
@@ -134,12 +134,12 @@ class _MailBoxScreenState extends State<MailBoxScreen>
                                               ),
                                             ),
                                             MySpacing.width(12),
-                                            Icon(
+                                            const Icon(
                                               LucideIcons.star,
                                               size: 16,
                                             ),
                                             MySpacing.width(12),
-                                            Icon(
+                                            const Icon(
                                               LucideIcons.stepForward,
                                               size: 16,
                                             ),
@@ -171,7 +171,7 @@ class _MailBoxScreenState extends State<MailBoxScreen>
                                         );
                                       },
                                       separatorBuilder: (context, index) {
-                                        return Divider(height: 28);
+                                        return const Divider(height: 28);
                                       },
                                     ),
                             ),
@@ -216,20 +216,20 @@ class _MailBoxScreenState extends State<MailBoxScreen>
               ),
               InkWell(
                 onTap: () {},
-                child: Icon(LucideIcons.refreshCw, size: 18),
+                child: const Icon(LucideIcons.refreshCw, size: 18),
               ),
               InkWell(
                 onTap: () {},
-                child: Icon(LucideIcons.archiveRestore, size: 18),
+                child: const Icon(LucideIcons.archiveRestore, size: 18),
               ),
-              InkWell(onTap: () {}, child: Icon(LucideIcons.info, size: 18)),
+              InkWell(onTap: () {}, child: const Icon(LucideIcons.info, size: 18)),
               InkWell(
                 onTap: () => controller.removeData(),
-                child: Icon(LucideIcons.trash2, size: 18),
+                child: const Icon(LucideIcons.trash2, size: 18),
               ),
-              InkWell(onTap: () {}, child: Icon(LucideIcons.mail, size: 18)),
-              InkWell(onTap: () {}, child: Icon(LucideIcons.tag, size: 18)),
-              InkWell(onTap: () {}, child: Icon(LucideIcons.clock4, size: 18)),
+              InkWell(onTap: () {}, child: const Icon(LucideIcons.mail, size: 18)),
+              InkWell(onTap: () {}, child: const Icon(LucideIcons.tag, size: 18)),
+              InkWell(onTap: () {}, child: const Icon(LucideIcons.clock4, size: 18)),
             ],
           ),
         ),
@@ -238,7 +238,7 @@ class _MailBoxScreenState extends State<MailBoxScreen>
             controller: controller.searchController,
             onChanged: controller.searchMail,
             decoration: InputDecoration(
-              prefixIcon: Icon(LucideIcons.search, size: 16),
+              prefixIcon: const Icon(LucideIcons.search, size: 16),
               hintText: "Search for...",
               hintStyle: MyTextStyle.bodyMedium(fontWeight: 600),
               border:
@@ -319,7 +319,7 @@ class _MailBoxScreenState extends State<MailBoxScreen>
         MySpacing.height(16),
         menuItem(LucideIcons.trash2, 'Trash'),
         MySpacing.height(20),
-        MyText.titleMedium("CATEGORY", fontWeight: 600),
+        const MyText.titleMedium("CATEGORY", fontWeight: 600),
         MySpacing.height(20),
         menuItem(LucideIcons.radioTower, 'Social'),
         MySpacing.height(16),
@@ -329,7 +329,7 @@ class _MailBoxScreenState extends State<MailBoxScreen>
         MySpacing.height(16),
         menuItem(LucideIcons.tag, 'Promotion'),
         MySpacing.height(20),
-        MyText.titleMedium("LABEL", fontWeight: 600),
+        const MyText.titleMedium("LABEL", fontWeight: 600),
         MySpacing.height(20),
         label(contentTheme.danger, "Support"),
         MySpacing.height(16),

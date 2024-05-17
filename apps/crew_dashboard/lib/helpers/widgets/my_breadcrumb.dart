@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
-
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb_item.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_constant.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_responsiv.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_router.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
+import 'package:flutter/material.dart';
 
 class MyBreadcrumb extends StatelessWidget {
   final List<MyBreadcrumbItem> children;
@@ -51,14 +50,14 @@ class MyBreadcrumb extends StatelessWidget {
       }
       if (i < children.length - 1) {
         list.add(MySpacing.width(10));
-        list.add(MyText(">"));
+        list.add(const MyText(">"));
         list.add(MySpacing.width(10));
       }
     }
     return MyResponsive(
       builder: (_, __, type) {
         return type.isMobile && hideOnMobile
-            ? SizedBox()
+            ? const SizedBox()
             : Row(mainAxisSize: MainAxisSize.min, children: list);
       },
     );

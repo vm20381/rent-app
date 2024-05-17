@@ -1,9 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:intl/intl.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:captainapp_crew_dashboard/controller/dashboard_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -25,6 +19,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:intl/intl.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -103,7 +103,7 @@ class DashboardPageState extends State<DashboardPage>
                                                 color: contentTheme.warning,
                                               ),
                                               MySpacing.width(8),
-                                              Expanded(
+                                              const Expanded(
                                                 child: MyText.bodyMedium(
                                                   "Your free trial expired in 21 days.",
                                                   overflow:
@@ -113,7 +113,7 @@ class DashboardPageState extends State<DashboardPage>
                                             ],
                                           ),
                                         ),
-                                        MyText.bodyMedium(
+                                        const MyText.bodyMedium(
                                           "Upgrade",
                                           fontWeight: 600,
                                           decoration: TextDecoration.underline,
@@ -371,21 +371,19 @@ class DashboardPageState extends State<DashboardPage>
                                     child: SfCartesianChart(
                                       plotAreaBorderWidth: 0,
                                       tooltipBehavior: controller.facebook,
-                                      primaryXAxis: CategoryAxis(
+                                      primaryXAxis: const CategoryAxis(
                                         isVisible: false,
                                         majorGridLines:
-                                            const MajorGridLines(width: 0),
-                                        labelStyle:
-                                            const TextStyle(fontSize: 0),
+                                            MajorGridLines(width: 0),
+                                        labelStyle: TextStyle(fontSize: 0),
                                       ),
-                                      primaryYAxis: NumericAxis(
+                                      primaryYAxis: const NumericAxis(
                                         isVisible: false,
-                                        labelStyle:
-                                            const TextStyle(fontSize: 0),
+                                        labelStyle: TextStyle(fontSize: 0),
                                         majorGridLines:
-                                            const MajorGridLines(width: 0),
+                                            MajorGridLines(width: 0),
                                       ),
-                                      series: <ChartSeries<ChartSampleData,
+                                      series: <CartesianSeries<ChartSampleData,
                                           int>>[
                                         ColumnSeries<ChartSampleData, int>(
                                           width: 0.5,
@@ -431,7 +429,7 @@ class DashboardPageState extends State<DashboardPage>
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Expanded(
+                                        const Expanded(
                                           child: MyText.titleMedium(
                                             "Response time by location",
                                             overflow: TextOverflow.ellipsis,
@@ -455,7 +453,7 @@ class DashboardPageState extends State<DashboardPage>
                                                 child: MyText.bodySmall(
                                                   behavior.toString(),
                                                   color: theme
-                                                      .colorScheme.onBackground,
+                                                      .colorScheme.onSurface,
                                                   fontWeight: 600,
                                                 ),
                                               );
@@ -474,13 +472,13 @@ class DashboardPageState extends State<DashboardPage>
                                                       .selectedTimeByLocation
                                                       .toString(),
                                                   color: theme
-                                                      .colorScheme.onBackground,
+                                                      .colorScheme.onSurface,
                                                 ),
                                                 Icon(
                                                   LucideIcons.chevronDown,
                                                   size: 22,
                                                   color: theme
-                                                      .colorScheme.onBackground,
+                                                      .colorScheme.onSurface,
                                                 ),
                                               ],
                                             ),
@@ -536,7 +534,7 @@ class DashboardPageState extends State<DashboardPage>
                                   Padding(
                                     padding: MySpacing.all(16),
                                     child: SfCartesianChart(
-                                      primaryXAxis: CategoryAxis(),
+                                      primaryXAxis: const CategoryAxis(),
                                       tooltipBehavior: controller.chart,
                                       axes: <ChartAxis>[
                                         NumericAxis(
@@ -550,7 +548,7 @@ class DashboardPageState extends State<DashboardPage>
                                           maximum: 7000,
                                         ),
                                       ],
-                                      series: <ChartSeries<ChartSampleData,
+                                      series: <CartesianSeries<ChartSampleData,
                                           String>>[
                                         ColumnSeries<ChartSampleData, String>(
                                           animationDuration: 2000,
@@ -604,7 +602,7 @@ class DashboardPageState extends State<DashboardPage>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      MyText.titleMedium(
+                                      const MyText.titleMedium(
                                         "Cost BreakDown",
                                         overflow: TextOverflow.ellipsis,
                                         fontWeight: 600,
@@ -644,7 +642,7 @@ class DashboardPageState extends State<DashboardPage>
                                   // MySpacing.height(12),
                                   Column(
                                     children: [
-                                      Row(
+                                      const Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
@@ -699,7 +697,7 @@ class DashboardPageState extends State<DashboardPage>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      MyText.titleMedium(
+                                      const MyText.titleMedium(
                                         "High Value Design",
                                         fontWeight: 600,
                                       ),
@@ -722,8 +720,8 @@ class DashboardPageState extends State<DashboardPage>
                                                   height: 32,
                                                   child: MyText.bodySmall(
                                                     behavior.toString(),
-                                                    color: theme.colorScheme
-                                                        .onBackground,
+                                                    color: theme
+                                                        .colorScheme.onSurface,
                                                     fontWeight: 600,
                                                   ),
                                                 );
@@ -741,14 +739,14 @@ class DashboardPageState extends State<DashboardPage>
                                                     controller
                                                         .selectedTimeDesign
                                                         .toString(),
-                                                    color: theme.colorScheme
-                                                        .onBackground,
+                                                    color: theme
+                                                        .colorScheme.onSurface,
                                                   ),
                                                   Icon(
                                                     LucideIcons.chevronDown,
                                                     size: 22,
-                                                    color: theme.colorScheme
-                                                        .onBackground,
+                                                    color: theme
+                                                        .colorScheme.onSurface,
                                                   ),
                                                 ],
                                               ),
@@ -766,12 +764,11 @@ class DashboardPageState extends State<DashboardPage>
                                       child: DataTable(
                                         sortAscending: true,
                                         onSelectAll: (_) => {},
-                                        headingRowColor:
-                                            MaterialStatePropertyAll(
+                                        headingRowColor: WidgetStatePropertyAll(
                                           contentTheme.primary.withAlpha(40),
                                         ),
                                         dataRowMaxHeight: 50,
-                                        columns: [
+                                        columns: const [
                                           DataColumn(
                                             label: MyText.labelLarge(
                                               'Value',
@@ -864,7 +861,7 @@ class DashboardPageState extends State<DashboardPage>
                                     children: [
                                       Padding(
                                         padding: MySpacing.x(8),
-                                        child: MyText.titleMedium(
+                                        child: const MyText.titleMedium(
                                           "Revenue Chart",
                                           overflow: TextOverflow.ellipsis,
                                           fontWeight: 600,
@@ -885,15 +882,15 @@ class DashboardPageState extends State<DashboardPage>
                                     child: SfCartesianChart(
                                       plotAreaBorderWidth: 0,
                                       tooltipBehavior: controller.revenue,
-                                      primaryXAxis: CategoryAxis(
+                                      primaryXAxis: const CategoryAxis(
                                         majorGridLines:
-                                            const MajorGridLines(width: 0),
+                                            MajorGridLines(width: 0),
                                       ),
-                                      primaryYAxis: NumericAxis(
+                                      primaryYAxis: const NumericAxis(
                                           // majorGridLines:
                                           // const MajorGridLines(width: 0),
                                           ),
-                                      series: <ChartSeries>[
+                                      series: <CartesianSeries>[
                                         SplineSeries<ChartSampleData, String>(
                                           color: const Color(0xff727cf5),
                                           dataLabelSettings:

@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/other/basic_table_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -12,9 +8,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class BasicTable extends StatefulWidget {
-  const BasicTable({Key? key}) : super(key: key);
+  const BasicTable({super.key});
 
   @override
   State<BasicTable> createState() => _BasicTableState();
@@ -64,7 +64,7 @@ class _BasicTableState extends State<BasicTable>
               Padding(
                 padding: MySpacing.x(flexSpacing),
                 child: PaginatedDataTable(
-                  header: Row(
+                  header: const Row(
                     children: [
                       MyText.titleMedium(
                         "Product List",
@@ -75,7 +75,7 @@ class _BasicTableState extends State<BasicTable>
                   ),
                   arrowHeadColor: contentTheme.primary,
                   source: controller.data!,
-                  columns: [
+                  columns: const [
                     DataColumn(
                       label: MyText.bodyMedium(
                         'Id',

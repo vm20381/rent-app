@@ -1,10 +1,5 @@
-import 'package:captainapp_crew_dashboard/helpers/services/auth_services.dart';
-import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
-import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
+import 'package:captainapp_crew_dashboard/helpers/services/auth_services.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/url_service.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/theme_customizer.dart';
@@ -16,6 +11,11 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/widgets/custom_pop_menu.dart';
+import 'package:flutter/material.dart';
+import 'package:get/instance_manager.dart';
+import 'package:get/route_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 typedef LeftbarMenuFunction = void Function(String key);
 
@@ -40,7 +40,7 @@ class LeftbarObserver {
 class LeftBar extends StatefulWidget {
   final bool isCondensed;
 
-  const LeftBar({Key? key, this.isCondensed = false}) : super(key: key);
+  const LeftBar({super.key, this.isCondensed = false});
 
   @override
   _LeftBarState createState() => _LeftBarState();
@@ -719,10 +719,10 @@ class LabelWidget extends StatefulWidget {
   final List<String> atLeastRoles;
 
   const LabelWidget({
-    Key? key,
+    super.key,
     required this.label,
     this.atLeastRoles = const [],
-  }) : super(key: key);
+  });
 
   @override
   _LabelWidgetState createState() => _LabelWidgetState();
@@ -768,7 +768,7 @@ class _LabelWidgetState extends State<LabelWidget> with UIMixin {
               fontWeight: 700,
             ),
           )
-        : SizedBox.shrink();
+        : const SizedBox.shrink();
   }
 }
 
@@ -868,7 +868,7 @@ class _MenuWidgetState extends State<MenuWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (!isVisible) return SizedBox.shrink();
+    if (!isVisible) return const SizedBox.shrink();
 
     // var route = Uri.base.fragment;
     // isActive = widget.children.any((element) => element.route == route);
@@ -1013,12 +1013,12 @@ class MenuItem extends StatefulWidget {
   final String? route;
 
   const MenuItem({
-    Key? key,
+    super.key,
     this.iconData,
     required this.title,
     this.isCondensed = false,
     this.route,
-  }) : super(key: key);
+  });
 
   @override
   _MenuItemState createState() => _MenuItemState();
@@ -1082,13 +1082,13 @@ class NavigationItem extends StatefulWidget {
   final String? route;
 
   const NavigationItem({
-    Key? key,
+    super.key,
     this.iconData,
     required this.title,
     this.isCondensed = false,
     this.atLeastRoles = const [],
     this.route,
-  }) : super(key: key);
+  });
 
   @override
   _NavigationItemState createState() => _NavigationItemState();
@@ -1122,7 +1122,7 @@ class _NavigationItemState extends State<NavigationItem> with UIMixin {
 
   @override
   Widget build(BuildContext context) {
-    if (!isVisible) return SizedBox.shrink();
+    if (!isVisible) return const SizedBox.shrink();
 
     bool isActive = UrlService.getCurrentUrl() == widget.route;
     return GestureDetector(

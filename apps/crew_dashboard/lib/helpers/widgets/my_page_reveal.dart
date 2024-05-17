@@ -6,7 +6,7 @@ class MyPageReveal extends StatelessWidget {
   final double? revealPercent;
   final Widget? child;
 
-  MyPageReveal({this.revealPercent, this.child});
+  const MyPageReveal({super.key, this.revealPercent, this.child});
 
   @override
   Widget build(BuildContext context) {

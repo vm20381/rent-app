@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_utils/src/extensions/string_extensions.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/app_constant.dart';
 import 'package:captainapp_crew_dashboard/controller/forms/basic_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/date_time_extention.dart';
@@ -21,9 +16,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_utils/src/extensions/string_extensions.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class BasicPage extends StatefulWidget {
-  const BasicPage({Key? key}) : super(key: key);
+  const BasicPage({super.key});
 
   @override
   State<BasicPage> createState() => _BasicPageState();
@@ -658,7 +658,7 @@ class _BasicPageState extends State<BasicPage>
                                               child: MyText.bodySmall(
                                                 behavior.name.capitalize!,
                                                 color: theme
-                                                    .colorScheme.onBackground,
+                                                    .colorScheme.onSurface,
                                                 fontWeight: 600,
                                               ),
                                             );
@@ -673,7 +673,7 @@ class _BasicPageState extends State<BasicPage>
                                                 controller.floatingLabelBehavior
                                                     .name.capitalize!,
                                                 color: theme
-                                                    .colorScheme.onBackground,
+                                                    .colorScheme.onSurface,
                                               ),
                                               Container(
                                                 margin: const EdgeInsets.only(
@@ -683,7 +683,7 @@ class _BasicPageState extends State<BasicPage>
                                                   LucideIcons.chevronDown,
                                                   size: 22,
                                                   color: theme
-                                                      .colorScheme.onBackground,
+                                                      .colorScheme.onSurface,
                                                 ),
                                               ),
                                             ],
@@ -713,7 +713,7 @@ class _BasicPageState extends State<BasicPage>
                                               child: MyText.bodySmall(
                                                 borderType.name.capitalize!,
                                                 color: theme
-                                                    .colorScheme.onBackground,
+                                                    .colorScheme.onSurface,
                                                 fontWeight: 600,
                                               ),
                                             );
@@ -728,7 +728,7 @@ class _BasicPageState extends State<BasicPage>
                                                 controller.borderType.name
                                                     .capitalize!,
                                                 color: theme
-                                                    .colorScheme.onBackground,
+                                                    .colorScheme.onSurface,
                                               ),
                                               Container(
                                                 margin: const EdgeInsets.only(
@@ -738,7 +738,7 @@ class _BasicPageState extends State<BasicPage>
                                                   LucideIcons.chevronDown,
                                                   size: 22,
                                                   color: theme
-                                                      .colorScheme.onBackground,
+                                                      .colorScheme.onSurface,
                                                 ),
                                               ),
                                             ],

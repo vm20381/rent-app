@@ -1,6 +1,6 @@
+import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 
 class ChartSampleData {
   ChartSampleData({
@@ -128,7 +128,7 @@ class SyncfusionChartsController extends MyController {
     ChartSampleData(x: 'Japan', xValue: 99, y: 0.2, size: 0.128),
     ChartSampleData(x: 'Mexico', xValue: 86.1, y: 4.0, size: 0.115),
     ChartSampleData(
-        x: 'crew_exampleippines', xValue: 92.6, y: 6.6, size: 0.096),
+        x: 'crew_exampleippines', xValue: 92.6, y: 6.6, size: 0.096,),
     ChartSampleData(x: 'Nigeria', xValue: 61.3, y: 1.45, size: 0.162),
     ChartSampleData(x: 'Hong Kong', xValue: 82.2, y: 3.97, size: 0.7),
     ChartSampleData(x: 'Netherland', xValue: 79.2, y: 3.9, size: 0.162),

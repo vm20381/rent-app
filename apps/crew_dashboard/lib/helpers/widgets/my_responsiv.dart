@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_screen_media.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_screen_media_type.dart';
+import 'package:flutter/material.dart';
 
 class MyResponsive extends StatelessWidget {
   final Widget Function(BuildContext, BoxConstraints, MyScreenMediaType)

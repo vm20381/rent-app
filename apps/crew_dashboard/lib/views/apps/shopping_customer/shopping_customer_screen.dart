@@ -1,7 +1,3 @@
-import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/shopping_customer/shopping_customer_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/extensions.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -22,6 +18,10 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/models/shopping_cart_data.dart';
 import 'package:captainapp_crew_dashboard/models/shopping_product_data.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:feather_icons/feather_icons.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ShoppingCustomerScreen extends StatefulWidget {
   const ShoppingCustomerScreen({super.key});
@@ -53,7 +53,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Shopping",
                       fontSize: 18,
                       fontWeight: 600,
@@ -126,7 +126,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               'Cart',
                               fontWeight: 600,
                             ),
@@ -158,7 +158,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
       child: ListView(
         shrinkWrap: true,
         children: [
-          MyText.titleMedium(
+          const MyText.titleMedium(
             'Product View',
             fontWeight: 600,
           ),
@@ -232,7 +232,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
               MySpacing.height(20),
               Row(
                 children: [
-                  MyText.bodyMedium(
+                  const MyText.bodyMedium(
                     'Size : ',
                     fontSize: 16,
                     fontWeight: 600,
@@ -288,7 +288,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                 ],
               ),
               MySpacing.height(20),
-              Row(
+              const Row(
                 children: [
                   MyText.bodyLarge(
                     'Related',
@@ -333,7 +333,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                       width: 140,
                       fit: BoxFit.cover,
                     ),
-                    Positioned(
+                    const Positioned(
                       right: 8,
                       top: 8,
                       child: Icon(
@@ -358,7 +358,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                     '\$${product.price}',
                     fontWeight: 700,
                   ),
-                  MyContainer.bordered(
+                  const MyContainer.bordered(
                     paddingAll: 2,
                     borderRadiusAll: 4,
                     child: Icon(
@@ -394,7 +394,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           border: Border.all(
             color: controller.selectSize == 1
                 ? theme.colorScheme.primary
-                : theme.colorScheme.onBackground,
+                : theme.colorScheme.onSurface,
           ),
           color: controller.selectSize == 1 ? theme.colorScheme.primary : null,
           child: Center(
@@ -403,7 +403,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
               fontWeight: 600,
               color: controller.selectSize == 1
                   ? theme.colorScheme.onSecondary
-                  : theme.colorScheme.onBackground,
+                  : theme.colorScheme.onSurface,
             ),
           ),
         ),
@@ -417,7 +417,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           border: Border.all(
             color: controller.selectSize == 2
                 ? theme.colorScheme.primary
-                : theme.colorScheme.onBackground,
+                : theme.colorScheme.onSurface,
           ),
           color: controller.selectSize == 2 ? theme.colorScheme.primary : null,
           child: Center(
@@ -426,7 +426,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
               fontWeight: 600,
               color: controller.selectSize == 2
                   ? theme.colorScheme.onSecondary
-                  : theme.colorScheme.onBackground,
+                  : theme.colorScheme.onSurface,
             ),
           ),
         ),
@@ -440,7 +440,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           border: Border.all(
             color: controller.selectSize == 3
                 ? theme.colorScheme.primary
-                : theme.colorScheme.onBackground,
+                : theme.colorScheme.onSurface,
           ),
           color: controller.selectSize == 3 ? theme.colorScheme.primary : null,
           child: Center(
@@ -449,7 +449,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
               fontWeight: 600,
               color: controller.selectSize == 3
                   ? theme.colorScheme.onSecondary
-                  : theme.colorScheme.onBackground,
+                  : theme.colorScheme.onSurface,
             ),
           ),
         ),
@@ -463,7 +463,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           border: Border.all(
             color: controller.selectSize == 4
                 ? theme.colorScheme.primary
-                : theme.colorScheme.onBackground,
+                : theme.colorScheme.onSurface,
           ),
           color: controller.selectSize == 4 ? theme.colorScheme.primary : null,
           child: Center(
@@ -472,7 +472,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
               fontWeight: 600,
               color: controller.selectSize == 4
                   ? theme.colorScheme.onSecondary
-                  : theme.colorScheme.onBackground,
+                  : theme.colorScheme.onSurface,
             ),
           ),
         ),
@@ -529,7 +529,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                           fontWeight: 600,
                         ),
                         MySpacing.width(8),
-                        MyText.bodySmall('Color : '),
+                        const MyText.bodySmall('Color : '),
                         MyContainer(
                           paddingAll: 8,
                           borderRadiusAll: 2,
@@ -554,7 +554,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                     border: Border.all(color: theme.colorScheme.primary),
                     color: increaseAble
                         ? theme.colorScheme.primary
-                        : theme.colorScheme.onBackground.withAlpha(200),
+                        : theme.colorScheme.onSurface.withAlpha(200),
                     child: Icon(
                       LucideIcons.plus,
                       size: 12,
@@ -581,7 +581,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                     ),
                     color: decreaseAble
                         ? theme.colorScheme.primary.withAlpha(28)
-                        : theme.colorScheme.onBackground.withAlpha(200),
+                        : theme.colorScheme.onSurface.withAlpha(200),
                     child: Icon(
                       LucideIcons.minus,
                       size: 12,
@@ -608,7 +608,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          MyText.bodyMedium(
+          const MyText.bodyMedium(
             'Billing Information',
             muted: true,
             fontWeight: 700,
@@ -617,7 +617,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MyText.bodyMedium(
+              const MyText.bodyMedium(
                 'Order Total',
                 fontWeight: 600,
               ),
@@ -631,7 +631,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MyText.bodyMedium(
+              const MyText.bodyMedium(
                 'Tax',
                 fontWeight: 600,
               ),
@@ -645,7 +645,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MyText.bodyMedium(
+              const MyText.bodyMedium(
                 'Offer',
                 fontWeight: 600,
               ),
@@ -662,7 +662,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                 child: MyDashedDivider(
                   dashSpace: 4,
                   dashWidth: 8,
-                  color: theme.colorScheme.onBackground.withAlpha(180),
+                  color: theme.colorScheme.onSurface.withAlpha(180),
                   height: 1.2,
                 ),
               ),
@@ -672,7 +672,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MyText.bodyMedium(
+              const MyText.bodyMedium(
                 'Grand Total',
                 fontWeight: 700,
               ),
@@ -793,7 +793,7 @@ class _ShoppingCustomerScreenState extends State<ShoppingCustomerScreen>
                           child: Icon(
                             LucideIcons.plus,
                             size: 14,
-                            color: theme.colorScheme.onBackground,
+                            color: theme.colorScheme.onSurface,
                           ),
                         ),
                       ],

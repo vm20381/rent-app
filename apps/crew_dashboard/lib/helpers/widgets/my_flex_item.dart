@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_display_type.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_screen_media.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_screen_media_type.dart';
+import 'package:flutter/material.dart';
 
 class MyFlexItem extends StatelessWidget {
   final Widget child;
@@ -13,7 +13,7 @@ class MyFlexItem extends StatelessWidget {
   Map<MyScreenMediaType, MyDisplayType> get display =>
       MyScreenMedia.getDisplayDataFromString(displays);
 
-  MyFlexItem({
+  const MyFlexItem({
     super.key,
     required this.child,
     this.sizes,

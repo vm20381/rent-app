@@ -1,17 +1,17 @@
-import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
-import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/file_manager/file_uploader_controller.dart';
+import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_card.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_dotted_line.dart';
+import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FileUploadWidget extends StatelessWidget {
   final FileUploaderController controller = Get.find<FileUploaderController>();
   final String entityId;
-  FileUploadWidget({required this.entityId});
+  FileUploadWidget({super.key, required this.entityId});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class FileUploadWidget extends StatelessWidget {
           onTap: () => controller.pickFile(entityId),
           child: MyDottedLine(
             strokeWidth: 0.2,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onSurface,
             corner: const MyDottedLineCorner(
               leftBottomCorner: 2,
               leftTopCorner: 2,
@@ -42,7 +42,7 @@ class FileUploadWidget extends StatelessWidget {
                           1], // Ensure this points to a valid asset
                       height: 200,
                     ),
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Drop files here or click to upload.",
                       fontWeight: 600,
                       muted: true,

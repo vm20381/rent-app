@@ -4,7 +4,7 @@ class MySinglePage extends StatelessWidget {
   final PageViewModel? viewModel;
   final double? percentVisible;
 
-  MySinglePage({
+  const MySinglePage({super.key, 
     this.viewModel,
     this.percentVisible = 1.0,
   });

@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/app_constant.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/entities/create_entity_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -22,6 +19,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class CreateEntity extends StatefulWidget {
   const CreateEntity({super.key});
@@ -53,7 +53,7 @@ class CreateEntitiesState extends State<CreateEntity>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Create Project",
                       fontSize: 18,
                       fontWeight: 600,
@@ -91,7 +91,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Project OverView",
                                       fontWeight: 600,
                                       muted: true,
@@ -157,7 +157,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          MyText.bodyMedium(
+                                          const MyText.bodyMedium(
                                             "Start Date",
                                             fontWeight: 600,
                                             muted: true,
@@ -207,7 +207,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          MyText.bodyMedium(
+                                          const MyText.bodyMedium(
                                             "End Date",
                                             fontWeight: 600,
                                             muted: true,
@@ -257,7 +257,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Project Priority",
                                       fontWeight: 600,
                                       muted: true,
@@ -276,7 +276,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                             child: MyText.bodySmall(
                                               behavior.toString(),
                                               color: theme
-                                                  .colorScheme.onBackground,
+                                                  .colorScheme.onSurface,
                                               fontWeight: 600,
                                             ),
                                           );
@@ -295,7 +295,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                               controller.selectProperties
                                                   .toString(),
                                               color: theme
-                                                  .colorScheme.onBackground,
+                                                  .colorScheme.onSurface,
                                             ),
                                             Container(
                                               margin: const EdgeInsets.only(
@@ -305,7 +305,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                                 LucideIcons.chevronDown,
                                                 size: 22,
                                                 color: theme
-                                                    .colorScheme.onBackground,
+                                                    .colorScheme.onSurface,
                                               ),
                                             ),
                                           ],
@@ -340,13 +340,13 @@ class CreateEntitiesState extends State<CreateEntity>
                                     child: Center(
                                       child: Padding(
                                         padding: MySpacing.xy(12, 44),
-                                        child: Column(
+                                        child: const Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            const Icon(LucideIcons.uploadCloud),
+                                            Icon(LucideIcons.uploadCloud),
                                             MyContainer(
                                               width: 340,
                                               alignment: Alignment.center,
@@ -427,7 +427,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Project Priority",
                                       fontWeight: 600,
                                       muted: true,
@@ -448,7 +448,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                             child: MyText.bodySmall(
                                               behavior.toString(),
                                               color: theme
-                                                  .colorScheme.onBackground,
+                                                  .colorScheme.onSurface,
                                               fontWeight: 600,
                                             ),
                                           );
@@ -467,7 +467,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                               controller.selectProperties
                                                   .toString(),
                                               color: theme
-                                                  .colorScheme.onBackground,
+                                                  .colorScheme.onSurface,
                                             ),
                                             Container(
                                               margin: const EdgeInsets.only(
@@ -477,7 +477,7 @@ class CreateEntitiesState extends State<CreateEntity>
                                                 LucideIcons.chevronDown,
                                                 size: 22,
                                                 color: theme
-                                                    .colorScheme.onBackground,
+                                                    .colorScheme.onSurface,
                                               ),
                                             ),
                                           ],

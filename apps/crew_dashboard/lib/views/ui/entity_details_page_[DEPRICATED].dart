@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class EntityDetailsPage extends StatelessWidget {
+  const EntityDetailsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final entityId = Get.parameters['entityId'];
