@@ -123,6 +123,14 @@ class _LeftBarState extends State<LeftBar>
                       route: '/',
                       isCondensed: isCondensed,
                     ),
+                    //-----------------About-----------------//
+                    LabelWidget(label: 'new page'.tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.fish,
+                      title: "New Page",
+                      route: '/new-page',
+                      isCondensed: isCondensed,
+                    ),
                     LabelWidget(label: "me".tr()),
                     //-----------------Profile-----------------//
                     NavigationItem(
