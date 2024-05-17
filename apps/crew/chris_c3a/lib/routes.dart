@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'helpers/services/auth_services.dart';
+import 'views/about/about_page.dart';
 import 'views/auth/locked.dart';
 import 'views/auth/login.dart';
 import 'views/error_pages/error_404.dart';
@@ -115,6 +117,11 @@ getPageRoute() {
     GetPage(
       name: '/my-profile',
       page: () => const EditUserProfile(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/about',
+      page: () => const AboutPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];
