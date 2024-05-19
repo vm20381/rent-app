@@ -1,5 +1,5 @@
 import '/helpers/widgets/my_spacing.dart';
-import 'package:example_package/example_package.dart';
+// import 'package:example_package/example_package.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -37,9 +37,9 @@ class _HomePageState extends State<HomePage> {
                 MySpacing.height(30),
                 const Text('Remember, read the README.md file!'),
                 // note: after you add example_package to your pubspec.yaml; you'll need to rerun melos bootstrap.
-                ExamplePackageWidget(
-                  message: controller.serviceMessage,
-                ),
+                // ExamplePackageWidget(
+                //   message: controller.serviceMessage,
+                // ),
               ],
             ),
           );

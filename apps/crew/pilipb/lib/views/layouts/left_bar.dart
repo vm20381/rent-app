@@ -138,6 +138,13 @@ class _LeftBarState extends State<LeftBar>
                       route: '/about',
                       isCondensed: isCondensed,
                     ),
+                    //-----------------Canopy Guide-----------------//
+                    NavigationItem(
+                      iconData: LucideIcons.map,
+                      title: "canopy".tr(),
+                      route: '/canopy',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
