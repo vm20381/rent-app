@@ -17,7 +17,8 @@ class TodosPageController extends MyController {
     super.onInit();
 
     // get the todos from Firestore
-    _todos = _todosCollection.snapshots().map((snapshot) {
+    // orders by isDone so that the unfinished todos are shown first
+    _todos = _todosCollection.orderBy('isDone').snapshots().map((snapshot) {
       return snapshot.docs.map((doc) {
         return Todo.fromMap(doc.data() as Map<String, dynamic>, doc.id);
       }).toList();
