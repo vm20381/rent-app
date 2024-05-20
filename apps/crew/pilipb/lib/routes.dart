@@ -7,6 +7,7 @@ import 'views/auth/login.dart';
 import 'views/error_pages/error_404.dart';
 import 'views/home/home_page.dart';
 import 'views/me/edit_user_profile.dart';
+import 'views/canopy/canopy_page.dart';
 
 // class AuthMiddleware extends GetMiddleware {
 //   final AuthService _authService = Get.find<AuthService>();
@@ -121,6 +122,11 @@ getPageRoute() {
     GetPage(
       name: '/about',
       page: () => const AboutPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/canopy',
+      page: () => const CanopyPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];

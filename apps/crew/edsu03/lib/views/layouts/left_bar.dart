@@ -131,6 +131,14 @@ class _LeftBarState extends State<LeftBar>
                       route: '/my-profile',
                       isCondensed: isCondensed,
                     ),
+                    LabelWidget(label: "new_page".tr()),
+                    //-----------------Profile-----------------//
+                    NavigationItem(
+                      iconData: LucideIcons.airVent,
+                      title: "new_page".tr(),
+                      route: '/new_page/new_page_view',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
