@@ -123,7 +123,7 @@ class _LeftBarState extends State<LeftBar>
                       route: '/',
                       isCondensed: isCondensed,
                     ),
-                    //-----------------About-----------------//
+                    //-----------------New Page-----------------//
                     LabelWidget(label: 'new page'.tr()),
                     NavigationItem(
                       iconData: LucideIcons.fish,
@@ -137,6 +137,14 @@ class _LeftBarState extends State<LeftBar>
                       iconData: LucideIcons.user,
                       title: "profile".tr(),
                       route: '/my-profile',
+                      isCondensed: isCondensed,
+                    ),
+                    //-----------------To Do List-----------------//
+                    LabelWidget(label: 'todo'.tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.checkSquare,
+                      title: "ToDo",
+                      route: '/todo',
                       isCondensed: isCondensed,
                     ),
                   ],
