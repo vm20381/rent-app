@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_constant.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
+import 'package:flutter/material.dart';
 
 class My {
   // entry point of the package

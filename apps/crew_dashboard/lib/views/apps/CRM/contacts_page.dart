@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/CRM/contacts_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
@@ -20,9 +17,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/models/contacts.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ContactsPage extends StatefulWidget {
-  const ContactsPage({Key? key}) : super(key: key);
+  const ContactsPage({super.key});
 
   @override
   State<ContactsPage> createState() => _ContactsPageState();
@@ -51,7 +51,7 @@ class _ContactsPageState extends State<ContactsPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Contact",
                       fontWeight: 600,
                     ),
@@ -106,7 +106,7 @@ class _ContactsPageState extends State<ContactsPage>
                                       builder: (context) => AlertDialog(
                                         clipBehavior:
                                             Clip.antiAliasWithSaveLayer,
-                                        title: Column(
+                                        title: const Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
@@ -123,7 +123,7 @@ class _ContactsPageState extends State<ContactsPage>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            MyText.bodyMedium("Name"),
+                                            const MyText.bodyMedium("Name"),
                                             MySpacing.height(8),
                                             TextFormField(
                                               keyboardType:
@@ -143,7 +143,7 @@ class _ContactsPageState extends State<ContactsPage>
                                               ),
                                             ),
                                             MySpacing.height(16),
-                                            MyText.bodyMedium("Email"),
+                                            const MyText.bodyMedium("Email"),
                                             MySpacing.height(8),
                                             TextFormField(
                                               keyboardType:
@@ -163,7 +163,7 @@ class _ContactsPageState extends State<ContactsPage>
                                               ),
                                             ),
                                             MySpacing.height(16),
-                                            MyText.bodyMedium("Phone"),
+                                            const MyText.bodyMedium("Phone"),
                                             MySpacing.height(8),
                                             TextFormField(
                                               keyboardType:
@@ -229,7 +229,7 @@ class _ContactsPageState extends State<ContactsPage>
                                 ],
                               ),
                               source: controller.data!,
-                              columns: [
+                              columns: const [
                                 DataColumn(
                                   label: MyText.titleMedium(
                                     'Name',
@@ -291,7 +291,7 @@ class _ContactsPageState extends State<ContactsPage>
                                   ),
                                 ),
                                 MySpacing.width(16),
-                                Column(
+                                const Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     MyText.bodyMedium(
@@ -333,7 +333,7 @@ class _ContactsPageState extends State<ContactsPage>
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                MyText.titleMedium(
+                                const MyText.titleMedium(
                                   "ABOUT ME:",
                                   fontWeight: 600,
                                 ),

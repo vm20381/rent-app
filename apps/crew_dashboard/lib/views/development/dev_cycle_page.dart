@@ -1,9 +1,5 @@
 import 'package:appflowy_board/appflowy_board.dart';
 import 'package:captainapp_crew_dashboard/controller/dev/dev_cycle_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
@@ -13,9 +9,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class DevCyclePage extends StatefulWidget {
-  const DevCyclePage({Key? key}) : super(key: key);
+  const DevCyclePage({super.key});
 
   @override
   State<DevCyclePage> createState() => _DevCyclePageState();
@@ -47,7 +47,7 @@ class _DevCyclePageState extends State<DevCyclePage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Cycle",
                       fontSize: 18,
                       fontWeight: 600,
@@ -74,7 +74,7 @@ class _DevCyclePageState extends State<DevCyclePage>
                     return AppFlowyGroupCard(
                       key: ValueKey(groupItem.id),
                       decoration:
-                          BoxDecoration(color: theme.colorScheme.background),
+                          BoxDecoration(color: theme.colorScheme.surface),
                       child: buildCard(groupItem),
                     );
                   },
@@ -195,7 +195,7 @@ class _DevCyclePageState extends State<DevCyclePage>
                               size: 20,
                             ),
                             MySpacing.width(8),
-                            MyText.bodySmall("Add People"),
+                            const MyText.bodySmall("Add People"),
                           ],
                         ),
                       ),
@@ -209,7 +209,7 @@ class _DevCyclePageState extends State<DevCyclePage>
                               size: 20,
                             ),
                             MySpacing.width(8),
-                            MyText.bodySmall("Edit"),
+                            const MyText.bodySmall("Edit"),
                           ],
                         ),
                       ),
@@ -223,7 +223,7 @@ class _DevCyclePageState extends State<DevCyclePage>
                               size: 20,
                             ),
                             MySpacing.width(8),
-                            MyText.bodySmall("Delete"),
+                            const MyText.bodySmall("Delete"),
                           ],
                         ),
                       ),
@@ -237,7 +237,7 @@ class _DevCyclePageState extends State<DevCyclePage>
                               size: 20,
                             ),
                             MySpacing.width(8),
-                            MyText.bodySmall("Leave"),
+                            const MyText.bodySmall("Leave"),
                           ],
                         ),
                       ),
@@ -268,8 +268,8 @@ class RichTextCard extends StatefulWidget {
 
   const RichTextCard({
     required this.item,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<RichTextCard> createState() => _RichTextCardState();

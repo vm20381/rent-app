@@ -2,10 +2,10 @@
 
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/json_decoder.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/models/identifier_model.dart';
+import 'package:flutter/services.dart';
 
 class NFTDashboardModel extends IdentifierModel {
   final String name, companyName, cartoonImage, image;

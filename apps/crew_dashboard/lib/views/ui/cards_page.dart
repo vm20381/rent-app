@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/cards_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -22,9 +17,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class CardsPage extends StatefulWidget {
-  const CardsPage({Key? key}) : super(key: key);
+  const CardsPage({super.key});
 
   @override
   State<CardsPage> createState() => _CardsPageState();
@@ -54,7 +54,7 @@ class _CardsPageState extends State<CardsPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Cards",
                       fontSize: 18,
                       fontWeight: 600,
@@ -438,7 +438,7 @@ class _CardsPageState extends State<CardsPage>
                               ),
                             ),
                             MySpacing.height(16),
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               "Bonne Green",
                               fontWeight: 600,
                               fontSize: 16,
@@ -508,7 +508,7 @@ class _CardsPageState extends State<CardsPage>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.titleMedium(
+                                  const MyText.titleMedium(
                                     "Box Title",
                                     fontWeight: 600,
                                     fontSize: 20,
@@ -600,8 +600,8 @@ class _CardsPageState extends State<CardsPage>
                                               height: 32,
                                               child: MyText.bodySmall(
                                                 position.humanReadable,
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                                 fontWeight: 600,
                                               ),
                                             );
@@ -615,8 +615,8 @@ class _CardsPageState extends State<CardsPage>
                                               MyText.labelMedium(
                                                 controller.shadowPosition
                                                     .humanReadable,
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                               ),
                                               Container(
                                                 margin: const EdgeInsets.only(
@@ -626,7 +626,7 @@ class _CardsPageState extends State<CardsPage>
                                                   LucideIcons.chevronDown,
                                                   size: 22,
                                                   color: theme
-                                                      .colorScheme.onBackground,
+                                                      .colorScheme.onSurface,
                                                 ),
                                               ),
                                             ],
@@ -671,10 +671,10 @@ class _CardsPageState extends State<CardsPage>
                                         ),
                                       ),
                                       MySpacing.width(16),
-                                      BlockPicker(
-                                        pickerColor: controller.shadowColor,
-                                        onColorChanged:
-                                            controller.onChangeColor,
+                                      ColorPicker(
+                                        color: controller.shadowColor,
+                                        onChanged: controller.onChangeColor,
+                                        initialPicker: Picker.paletteHue,
                                       ),
                                     ],
                                   ),

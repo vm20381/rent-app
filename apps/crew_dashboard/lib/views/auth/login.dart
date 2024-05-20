@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/login_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -16,9 +12,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -81,21 +81,21 @@ class _LoginPageState extends State<LoginPage>
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Center(
+                          const Center(
                             child: MyText.titleLarge(
                               "Welcome",
                               fontWeight: 600,
                               fontSize: 24,
                             ),
                           ),
-                          Center(
+                          const Center(
                             child: MyText.bodyMedium(
                               "Login your account",
                               fontSize: 16,
                             ),
                           ),
                           MySpacing.height(40),
-                          MyText.bodyMedium(
+                          const MyText.bodyMedium(
                             "Your Email",
                           ),
                           MySpacing.height(8),
@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage>
                                       visualDensity: getCompactDensity,
                                     ),
                                     MySpacing.width(16),
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Remember Me",
                                     ),
                                   ],

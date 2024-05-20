@@ -94,7 +94,7 @@ class MySpacing {
   }
 
   static Widget empty() {
-    return SizedBox(width: 0, height: 0);
+    return const SizedBox(width: 0, height: 0);
   }
 
   static double safeAreaTop(BuildContext context) {

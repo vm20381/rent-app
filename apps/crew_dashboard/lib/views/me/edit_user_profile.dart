@@ -1,19 +1,9 @@
-import 'dart:io';
-
-import 'package:captainapp_crew_dashboard/helpers/storage/firebase_storage.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/me/edit_user_profile_controller.dart';
-import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
+import 'package:captainapp_crew_dashboard/helpers/storage/firebase_storage.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
-import 'package:captainapp_crew_dashboard/helpers/utils/my_string_utils.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb_item.dart';
-import 'package:captainapp_crew_dashboard/helpers/widgets/my_button.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_card.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_container.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_flex.dart';
@@ -22,8 +12,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
-import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class EditUserProfile extends StatefulWidget {
   const EditUserProfile({super.key});
@@ -57,7 +48,7 @@ class _EditProfileState extends State<EditUserProfile>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "My Profile",
                       fontWeight: 600,
                     ),
@@ -111,25 +102,25 @@ class _EditProfileState extends State<EditUserProfile>
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Divider(height: 40),
+                                const Divider(height: 40),
                                 Text(
                                   'Name: ${controller.authService.user?.displayName ?? "N/A"}',
-                                  style: TextStyle(fontSize: 20),
+                                  style: const TextStyle(fontSize: 20),
                                 ),
                                 OutlinedButton(
                                   onPressed: () => _editName(context),
-                                  child: Text('Edit Name'),
+                                  child: const Text('Edit Name'),
                                 ),
-                                Divider(height: 40),
+                                const Divider(height: 40),
                                 Text(
                                   'Email: ${controller.authService.user?.email ?? "N/A"}',
-                                  style: TextStyle(fontSize: 20),
+                                  style: const TextStyle(fontSize: 20),
                                 ),
-                                Divider(height: 40),
+                                const Divider(height: 40),
                                 OutlinedButton(
                                   onPressed:
                                       controller.togglePasswordVisibility,
-                                  child: Text('Set New Password'),
+                                  child: const Text('Set New Password'),
                                 ),
                                 // buildTextField(
                                 //   "First Name",
@@ -270,7 +261,7 @@ void _editName(BuildContext context) {
   showDialog(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text('Edit Name'),
+      title: const Text('Edit Name'),
       content: Form(
         key: controller.validation
             .formKey, // Assign the GlobalKey<FormState> from the controller
@@ -279,7 +270,7 @@ void _editName(BuildContext context) {
           children: [
             TextFormField(
               controller: firstNameController,
-              decoration: InputDecoration(labelText: 'First Name'),
+              decoration: const InputDecoration(labelText: 'First Name'),
               validator: (value) => controller.validation
                   .getValidation<String>('First Name')
                   ?.call(value),
@@ -288,7 +279,7 @@ void _editName(BuildContext context) {
             ),
             TextFormField(
               controller: lastNameController,
-              decoration: InputDecoration(labelText: 'Last Name'),
+              decoration: const InputDecoration(labelText: 'Last Name'),
               validator: (value) => controller.validation
                   .getValidation<String>('Last Name')
                   ?.call(value),
@@ -312,7 +303,7 @@ void _editName(BuildContext context) {
               Get.snackbar('Error', 'Please check your inputs');
             }
           },
-          child: Text('Save'),
+          child: const Text('Save'),
         ),
       ],
     ),

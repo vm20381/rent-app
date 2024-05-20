@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:captainapp_crew_dashboard/controller/layouts/dynamic_auth_layout_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/admin_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -9,6 +7,8 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_flex_item.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_responsiv.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AuthLayout2 extends StatelessWidget {
   final Widget? child;

@@ -1,9 +1,4 @@
 import 'package:captainapp_crew_dashboard/controller/apps/assets/product_detail_controller.dart';
-import 'package:captainapp_crew_dashboard/helpers/widgets/my_list_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
@@ -12,15 +7,20 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_button.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_container.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_flex.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_flex_item.dart';
+import 'package:captainapp_crew_dashboard/helpers/widgets/my_list_extension.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_progress_bar.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 
 class ProductDetail extends StatefulWidget {
-  const ProductDetail({Key? key}) : super(key: key);
+  const ProductDetail({super.key});
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -49,7 +49,7 @@ class _ProductDetailState extends State<ProductDetail>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Product Detail",
                       fontWeight: 600,
                       fontSize: 18,
@@ -120,7 +120,7 @@ class _ProductDetailState extends State<ProductDetail>
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.bodyMedium(
+                                  const MyText.bodyMedium(
                                     "Detail",
                                     fontSize: 16,
                                     fontWeight: 600,
@@ -226,7 +226,7 @@ class _ProductDetailState extends State<ProductDetail>
                                 ],
                               ),
                               MySpacing.height(20),
-                              MyText.titleLarge(
+                              const MyText.titleLarge(
                                 "All Images",
                                 fontSize: 32,
                                 fontWeight: 600,
@@ -248,13 +248,13 @@ class _ProductDetailState extends State<ProductDetail>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        MyText.bodyMedium(
+                                        const MyText.bodyMedium(
                                           "Current Price",
                                           fontSize: 20,
                                           fontWeight: 600,
                                         ),
                                         MySpacing.height(8),
-                                        MyText.bodyMedium(
+                                        const MyText.bodyMedium(
                                           "\$ 69",
                                           fontSize: 20,
                                         ),
@@ -270,7 +270,7 @@ class _ProductDetailState extends State<ProductDetail>
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.bodyMedium(
+                                    const MyText.bodyMedium(
                                       "Attribute",
                                       fontSize: 16,
                                     ),
@@ -305,7 +305,7 @@ class _ProductDetailState extends State<ProductDetail>
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    MyText.titleMedium(
+                                    const MyText.titleMedium(
                                       "Add Item",
                                       fontWeight: 600,
                                       fontSize: 16,
@@ -370,7 +370,7 @@ class _ProductDetailState extends State<ProductDetail>
                                         ),
                                         Row(
                                           children: [
-                                            MyText.bodyMedium(
+                                            const MyText.bodyMedium(
                                               "Total Price",
                                               fontWeight: 600,
                                               fontSize: 16,
@@ -439,7 +439,7 @@ class _ProductDetailState extends State<ProductDetail>
                                     child: DataTable(
                                       sortAscending: true,
                                       onSelectAll: (value) {},
-                                      headingRowColor: MaterialStatePropertyAll(
+                                      headingRowColor: WidgetStatePropertyAll(
                                         contentTheme.primary.withAlpha(30),
                                       ),
                                       columns: [

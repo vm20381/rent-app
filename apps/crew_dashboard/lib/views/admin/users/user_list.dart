@@ -1,11 +1,5 @@
 import 'package:captainapp_crew_dashboard/controller/admin/users/user_list_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/storage/firebase_storage.dart';
-import 'package:captainapp_crew_dashboard/models/firebase_auth_user.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -18,10 +12,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
+import 'package:captainapp_crew_dashboard/models/firebase_auth_user.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class UserList extends StatefulWidget {
-  const UserList({Key? key}) : super(key: key);
+  const UserList({super.key});
 
   @override
   State<UserList> createState() => UserListState();
@@ -50,7 +48,7 @@ class UserListState extends State<UserList>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "",
                       // "Users List",
                       fontWeight: 600,
@@ -157,17 +155,17 @@ class UserListState extends State<UserList>
                                     PopupMenuItem(
                                       padding: MySpacing.xy(16, 8),
                                       height: 10,
-                                      child: MyText.bodySmall("Action"),
+                                      child: const MyText.bodySmall("Action"),
                                     ),
                                     PopupMenuItem(
                                       padding: MySpacing.xy(16, 8),
                                       height: 10,
-                                      child: MyText.bodySmall("Another action"),
+                                      child: const MyText.bodySmall("Another action"),
                                     ),
                                     PopupMenuItem(
                                       padding: MySpacing.xy(16, 8),
                                       height: 10,
-                                      child: MyText.bodySmall(
+                                      child: const MyText.bodySmall(
                                         "Somethings else here",
                                       ),
                                     ),
@@ -259,9 +257,9 @@ class UserListState extends State<UserList>
                                       );
                                     }).toList(),
                                   ),
-                                  Row(
+                                  const Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const [
+                                    children: [
                                       // IconButton(
                                       //   onPressed: () {},
                                       //   icon: const Icon(
@@ -309,7 +307,7 @@ class UserListState extends State<UserList>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Confirm Role Change'),
+        title: const Text('Confirm Role Change'),
         content: Text('Change ${user.displayName}\'s role to $newRole?'),
         actions: <Widget>[
           TextButton(
@@ -317,11 +315,11 @@ class UserListState extends State<UserList>
               Navigator.of(context).pop();
               controller.setUserRole(user.id, newRole);
             },
-            child: Text('Confirm'),
+            child: const Text('Confirm'),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
         ],
       ),

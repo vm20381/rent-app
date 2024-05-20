@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:quill_html_editor/quill_html_editor.dart';
 import 'package:captainapp_crew_dashboard/controller/forms/quill_editor_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
@@ -13,9 +9,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:quill_html_editor/quill_html_editor.dart';
 
 class QuillEditor extends StatefulWidget {
-  const QuillEditor({Key? key}) : super(key: key);
+  const QuillEditor({super.key});
 
   @override
   State<QuillEditor> createState() => _QuillEditorState();
@@ -44,7 +44,7 @@ class _QuillEditorState extends State<QuillEditor>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Quill HTML Editor",
                       fontWeight: 600,
                     ),

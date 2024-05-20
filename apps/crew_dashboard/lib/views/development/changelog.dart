@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChangelogScreen extends StatefulWidget {
-  ChangelogScreen({Key? key}) : super(key: key);
+  const ChangelogScreen({super.key});
 
   @override
   State<ChangelogScreen> createState() => _ChangelogScreenState();
@@ -43,7 +43,7 @@ class _ChangelogScreenState extends State<ChangelogScreen> {
                       }
                       return Text(snapshot.data!.changes[0].version);
                     }
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   },
                 ),
               ),

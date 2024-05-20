@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
-import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 
 class Model {
   Model(this.state, this.dataLabel);
@@ -495,8 +495,7 @@ class SfMapController extends MyController {
 }
 
 class ClockWidget extends StatefulWidget {
-  const ClockWidget({Key? key, required this.countryName, required this.date})
-      : super(key: key);
+  const ClockWidget({super.key, required this.countryName, required this.date});
 
   final String countryName;
   final DateTime date;

@@ -1,3 +1,4 @@
+import 'package:edsu03/views/new_page/new_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'helpers/services/auth_services.dart';
@@ -115,6 +116,11 @@ getPageRoute() {
     GetPage(
       name: '/my-profile',
       page: () => const EditUserProfile(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/new_page/new_page_view',
+      page: () => const NewPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];

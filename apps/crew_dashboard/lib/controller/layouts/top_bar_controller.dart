@@ -1,5 +1,5 @@
-import 'package:get/get.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/auth_services.dart';
+import 'package:get/get.dart';
 
 class TopBarController extends GetxController {
   final AuthService authService = Get.find<AuthService>();

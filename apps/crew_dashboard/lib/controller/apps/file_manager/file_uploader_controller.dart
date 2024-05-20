@@ -1,7 +1,7 @@
+import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart' as http;
-import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:http_parser/http_parser.dart';
 
 class FileUploaderController extends MyController {

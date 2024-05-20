@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_generic_function_type_aliases
 
+import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 
 enum MyTextType {
   displayLarge,
@@ -91,7 +91,7 @@ class MyTextStyle {
     double? finalFontSize =
         fontSize ?? (textStyle == null ? 40 : textStyle.fontSize);
 
-    Color finalColor = color ?? theme.colorScheme.onBackground;
+    Color finalColor = color ?? theme.colorScheme.onSurface;
     finalColor = xMuted
         ? finalColor.withAlpha(160)
         : (muted ? finalColor.withAlpha(200) : finalColor);

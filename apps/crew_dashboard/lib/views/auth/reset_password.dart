@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/reset_password_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -16,9 +12,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ResetPassword extends StatefulWidget {
-  const ResetPassword({Key? key}) : super(key: key);
+  const ResetPassword({super.key});
 
   @override
   State<ResetPassword> createState() => _ResetPasswordState();

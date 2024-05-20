@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/file_manager/file_manager_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -23,9 +19,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class FileManager extends StatefulWidget {
-  const FileManager({Key? key}) : super(key: key);
+  const FileManager({super.key});
 
   @override
   State<FileManager> createState() => _FileManagerState();
@@ -54,7 +54,7 @@ class _FileManagerState extends State<FileManager>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "File Manager",
                       fontWeight: 600,
                     ),
@@ -95,7 +95,7 @@ class _FileManagerState extends State<FileManager>
                                   ),
                                 ),
                                 MySpacing.width(12),
-                                MyText.titleMedium(
+                                const MyText.titleMedium(
                                   "Den G",
                                   fontWeight: 600,
                                 ),
@@ -142,7 +142,7 @@ class _FileManagerState extends State<FileManager>
                             MySpacing.height(16),
                             buildCreateNew("Delete File", LucideIcons.trash2),
                             MySpacing.height(40),
-                            MyText.bodySmall(
+                            const MyText.bodySmall(
                               "STORAGE",
                               fontWeight: 700,
                             ),
@@ -211,7 +211,7 @@ class _FileManagerState extends State<FileManager>
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            MyText.titleMedium(
+                            const MyText.titleMedium(
                               "Folders :",
                               fontSize: 20,
                             ),
@@ -274,7 +274,7 @@ class _FileManagerState extends State<FileManager>
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                MyText.titleMedium(
+                                const MyText.titleMedium(
                                   "Recent :",
                                   fontSize: 20,
                                 ),
@@ -285,7 +285,7 @@ class _FileManagerState extends State<FileManager>
                                     color: contentTheme.secondary.withAlpha(28),
                                     child: Row(
                                       children: [
-                                        MyText.bodySmall("Upload File"),
+                                        const MyText.bodySmall("Upload File"),
                                         MySpacing.width(12),
                                         const Icon(
                                           LucideIcons.upload,
@@ -307,7 +307,7 @@ class _FileManagerState extends State<FileManager>
                                 child: DataTable(
                                   sortAscending: true,
                                   onSelectAll: (_) => {},
-                                  headingRowColor: MaterialStatePropertyAll(
+                                  headingRowColor: WidgetStatePropertyAll(
                                     contentTheme.secondary.withAlpha(30),
                                   ),
                                   dataRowMaxHeight: 60,
@@ -586,7 +586,7 @@ class _FileManagerState extends State<FileManager>
                         size: 16,
                       ),
                       MySpacing.width(8),
-                      MyText.bodySmall("Share"),
+                      const MyText.bodySmall("Share"),
                     ],
                   ),
                 ),
@@ -600,7 +600,7 @@ class _FileManagerState extends State<FileManager>
                         size: 16,
                       ),
                       MySpacing.width(8),
-                      MyText.bodySmall("Get Sharable Link"),
+                      const MyText.bodySmall("Get Sharable Link"),
                     ],
                   ),
                 ),
@@ -614,7 +614,7 @@ class _FileManagerState extends State<FileManager>
                         size: 16,
                       ),
                       MySpacing.width(8),
-                      MyText.bodySmall("Rename"),
+                      const MyText.bodySmall("Rename"),
                     ],
                   ),
                 ),
@@ -628,7 +628,7 @@ class _FileManagerState extends State<FileManager>
                         size: 16,
                       ),
                       MySpacing.width(8),
-                      MyText.bodySmall("Download"),
+                      const MyText.bodySmall("Download"),
                     ],
                   ),
                 ),
@@ -642,7 +642,7 @@ class _FileManagerState extends State<FileManager>
                         size: 16,
                       ),
                       MySpacing.width(8),
-                      MyText.bodySmall("Remove"),
+                      const MyText.bodySmall("Remove"),
                     ],
                   ),
                 ),

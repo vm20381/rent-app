@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/calender/calender_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -12,9 +8,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class Calender extends StatefulWidget {
-  const Calender({Key? key}) : super(key: key);
+  const Calender({super.key});
 
   @override
   State<Calender> createState() => _CalenderState();
@@ -43,7 +43,7 @@ class _CalenderState extends State<Calender>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Calender",
                       fontWeight: 600,
                     ),

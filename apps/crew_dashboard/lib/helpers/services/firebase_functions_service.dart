@@ -1,5 +1,5 @@
-import 'package:cloud_functions/cloud_functions.dart';
 import 'package:captainapp_crew_dashboard/models/firebase_auth_user.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/foundation.dart';
 
 class FirebaseFunctionService {

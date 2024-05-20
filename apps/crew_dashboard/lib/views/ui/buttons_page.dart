@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/buttons_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -17,9 +13,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ButtonsPage extends StatefulWidget {
-  const ButtonsPage({Key? key}) : super(key: key);
+  const ButtonsPage({super.key});
 
   @override
   State<ButtonsPage> createState() => _ButtonsPageState();
@@ -48,7 +48,7 @@ class _ButtonsPageState extends State<ButtonsPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Buttons",
                       fontSize: 18,
                       fontWeight: 600,
@@ -1182,7 +1182,7 @@ class _ButtonsPageState extends State<ButtonsPage>
           MySpacing.height(16),
           ToggleButtons(
             splashColor: theme.colorScheme.primary.withAlpha(48),
-            color: theme.colorScheme.onBackground,
+            color: theme.colorScheme.onSurface,
 // fillColor: theme.colorScheme.primary.withAlpha(48),
             selectedBorderColor: theme.colorScheme.primary.withAlpha(48),
             borderRadius: BorderRadius.all(
@@ -1211,7 +1211,7 @@ class _ButtonsPageState extends State<ButtonsPage>
           MySpacing.height(16),
           ToggleButtons(
             splashColor: theme.colorScheme.primary.withAlpha(48),
-            color: theme.colorScheme.onBackground,
+            color: theme.colorScheme.onSurface,
             selectedBorderColor: theme.colorScheme.primary.withAlpha(48),
             borderRadius: BorderRadius.all(
               Radius.circular(AppStyle.containerRadius.small),

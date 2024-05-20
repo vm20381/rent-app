@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/ui/dialogs_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -17,9 +13,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class Dialogs extends StatefulWidget {
-  const Dialogs({Key? key}) : super(key: key);
+  const Dialogs({super.key});
 
   @override
   State<Dialogs> createState() => _DialogsState();
@@ -248,7 +248,7 @@ class _DialogsState extends State<Dialogs>
       builder: (_) {
         return AlertDialog(
           title: MyText.labelLarge("confirmation?".tr()),
-          content: MyText.bodySmall(
+          content: const MyText.bodySmall(
             "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
           ),
           actions: [
@@ -719,7 +719,7 @@ class _DialogsState extends State<Dialogs>
                           LucideIcons.x,
                           size: 20,
                           color:
-                              theme.colorScheme.onBackground.withOpacity(0.5),
+                              theme.colorScheme.onSurface.withOpacity(0.5),
                         ),
                       ),
                     ],

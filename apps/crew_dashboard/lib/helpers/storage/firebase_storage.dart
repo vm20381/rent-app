@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 
 class ImageFromStorage extends StatelessWidget {
   final String imagePath;
   final FirebaseStorage storage = FirebaseStorage.instance;
 
-  ImageFromStorage({Key? key, required this.imagePath}) : super(key: key);
+  ImageFromStorage({super.key, required this.imagePath});
 
   Future<Image> _loadImage() async {
     String imageUrl = await storage.ref(imagePath).getDownloadURL();
@@ -15,7 +15,7 @@ class ImageFromStorage extends StatelessWidget {
           (BuildContext context, Object exception, StackTrace? stackTrace) {
             print('Error loading image: $exception');
             print(stackTrace);
-        return Text('Failed to load image');
+        return const Text('Failed to load image');
       },
     );
   }
@@ -29,9 +29,9 @@ class ImageFromStorage extends StatelessWidget {
             snapshot.hasData) {
           return snapshot.data!;
         } else if (snapshot.error != null) {
-          return Text('Error loading image');
+          return const Text('Error loading image');
         } else {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
       },
     );

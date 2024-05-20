@@ -1,7 +1,7 @@
 // ignore_for_file: curly_braces_in_flow_control_structures
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/constant_data.dart';
+import 'package:flutter/material.dart';
 
 enum MyButtonType { elevated, outlined, text }
 
@@ -16,34 +16,35 @@ class MyButton extends StatelessWidget {
   final bool? block;
   final bool soft;
 
-  final MaterialStateProperty<EdgeInsetsGeometry>? msPadding;
+  final WidgetStateProperty<EdgeInsetsGeometry>? msPadding;
   final EdgeInsetsGeometry? padding;
 
-  final MaterialStateProperty<double>? msElevation;
+  final WidgetStateProperty<double>? msElevation;
   final double? elevation;
 
-  final MaterialStateProperty<EdgeInsetsGeometry>? msShape;
+  final WidgetStateProperty<EdgeInsetsGeometry>? msShape;
   final OutlinedBorder? shape;
   final BorderRadiusGeometry? borderRadius;
   final double? borderRadiusAll;
 
-  final MaterialStateProperty<Color>? msBackgroundColor;
+  final WidgetStateProperty<Color>? msBackgroundColor;
   final Color? backgroundColor;
 
-  final MaterialStateProperty<BorderSide>? msSide;
+  final WidgetStateProperty<BorderSide>? msSide;
   final BorderSide? side;
   final Color borderColor;
 
   final MaterialTapTargetSize? tapTargetSize;
 
-  final MaterialStateProperty<Color>? msShadowColor;
+  final WidgetStateProperty<Color>? msShadowColor;
   final Color? shadowColor;
 
   final Color? splashColor;
 
   final Widget child;
 
-  MyButton({
+  const MyButton({
+    super.key,
     this.onPressed,
     required this.child,
     this.msPadding,
@@ -70,7 +71,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.rounded({
+  const MyButton.rounded({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -97,7 +99,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.small({
+  const MyButton.small({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -124,7 +127,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.medium({
+  const MyButton.medium({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -151,7 +155,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.text({
+  const MyButton.text({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -178,7 +183,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.block({
+  const MyButton.block({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -205,7 +211,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.outlined({
+  const MyButton.outlined({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -232,7 +239,8 @@ class MyButton extends StatelessWidget {
     this.splashColor,
   });
 
-  MyButton.large({
+  const MyButton.large({
+    super.key,
     required this.onPressed,
     required this.child,
     this.msPadding,
@@ -271,7 +279,7 @@ class MyButton extends StatelessWidget {
             ButtonStyle(
               tapTargetSize: tapTargetSize,
               side: msSide ??
-                  MaterialStateProperty.all(
+                  WidgetStateProperty.all(
                     side ??
                         BorderSide(
                           color:
@@ -279,18 +287,18 @@ class MyButton extends StatelessWidget {
                           width: soft ? 0.8 : 1,
                         ),
                   ),
-              overlayColor: MaterialStateProperty.all(
+              overlayColor: WidgetStateProperty.all(
                 splashColor ?? (bgColor.withAlpha(40)),
               ),
               backgroundColor: soft
-                  ? MaterialStateProperty.all(borderColor.withAlpha(40))
+                  ? WidgetStateProperty.all(borderColor.withAlpha(40))
                   : null,
               foregroundColor:
-                  MaterialStateProperty.all(borderColor.withAlpha(40)),
+                  WidgetStateProperty.all(borderColor.withAlpha(40)),
               shadowColor:
-                  msShadowColor ?? MaterialStateProperty.all(shadowColor),
-              padding: msPadding ?? MaterialStateProperty.all(padding),
-              shape: MaterialStateProperty.all(
+                  msShadowColor ?? WidgetStateProperty.all(shadowColor),
+              padding: msPadding ?? WidgetStateProperty.all(padding),
+              shape: WidgetStateProperty.all(
                 shape ??
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
@@ -308,33 +316,33 @@ class MyButton extends StatelessWidget {
               tapTargetSize: tapTargetSize,
               visualDensity: VisualDensity.compact,
               elevation: msElevation ??
-                  MaterialStateProperty.resolveWith<double>(
-                    (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.disabled)) {
+                  WidgetStateProperty.resolveWith<double>(
+                    (Set<WidgetState> states) {
+                      if (states.contains(WidgetState.disabled)) {
                         return 0;
-                      } else if (states.contains(MaterialState.pressed))
+                      } else if (states.contains(WidgetState.pressed))
                         return elevation! * 2;
-                      else if (states.contains(MaterialState.hovered))
+                      else if (states.contains(WidgetState.hovered))
                         return elevation! * 1.5;
                       return elevation!;
                     },
                   ),
               backgroundColor: msBackgroundColor ??
-                  MaterialStateProperty.resolveWith<Color>(
-                    (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.disabled))
+                  WidgetStateProperty.resolveWith<Color>(
+                    (Set<WidgetState> states) {
+                      if (states.contains(WidgetState.disabled))
                         return bgColor.withAlpha(100);
                       return bgColor;
                     },
                   ),
               shadowColor: msShadowColor ??
-                  MaterialStateProperty.all(shadowColor ?? bgColor),
-              padding: msPadding ?? MaterialStateProperty.all(padding),
-              overlayColor: MaterialStateProperty.all(
+                  WidgetStateProperty.all(shadowColor ?? bgColor),
+              padding: msPadding ?? WidgetStateProperty.all(padding),
+              overlayColor: WidgetStateProperty.all(
                 splashColor ??
                     (Theme.of(context).colorScheme.onPrimary.withAlpha(36)),
               ),
-              shape: MaterialStateProperty.all(
+              shape: WidgetStateProperty.all(
                 shape ??
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
@@ -349,10 +357,10 @@ class MyButton extends StatelessWidget {
     } else {
       button = TextButton(
         style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(
+          overlayColor: WidgetStateProperty.all(
             splashColor ?? (bgColor.withAlpha(40)),
           ),
-          padding: msPadding ?? MaterialStateProperty.all(padding),
+          padding: msPadding ?? WidgetStateProperty.all(padding),
           // visualDensity: VisualDensity.standard,
 
           tapTargetSize: tapTargetSize,

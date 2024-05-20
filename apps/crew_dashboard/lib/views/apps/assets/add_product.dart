@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_utils/src/extensions/string_extensions.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/assets/add_product_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
@@ -21,9 +16,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_utils/src/extensions/string_extensions.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class AddProduct extends StatefulWidget {
-  const AddProduct({Key? key}) : super(key: key);
+  const AddProduct({super.key});
 
   @override
   State<AddProduct> createState() => _AddProductState();
@@ -248,7 +248,7 @@ class _AddProductState extends State<AddProduct>
                                                     child: MyText.bodySmall(
                                                       behavior.toString(),
                                                       color: theme.colorScheme
-                                                          .onBackground,
+                                                          .onSurface,
                                                       fontWeight: 600,
                                                     ),
                                                   );
@@ -267,14 +267,14 @@ class _AddProductState extends State<AddProduct>
                                                           .selectedQuantity
                                                           .toString(),
                                                       color: theme.colorScheme
-                                                          .onBackground,
+                                                          .onSurface,
                                                     ),
                                                     Icon(
                                                       Icons
                                                           .expand_more_outlined,
                                                       size: 22,
                                                       color: theme.colorScheme
-                                                          .onBackground,
+                                                          .onSurface,
                                                     ),
                                                   ],
                                                 ),

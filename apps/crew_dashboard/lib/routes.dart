@@ -199,19 +199,19 @@ getPageRoute() {
     // ),
     GetPage(
       name: '/development/changelog',
-      page: () => ChangelogScreen(),
+      page: () => const ChangelogScreen(),
       middlewares: [AuthMiddleware()],
     ),
 
     GetPage(
       name: '/development/kanban',
-      page: () => DevKanBanPage(),
+      page: () => const DevKanBanPage(),
       middlewares: [AuthMiddleware()],
     ),
 
     GetPage(
       name: '/development/cycle',
-      page: () => DevCyclePage(),
+      page: () => const DevCyclePage(),
       middlewares: [AuthMiddleware()],
     ),
 
@@ -327,7 +327,7 @@ getPageRoute() {
     ),
     GetPage(
       name: '/entities/:entityId',
-      page: () => EntityDetail(),
+      page: () => const EntityDetail(),
       transition: Transition.noTransition,
     ),
 

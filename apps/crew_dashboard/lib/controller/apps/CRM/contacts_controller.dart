@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_utils.dart';
 import 'package:captainapp_crew_dashboard/models/contacts.dart';
 import 'package:captainapp_crew_dashboard/views/apps/CRM/contacts_page.dart';
+import 'package:flutter/material.dart';
 
 class ContactsController extends MyController {
   List<Contacts> contacts = [];

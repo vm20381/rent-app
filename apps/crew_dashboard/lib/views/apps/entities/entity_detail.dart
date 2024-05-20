@@ -1,15 +1,6 @@
+import 'package:captainapp_crew_dashboard/controller/apps/entities/entity_detail_controller.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/file_manager/file_download_controller.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/file_manager/file_uploader_controller.dart';
-import 'package:captainapp_crew_dashboard/views/ui/file_upload_widget.dart';
-import 'package:countup/countup.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:intl/intl.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:captainapp_crew_dashboard/controller/apps/entities/entity_detail_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -28,9 +19,17 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:captainapp_crew_dashboard/views/ui/file_upload_widget.dart';
+import 'package:countup/countup.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class EntityDetail extends StatefulWidget {
-  const EntityDetail({Key? key}) : super(key: key);
+  const EntityDetail({super.key});
 
   @override
   State<EntityDetail> createState() => _EntityDetailState();
@@ -64,7 +63,7 @@ class _EntityDetailState extends State<EntityDetail>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Asset Details",
                       fontSize: 18,
                       fontWeight: 600,
@@ -82,7 +81,7 @@ class _EntityDetailState extends State<EntityDetail>
               Obx(() {
                 if (controller.isLoading.value ||
                     controller.entityObservable.value == null) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 final entity = controller.entityObservable.value!;
                 return Column(
@@ -95,7 +94,7 @@ class _EntityDetailState extends State<EntityDetail>
                       height: 200,
                       fit: BoxFit.cover,
                       placeholderBuilder: (context) {
-                        return CircularProgressIndicator();
+                        return const CircularProgressIndicator();
                       },
                     ),
                     // Add other UI elements that display entity details
@@ -187,7 +186,7 @@ class _EntityDetailState extends State<EntityDetail>
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Expanded(
+                                            const Expanded(
                                               child: MyText.titleLarge(
                                                 "App design and development",
                                                 overflow: TextOverflow.ellipsis,
@@ -214,7 +213,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                           size: 16,
                                                         ),
                                                         MySpacing.width(8),
-                                                        MyText.bodySmall(
+                                                        const MyText.bodySmall(
                                                           "Edit",
                                                         ),
                                                       ],
@@ -231,7 +230,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                           size: 16,
                                                         ),
                                                         MySpacing.width(8),
-                                                        MyText.bodySmall(
+                                                        const MyText.bodySmall(
                                                           "Delete",
                                                         ),
                                                       ],
@@ -248,7 +247,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                           size: 16,
                                                         ),
                                                         MySpacing.width(8),
-                                                        MyText.bodySmall(
+                                                        const MyText.bodySmall(
                                                           "Invite",
                                                         ),
                                                       ],
@@ -265,7 +264,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                           size: 16,
                                                         ),
                                                         MySpacing.width(8),
-                                                        MyText.bodySmall(
+                                                        const MyText.bodySmall(
                                                           "Leave",
                                                         ),
                                                       ],
@@ -297,7 +296,7 @@ class _EntityDetailState extends State<EntityDetail>
                                           ),
                                         ),
                                         MySpacing.height(16),
-                                        MyText.titleMedium(
+                                        const MyText.titleMedium(
                                           "Project Reviews :",
                                           fontWeight: 600,
                                         ),
@@ -314,7 +313,7 @@ class _EntityDetailState extends State<EntityDetail>
                                           maxLines: 3,
                                         ),
                                         MySpacing.height(16),
-                                        MyText.titleMedium(
+                                        const MyText.titleMedium(
                                           "Tags",
                                           fontWeight: 600,
                                         ),
@@ -344,11 +343,11 @@ class _EntityDetailState extends State<EntityDetail>
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                MyText.titleMedium(
+                                                const MyText.titleMedium(
                                                   "Start Data",
                                                 ),
                                                 MySpacing.height(8),
-                                                MyText.bodyMedium(
+                                                const MyText.bodyMedium(
                                                   "17 March 2019 1:00 PM",
                                                   muted: true,
                                                 ),
@@ -358,11 +357,11 @@ class _EntityDetailState extends State<EntityDetail>
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                MyText.titleMedium(
+                                                const MyText.titleMedium(
                                                   "End Data",
                                                 ),
                                                 MySpacing.height(8),
-                                                MyText.bodyMedium(
+                                                const MyText.bodyMedium(
                                                   "22 December 2019 1:00 PM",
                                                   muted: true,
                                                 ),
@@ -372,9 +371,9 @@ class _EntityDetailState extends State<EntityDetail>
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                MyText.titleMedium("Budget"),
+                                                const MyText.titleMedium("Budget"),
                                                 MySpacing.height(8),
-                                                MyText.bodyMedium(
+                                                const MyText.bodyMedium(
                                                   "\$15,800",
                                                   muted: true,
                                                 ),
@@ -383,7 +382,7 @@ class _EntityDetailState extends State<EntityDetail>
                                           ],
                                         ),
                                         MySpacing.height(16),
-                                        MyText.titleMedium(
+                                        const MyText.titleMedium(
                                           "Team Members",
                                           fontWeight: 600,
                                         ),
@@ -424,7 +423,7 @@ class _EntityDetailState extends State<EntityDetail>
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Expanded(
+                                            const Expanded(
                                               child: MyText.titleLarge(
                                                 "Comments (258)",
                                                 overflow: TextOverflow.ellipsis,
@@ -444,7 +443,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                     padding:
                                                         MySpacing.xy(16, 8),
                                                     height: 10,
-                                                    child: MyText.bodySmall(
+                                                    child: const MyText.bodySmall(
                                                       "Latest",
                                                     ),
                                                   ),
@@ -452,7 +451,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                     padding:
                                                         MySpacing.xy(16, 8),
                                                     height: 10,
-                                                    child: MyText.bodySmall(
+                                                    child: const MyText.bodySmall(
                                                       "Popular",
                                                     ),
                                                   ),
@@ -598,7 +597,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      MyText.titleMedium(
+                                                      const MyText.titleMedium(
                                                         "Jeremy Tomlinson",
                                                         fontWeight: 700,
                                                         fontSize: 12,
@@ -657,7 +656,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Row(
+                                                        const Row(
                                                           children: [
                                                             MyText.bodyMedium(
                                                               "Kevina Levered ",
@@ -676,7 +675,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                             ),
                                                           ],
                                                         ),
-                                                        MyText.bodyMedium(
+                                                        const MyText.bodyMedium(
                                                           "Nice work, makes me think of The Money Pit.",
                                                           fontWeight: 600,
                                                           fontSize: 12,
@@ -695,7 +694,7 @@ class _EntityDetailState extends State<EntityDetail>
                                                             MySpacing.width(
                                                               8,
                                                             ),
-                                                            MyText.bodySmall(
+                                                            const MyText.bodySmall(
                                                               "Reply",
                                                             ),
                                                           ],
@@ -725,7 +724,7 @@ class _EntityDetailState extends State<EntityDetail>
                                   child: MyCard(
                                     shadow: MyShadow(elevation: 0.5),
                                     child: SfCartesianChart(
-                                      primaryXAxis: CategoryAxis(),
+                                      primaryXAxis: const CategoryAxis(),
                                       axes: <ChartAxis>[
                                         NumericAxis(
                                           numberFormat: NumberFormat.compact(),
@@ -739,7 +738,8 @@ class _EntityDetailState extends State<EntityDetail>
                                           maximum: 7000,
                                         ),
                                       ],
-                                      series: <ChartSeries<ChartData, String>>[
+                                      series: <CartesianSeries<ChartData,
+                                          String>>[
                                         ColumnSeries<ChartData, String>(
                                           color: contentTheme.primary,
                                           animationDuration: 2000,
@@ -775,7 +775,7 @@ class _EntityDetailState extends State<EntityDetail>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        MyText.titleMedium("File"),
+                                        const MyText.titleMedium("File"),
                                         MySpacing.height(16),
                                         // Remove Expanded
                                         GetBuilder(

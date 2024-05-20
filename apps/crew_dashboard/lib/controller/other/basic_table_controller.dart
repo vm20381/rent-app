@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_utils.dart';
 import 'package:captainapp_crew_dashboard/views/other/basic_table.dart';
+import 'package:flutter/material.dart';
 
 class Data {
   final int id, qty;

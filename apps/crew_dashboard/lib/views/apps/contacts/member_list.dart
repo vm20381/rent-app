@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/contact/member_list_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
@@ -16,9 +12,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class MemberList extends StatefulWidget {
-  const MemberList({Key? key}) : super(key: key);
+  const MemberList({super.key});
 
   @override
   State<MemberList> createState() => _MemberListState();
@@ -47,7 +47,7 @@ class _MemberListState extends State<MemberList>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Member List",
                       fontWeight: 600,
                     ),
@@ -73,7 +73,7 @@ class _MemberListState extends State<MemberList>
                             context: context,
                             builder: (context) => AlertDialog(
                               clipBehavior: Clip.antiAliasWithSaveLayer,
-                              title: Column(
+                              title: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   MyText.titleMedium(
@@ -88,7 +88,7 @@ class _MemberListState extends State<MemberList>
                               content: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  MyText.bodyMedium("Name :"),
+                                  const MyText.bodyMedium("Name :"),
                                   MySpacing.height(8),
                                   TextFormField(
                                     validator: controller.basicValidator
@@ -108,7 +108,7 @@ class _MemberListState extends State<MemberList>
                                     ),
                                   ),
                                   MySpacing.height(16),
-                                  MyText.bodyMedium("Address :"),
+                                  const MyText.bodyMedium("Address :"),
                                   MySpacing.height(8),
                                   TextFormField(
                                     validator: controller.basicValidator
@@ -239,17 +239,17 @@ class _MemberListState extends State<MemberList>
                                     PopupMenuItem(
                                       padding: MySpacing.xy(16, 8),
                                       height: 10,
-                                      child: MyText.bodySmall("Action"),
+                                      child: const MyText.bodySmall("Action"),
                                     ),
                                     PopupMenuItem(
                                       padding: MySpacing.xy(16, 8),
                                       height: 10,
-                                      child: MyText.bodySmall("Another action"),
+                                      child: const MyText.bodySmall("Another action"),
                                     ),
                                     PopupMenuItem(
                                       padding: MySpacing.xy(16, 8),
                                       height: 10,
-                                      child: MyText.bodySmall(
+                                      child: const MyText.bodySmall(
                                         "Somethings else here",
                                       ),
                                     ),

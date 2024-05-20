@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'dart:math';
-import 'package:fl_chart/fl_chart.dart';
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 
 class FlChartController extends MyController {
   @override
@@ -76,7 +76,7 @@ class FlChartController extends MyController {
   LineTouchData get lineTouchData1 => LineTouchData(
         handleBuiltInTouches: true,
         touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
+          getTooltipColor: (spot) => Colors.blueGrey.withOpacity(0.8),
         ),
       );
 
@@ -410,7 +410,7 @@ class FlChartController extends MyController {
   BarTouchData get barTouchData => BarTouchData(
         enabled: false,
         touchTooltipData: BarTouchTooltipData(
-          tooltipBgColor: Colors.transparent,
+          getTooltipColor: (spot) => Colors.transparent,
           tooltipPadding: EdgeInsets.zero,
           tooltipMargin: 8,
           getTooltipItem: (
@@ -634,171 +634,631 @@ class FlChartController extends MyController {
       ScatterSpot(
         20,
         14.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         22,
         16.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         24,
         18.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
-
       ScatterSpot(
         22,
         12.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         24,
         14.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         26,
         16.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
-
       ScatterSpot(
         24,
         10.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         26,
         12.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         28,
         14.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
-
-      ScatterSpot(26, 8.5, color: Colors.blue.withOpacity(0.5), radius: radius),
+      ScatterSpot(
+        26,
+        8.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
       ScatterSpot(
         28,
         10.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
       ScatterSpot(
         30,
         12.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
-
-      ScatterSpot(28, 6.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-      ScatterSpot(30, 8.5, color: Colors.blue.withOpacity(0.5), radius: radius),
+      ScatterSpot(
+        28,
+        6.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        30,
+        8.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
       ScatterSpot(
         32,
         10.5,
-        color: Colors.blue.withOpacity(0.5),
-        radius: radius,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        30,
+        4.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        32,
+        6.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        34,
+        8.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        34,
+        4.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        36,
+        6.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
+      ),
+      ScatterSpot(
+        38,
+        4.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue.withOpacity(0.5),
+        ),
       ),
 
-      ScatterSpot(30, 4.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-      ScatterSpot(32, 6.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-      ScatterSpot(34, 8.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-
-      ScatterSpot(34, 4.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-      ScatterSpot(36, 6.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-
-      ScatterSpot(38, 4.5, color: Colors.blue.withOpacity(0.5), radius: radius),
-
       /// section 2
-      ScatterSpot(20, 14.5, color: Colors.blue, radius: radius),
-      ScatterSpot(22, 12.5, color: Colors.blue, radius: radius),
-      ScatterSpot(24, 10.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(22, 16.5, color: Colors.blue, radius: radius),
-      ScatterSpot(24, 14.5, color: Colors.blue, radius: radius),
-      ScatterSpot(26, 12.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(24, 18.5, color: Colors.blue, radius: radius),
-      ScatterSpot(26, 16.5, color: Colors.blue, radius: radius),
-      ScatterSpot(28, 14.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(26, 20.5, color: Colors.blue, radius: radius),
-      ScatterSpot(28, 18.5, color: Colors.blue, radius: radius),
-      ScatterSpot(30, 16.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(28, 22.5, color: Colors.blue, radius: radius),
-      ScatterSpot(30, 20.5, color: Colors.blue, radius: radius),
-      ScatterSpot(32, 18.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(30, 24.5, color: Colors.blue, radius: radius),
-      ScatterSpot(32, 22.5, color: Colors.blue, radius: radius),
-      ScatterSpot(34, 20.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(34, 24.5, color: Colors.blue, radius: radius),
-      ScatterSpot(36, 22.5, color: Colors.blue, radius: radius),
-
-      ScatterSpot(38, 24.5, color: Colors.blue, radius: radius),
+      ScatterSpot(
+        20,
+        14.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        22,
+        12.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        24,
+        10.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        22,
+        16.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        24,
+        14.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        26,
+        12.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        24,
+        18.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        26,
+        16.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        28,
+        14.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        26,
+        20.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        28,
+        18.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        30,
+        16.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        28,
+        22.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        30,
+        20.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        32,
+        18.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        30,
+        24.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        32,
+        22.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        34,
+        20.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        34,
+        24.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        36,
+        22.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        38,
+        24.5,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
 
       /// section 3
-      ScatterSpot(10, 25, color: Colors.blue, radius: radius),
-      ScatterSpot(12, 23, color: Colors.blue, radius: radius),
-      ScatterSpot(14, 21, color: Colors.blue, radius: radius),
-
-      ScatterSpot(12, 27, color: Colors.blue, radius: radius),
-      ScatterSpot(14, 25, color: Colors.blue, radius: radius),
-      ScatterSpot(16, 23, color: Colors.blue, radius: radius),
-
-      ScatterSpot(14, 29, color: Colors.blue, radius: radius),
-      ScatterSpot(16, 27, color: Colors.blue, radius: radius),
-      ScatterSpot(18, 25, color: Colors.blue, radius: radius),
-
-      ScatterSpot(16, 31, color: Colors.blue, radius: radius),
-      ScatterSpot(18, 29, color: Colors.blue, radius: radius),
-      ScatterSpot(20, 27, color: Colors.blue, radius: radius),
-
-      ScatterSpot(18, 33, color: Colors.blue, radius: radius),
-      ScatterSpot(20, 31, color: Colors.blue, radius: radius),
-      ScatterSpot(22, 29, color: Colors.blue, radius: radius),
-
-      ScatterSpot(20, 35, color: Colors.blue, radius: radius),
-      ScatterSpot(22, 33, color: Colors.blue, radius: radius),
-      ScatterSpot(24, 31, color: Colors.blue, radius: radius),
-
-      ScatterSpot(22, 37, color: Colors.blue, radius: radius),
-      ScatterSpot(24, 35, color: Colors.blue, radius: radius),
-      ScatterSpot(26, 33, color: Colors.blue, radius: radius),
-
-      ScatterSpot(24, 39, color: Colors.blue, radius: radius),
-      ScatterSpot(26, 37, color: Colors.blue, radius: radius),
-      ScatterSpot(28, 35, color: Colors.blue, radius: radius),
-
-      ScatterSpot(26, 41, color: Colors.blue, radius: radius),
-      ScatterSpot(28, 39, color: Colors.blue, radius: radius),
-      ScatterSpot(30, 37, color: Colors.blue, radius: radius),
-
-      ScatterSpot(28, 43, color: Colors.blue, radius: radius),
-      ScatterSpot(30, 41, color: Colors.blue, radius: radius),
-      ScatterSpot(32, 39, color: Colors.blue, radius: radius),
-
-      ScatterSpot(30, 45, color: Colors.blue, radius: radius),
-      ScatterSpot(32, 43, color: Colors.blue, radius: radius),
-      ScatterSpot(34, 41, color: Colors.blue, radius: radius),
-
-      ScatterSpot(34, 45, color: Colors.blue, radius: radius),
-      ScatterSpot(36, 43, color: Colors.blue, radius: radius),
-
-      ScatterSpot(38, 45, color: Colors.blue, radius: radius),
+      ScatterSpot(
+        10,
+        25,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        12,
+        23,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        14,
+        21,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        12,
+        27,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        14,
+        25,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        16,
+        23,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        14,
+        29,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        16,
+        27,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        18,
+        25,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        16,
+        31,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        18,
+        29,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        20,
+        27,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        18,
+        33,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        20,
+        31,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        22,
+        29,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        20,
+        35,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        22,
+        33,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        24,
+        31,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        22,
+        37,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        24,
+        35,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        26,
+        33,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        24,
+        39,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        26,
+        37,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        28,
+        35,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        26,
+        41,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        28,
+        39,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        30,
+        37,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        28,
+        43,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        30,
+        41,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        32,
+        39,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        30,
+        45,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        32,
+        43,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        34,
+        41,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        34,
+        45,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        36,
+        43,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
+      ScatterSpot(
+        38,
+        45,
+        dotPainter: FlDotCirclePainter(
+          radius: radius,
+          color: Colors.blue,
+        ),
+      ),
     ];
   }
 
@@ -816,8 +1276,10 @@ class FlChartController extends MyController {
       return ScatterSpot(
         (Random().nextDouble() * (maxX - 8)) + 4,
         (Random().nextDouble() * (maxY - 8)) + 4,
-        color: color,
-        radius: (Random().nextDouble() * 16) + 4,
+        dotPainter: FlDotCirclePainter(
+          radius: (Random().nextDouble() * 16) + 4,
+          color: color,
+        ),
       );
     });
   }

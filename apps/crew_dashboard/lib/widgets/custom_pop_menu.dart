@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
+import 'package:flutter/material.dart';
 
 enum CustomPopupMenuPlacement { left, right, top, bottom }
 
@@ -132,7 +132,7 @@ class _CustomPopupMenuState extends State<CustomPopupMenu>
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             color: widget.backdrop
-                ? theme.colorScheme.onBackground.withAlpha(12)
+                ? theme.colorScheme.onSurface.withAlpha(12)
                 : Colors.transparent,
           ),
         );

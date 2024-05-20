@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter/services.dart';
 import 'package:captainapp_crew_dashboard/helpers/services/json_decoder.dart';
 import 'package:captainapp_crew_dashboard/models/identifier_model.dart';
+import 'package:flutter/services.dart';
 
 class FirebaseAuthUser extends IdentifierModel {
   final String email, displayName, role, lastSignInTime, creationTime, photoURL;

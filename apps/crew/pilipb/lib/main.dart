@@ -1,4 +1,4 @@
-import 'package:example_package/example_package.dart';
+// import 'package:example_package/example_package.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -38,7 +38,7 @@ void main() async {
   Get.put(AuthService());
   // // Get.put(DeepLinkController());
   Get.put(FirebaseFunctionService());
-  Get.put(ExamplePackageService());
+  // Get.put(ExamplePackageService());
 
   runApp(
     ChangeNotifierProvider<AppNotifier>(

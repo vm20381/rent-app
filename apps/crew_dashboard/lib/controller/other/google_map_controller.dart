@@ -1,5 +1,5 @@
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapPageController extends MyController {
   GoogleMapController? mapController;

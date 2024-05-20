@@ -59,7 +59,7 @@ class MyShadow {
           this.offset = Offset(-elevation, elevation * 0.25);
           break;
         case MyShadowPosition.center:
-          this.offset = Offset(0, 0);
+          this.offset = const Offset(0, 0);
           break;
         //TODO: Shadow problem
         case MyShadowPosition.centerRight:
@@ -111,7 +111,7 @@ class MyShadow {
           this.offset = Offset(-elevation, elevation * 0.25);
           break;
         case MyShadowPosition.center:
-          this.offset = Offset(0, 0);
+          this.offset = const Offset(0, 0);
           break;
         //TODO: Shadow problem
         case MyShadowPosition.centerRight:

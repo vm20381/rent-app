@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
-import 'package:uni_links/uni_links.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:uni_links/uni_links.dart';
 
 class DeepLinkController extends MyController {
   late StreamSubscription _linkSubscription;

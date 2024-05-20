@@ -1,11 +1,11 @@
 // ignore_for_file: unrelated_type_equality_checks
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_bottom_navigation_bar_item.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_container.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
+import 'package:flutter/material.dart';
 
 enum MyBottomNavigationBarType {
   normal,
@@ -43,7 +43,7 @@ class MyBottomNavigationBar extends StatefulWidget {
   final EdgeInsetsGeometry? containerPadding;
   final double? containerRadius;
 
-  MyBottomNavigationBar({
+  const MyBottomNavigationBar({super.key, 
     required this.itemList,
     this.animationDuration,
     this.indicatorColor,
@@ -207,7 +207,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
                         size: iconSize ?? item.iconSize ?? 14,
                         color: iconColor ??
                             item.iconColor ??
-                            theme.colorScheme.onBackground,
+                            theme.colorScheme.onSurface,
                       ),
                   widget.labelDirection == Axis.horizontal
                       ? MySpacing.width(showLabel ? widget.labelSpacing : 0)
@@ -220,7 +220,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
                               MyTextStyle.labelSmall(
                                 color: titleColor ??
                                     item.titleColor ??
-                                    theme.colorScheme.onBackground,
+                                    theme.colorScheme.onSurface,
                                 fontSize: widget.titleSize ?? item.titleSize,
                               ),
                         )
@@ -274,7 +274,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
                 size: iconSize ?? item.iconSize ?? 24,
                 color: iconColor ??
                     item.iconColor ??
-                    theme.colorScheme.onBackground.withAlpha(150),
+                    theme.colorScheme.onSurface.withAlpha(150),
               );
     }
   }
@@ -322,7 +322,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
     showActiveLabel = widget.showActiveLabel ?? true;
     activeContainerColor =
         widget.activeContainerColor ?? theme.primaryColor.withAlpha(100);
-    backgroundColor = widget.backgroundColor ?? theme.colorScheme.background;
+    backgroundColor = widget.backgroundColor ?? theme.colorScheme.surface;
     activeTitleStyle = widget.activeTitleStyle;
     titleStyle = widget.titleStyle;
     activeTitleColor = widget.activeTitleColor;
@@ -343,7 +343,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
       children: [
         Expanded(
           child: TabBarView(
-            physics: ClampingScrollPhysics(),
+            physics: const ClampingScrollPhysics(),
             controller: _tabController,
             children: getListOfViews(),
           ),

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_form_validator.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_validators.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Locked2Controller extends MyController {
   MyFormValidator basicValidator = MyFormValidator();
@@ -32,7 +32,7 @@ class Locked2Controller extends MyController {
     if (basicValidator.validateForm()) {
       loading = true;
       update();
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       Get.toNamed('/dashboard');
 
       loading = false;

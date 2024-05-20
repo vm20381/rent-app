@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/models/opportunities.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ChartData1 {
   ChartData1(this.x, this.y, [this.color]);

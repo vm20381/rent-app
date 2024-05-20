@@ -3,11 +3,11 @@
 * Version : 1.0.0
 * */
 
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/custom_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/theme_type.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 export 'custom_theme.dart';
 export 'navigation_theme.dart';
@@ -35,53 +35,53 @@ class AppTheme {
 
   static ThemeData plantLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xff009900),
+      seedColor: const Color(0xff009900),
       primary: Colors.green.shade600,
-      onPrimary: Color(0xffffffff),
-      primaryContainer: Color(0xff08c002),
-      error: Color(0xffFF0000),
-      background: Color(0xffffffff),
-      onBackground: Color(0xffffffff),
+      onPrimary: const Color(0xffffffff),
+      primaryContainer: const Color(0xff08c002),
+      error: const Color(0xffFF0000),
+      background: const Color(0xffffffff),
+      onBackground: const Color(0xffffffff),
     ),
   );
   static ThemeData plantDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xff00ff00),
+      seedColor: const Color(0xff00ff00),
       primary: Colors.green.shade600,
       // primary: Color(0xff40826D),
-      onPrimary: Color(0xffffffff),
-      error: Color(0xffFF0000),
-      primaryContainer: Color(0xff27AE60),
-      onBackground: Color(0xffffffff),
-      background: Color(0xffffffff),
+      onPrimary: const Color(0xffffffff),
+      error: const Color(0xffFF0000),
+      primaryContainer: const Color(0xff27AE60),
+      onBackground: const Color(0xffffffff),
+      background: const Color(0xffffffff),
     ),
   );
 
   static ThemeData cookifyLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xfff57a66),
-      primary: Color(0xffdf7463),
-      onPrimary: Color(0xffffffff),
-      primaryContainer: Color(0xfffdeeea),
-      onPrimaryContainer: Color(0xffe73a1f),
-      secondary: Color(0xff5e3f22),
-      onSecondary: Color(0xffffffff),
-      secondaryContainer: Color(0xffe7bc91),
-      onSecondaryContainer: Color(0xff462601),
+      seedColor: const Color(0xfff57a66),
+      primary: const Color(0xffdf7463),
+      onPrimary: const Color(0xffffffff),
+      primaryContainer: const Color(0xfffdeeea),
+      onPrimaryContainer: const Color(0xffe73a1f),
+      secondary: const Color(0xff5e3f22),
+      onSecondary: const Color(0xffffffff),
+      secondaryContainer: const Color(0xffe7bc91),
+      onSecondaryContainer: const Color(0xff462601),
     ),
   );
   static ThemeData cookifyDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xfffcccc5),
-      primary: Color(0xfffcccc5),
-      onPrimary: Color(0xffec371a),
-      primaryContainer: Color(0xffec6d5a),
-      onPrimaryContainer: Color(0xffffeeec),
-      secondary: Color(0xfffcc18e),
-      onSecondary: Color(0xff381f01),
-      secondaryContainer: Color(0xff54381e),
-      onSecondaryContainer: Color(0xffe7cbae),
-      onBackground: Color(0xffe6e1e5),
+      seedColor: const Color(0xfffcccc5),
+      primary: const Color(0xfffcccc5),
+      onPrimary: const Color(0xffec371a),
+      primaryContainer: const Color(0xffec6d5a),
+      onPrimaryContainer: const Color(0xffffeeec),
+      secondary: const Color(0xfffcc18e),
+      onSecondary: const Color(0xff381f01),
+      secondaryContainer: const Color(0xff54381e),
+      onSecondaryContainer: const Color(0xffe7cbae),
+      onBackground: const Color(0xffe6e1e5),
     ),
   );
 
@@ -91,25 +91,25 @@ class AppTheme {
 
   static ThemeData datingLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xffB428C3),
-      secondary: Color(0xfff15f5f),
-      onSecondary: Color(0xffffffff),
-      secondaryContainer: Color(0xfffcd8d8),
-      onSecondaryContainer: Color(0xffea2929),
+      seedColor: const Color(0xffB428C3),
+      secondary: const Color(0xfff15f5f),
+      onSecondary: const Color(0xffffffff),
+      secondaryContainer: const Color(0xfffcd8d8),
+      onSecondaryContainer: const Color(0xffea2929),
     ),
   );
   static ThemeData datingDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xfff1b0f8),
-      primary: Color(0xfff1b0f8),
-      onPrimary: Color(0xff9614a4),
-      primaryContainer: Color(0xffde4cef),
-      onPrimaryContainer: Color(0xfff8d8fd),
-      secondary: Color(0xfff88686),
-      onSecondary: Color(0xff8f1313),
-      secondaryContainer: Color(0xffec3535),
-      onSecondaryContainer: Color(0xfff6cdcd),
-      onBackground: Color(0xffe6e1e5),
+      seedColor: const Color(0xfff1b0f8),
+      primary: const Color(0xfff1b0f8),
+      onPrimary: const Color(0xff9614a4),
+      primaryContainer: const Color(0xffde4cef),
+      onPrimaryContainer: const Color(0xfff8d8fd),
+      secondary: const Color(0xfff88686),
+      onSecondary: const Color(0xff8f1313),
+      secondaryContainer: const Color(0xffec3535),
+      onSecondaryContainer: const Color(0xfff6cdcd),
+      onBackground: const Color(0xffe6e1e5),
     ),
   );
 
@@ -120,26 +120,26 @@ class AppTheme {
 
   static ThemeData estateLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xff1c8c8c),
-      primaryContainer: Color(0xffdafafa),
-      secondary: Color(0xfff15f5f),
-      onSecondary: Color(0xffffffff),
-      secondaryContainer: Color(0xfff8d6d6),
-      onSecondaryContainer: Color(0xff570202),
+      seedColor: const Color(0xff1c8c8c),
+      primaryContainer: const Color(0xffdafafa),
+      secondary: const Color(0xfff15f5f),
+      onSecondary: const Color(0xffffffff),
+      secondaryContainer: const Color(0xfff8d6d6),
+      onSecondaryContainer: const Color(0xff570202),
     ),
   );
   static ThemeData estateDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xffcaffff),
-      primary: Color(0xffcaffff),
-      onPrimary: Color(0xff0b7777),
-      primaryContainer: Color(0xff18a6a6),
-      onPrimaryContainer: Color(0xffe5fdfd),
-      secondary: Color(0xffeea6a6),
-      onSecondary: Color(0xff491818),
-      secondaryContainer: Color(0xff7a2f2f),
-      onSecondaryContainer: Color(0xffefdada),
-      onBackground: Color(0xffe6e1e5),
+      seedColor: const Color(0xffcaffff),
+      primary: const Color(0xffcaffff),
+      onPrimary: const Color(0xff0b7777),
+      primaryContainer: const Color(0xff18a6a6),
+      onPrimaryContainer: const Color(0xffe5fdfd),
+      secondary: const Color(0xffeea6a6),
+      onSecondary: const Color(0xff491818),
+      secondaryContainer: const Color(0xff7a2f2f),
+      onSecondaryContainer: const Color(0xffefdada),
+      onBackground: const Color(0xffe6e1e5),
     ),
   );
 
@@ -149,25 +149,25 @@ class AppTheme {
 
   static ThemeData homemadeLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xffc5558e),
-      secondary: Color(0xffCC9D60),
-      onSecondary: Color(0xffffffff),
-      secondaryContainer: Color(0xfffce7cf),
-      onSecondaryContainer: Color(0xffc47712),
+      seedColor: const Color(0xffc5558e),
+      secondary: const Color(0xffCC9D60),
+      onSecondary: const Color(0xffffffff),
+      secondaryContainer: const Color(0xfffce7cf),
+      onSecondaryContainer: const Color(0xffc47712),
     ),
   );
   static ThemeData homemadeDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xfffaafd4),
-      primary: Color(0xfffaafd4),
-      onPrimary: Color(0xffbb2e75),
-      primaryContainer: Color(0xffd95a9b),
-      onPrimaryContainer: Color(0xfffadaea),
-      secondary: Color(0xffecc797),
-      onSecondary: Color(0xff4f3616),
-      secondaryContainer: Color(0xff855b25),
-      onSecondaryContainer: Color(0xfff5e6d6),
-      onBackground: Color(0xffe6e1e5),
+      seedColor: const Color(0xfffaafd4),
+      primary: const Color(0xfffaafd4),
+      onPrimary: const Color(0xffbb2e75),
+      primaryContainer: const Color(0xffd95a9b),
+      onPrimaryContainer: const Color(0xfffadaea),
+      secondary: const Color(0xffecc797),
+      onSecondary: const Color(0xff4f3616),
+      secondaryContainer: const Color(0xff855b25),
+      onSecondaryContainer: const Color(0xfff5e6d6),
+      onBackground: const Color(0xffe6e1e5),
     ),
   );
 
@@ -177,32 +177,32 @@ class AppTheme {
 
   static ThemeData learningLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xff6874E8),
-      secondary: Color(0xff548c2f),
-      onSecondary: Color(0xffffffff),
-      secondaryContainer: Color(0xffdef0d1),
-      onSecondaryContainer: Color(0xff131F0a),
+      seedColor: const Color(0xff6874E8),
+      secondary: const Color(0xff548c2f),
+      onSecondary: const Color(0xffffffff),
+      secondaryContainer: const Color(0xffdef0d1),
+      onSecondaryContainer: const Color(0xff131F0a),
     ),
   );
   static ThemeData learningDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xffcfd2ff),
-      primary: Color(0xffcfd2ff),
-      onPrimary: Color(0xff1529e8),
-      primaryContainer: Color(0xff5563e8),
-      onPrimaryContainer: Color(0xffe6e7fd),
-      secondary: Color(0xffd3ebc1),
-      onSecondary: Color(0xff253e14),
-      secondaryContainer: Color(0xff4B7b28),
-      onSecondaryContainer: Color(0xffe9f5e0),
-      onBackground: Color(0xffe6e1e5),
+      seedColor: const Color(0xffcfd2ff),
+      primary: const Color(0xffcfd2ff),
+      onPrimary: const Color(0xff1529e8),
+      primaryContainer: const Color(0xff5563e8),
+      onPrimaryContainer: const Color(0xffe6e7fd),
+      secondary: const Color(0xffd3ebc1),
+      onSecondary: const Color(0xff253e14),
+      secondaryContainer: const Color(0xff4B7b28),
+      onSecondaryContainer: const Color(0xffe9f5e0),
+      onBackground: const Color(0xffe6e1e5),
     ),
   );
 
   static ThemeData shoppingManagerTheme = getShoppingManagerTheme();
 
   static ThemeData getShoppingManagerTheme() {
-    return createThemeM3(themeType, Color(0xff5a4a94));
+    return createThemeM3(themeType, const Color(0xff5a4a94));
   }
 
   static ThemeData shoppingTheme = AppTheme.themeType == ThemeType.light
@@ -211,26 +211,26 @@ class AppTheme {
 
   static ThemeData shoppingLightTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xff1c8c8c),
-      primaryContainer: Color(0xffdafafa),
-      secondary: Color(0xfff15f5f),
-      onSecondary: Color(0xffffffff),
-      secondaryContainer: Color(0xfff8d6d6),
-      onSecondaryContainer: Color(0xff570202),
+      seedColor: const Color(0xff1c8c8c),
+      primaryContainer: const Color(0xffdafafa),
+      secondary: const Color(0xfff15f5f),
+      onSecondary: const Color(0xffffffff),
+      secondaryContainer: const Color(0xfff8d6d6),
+      onSecondaryContainer: const Color(0xff570202),
     ),
   );
   static ThemeData shoppingDarkTheme = createTheme(
     ColorScheme.fromSeed(
-      seedColor: Color(0xffcaffff),
-      primary: Color(0xffcaffff),
-      onPrimary: Color(0xff0b7777),
-      primaryContainer: Color(0xff18a6a6),
-      onPrimaryContainer: Color(0xffe5fdfd),
-      secondary: Color(0xffeea6a6),
-      onSecondary: Color(0xff491818),
-      secondaryContainer: Color(0xff7a2f2f),
-      onSecondaryContainer: Color(0xffefdada),
-      onBackground: Color(0xffe6e1e5),
+      seedColor: const Color(0xffcaffff),
+      primary: const Color(0xffcaffff),
+      onPrimary: const Color(0xff0b7777),
+      primaryContainer: const Color(0xff18a6a6),
+      onPrimaryContainer: const Color(0xffe5fdfd),
+      secondary: const Color(0xffeea6a6),
+      onSecondary: const Color(0xff491818),
+      secondaryContainer: const Color(0xff7a2f2f),
+      onSecondaryContainer: const Color(0xffefdada),
+      onBackground: const Color(0xffe6e1e5),
     ),
   );
 
@@ -291,20 +291,20 @@ class AppTheme {
     brightness: Brightness.light,
 
     /// Primary Color
-    primaryColor: Color(0xff3C4EC5),
-    scaffoldBackgroundColor: Color(0xffffffff),
+    primaryColor: const Color(0xff3C4EC5),
+    scaffoldBackgroundColor: const Color(0xffffffff),
     canvasColor: Colors.transparent,
 
     /// AppBar Theme
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xffffffff),
       iconTheme: IconThemeData(color: Color(0xff495057)),
       actionsIconTheme: IconThemeData(color: Color(0xff495057)),
     ),
 
     /// Card Theme
-    cardTheme: CardTheme(color: Color(0xfff0f0f0)),
-    cardColor: Color(0xfff0f0f0),
+    cardTheme: const CardTheme(color: Color(0xfff0f0f0)),
+    cardColor: const Color(0xfff0f0f0),
 
     textTheme: TextTheme(
       titleLarge: GoogleFonts.aBeeZee(),
@@ -313,25 +313,25 @@ class AppTheme {
 
     /// Floating Action Theme
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Color(0xff3C4EC5),
-      splashColor: Color(0xffeeeeee).withAlpha(100),
+      backgroundColor: const Color(0xff3C4EC5),
+      splashColor: const Color(0xffeeeeee).withAlpha(100),
       highlightElevation: 8,
       elevation: 4,
-      focusColor: Color(0xff3C4EC5),
-      hoverColor: Color(0xff3C4EC5),
-      foregroundColor: Color(0xffeeeeee),
+      focusColor: const Color(0xff3C4EC5),
+      hoverColor: const Color(0xff3C4EC5),
+      foregroundColor: const Color(0xffeeeeee),
     ),
 
     /// Divider Theme
-    dividerTheme: DividerThemeData(color: Color(0xffe8e8e8), thickness: 1),
-    dividerColor: Color(0xffe8e8e8),
+    dividerTheme: const DividerThemeData(color: Color(0xffe8e8e8), thickness: 1),
+    dividerColor: const Color(0xffe8e8e8),
 
     /// Bottom AppBar Theme
     bottomAppBarTheme:
-        BottomAppBarTheme(color: Color(0xffeeeeee), elevation: 2),
+        const BottomAppBarTheme(color: Color(0xffeeeeee), elevation: 2),
 
     /// Tab bar Theme
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: const TabBarTheme(
       unselectedLabelColor: Color(0xff495057),
       labelColor: Color(0xff3d63ff),
       indicatorSize: TabBarIndicatorSize.label,
@@ -342,38 +342,38 @@ class AppTheme {
 
     /// CheckBox theme
     checkboxTheme: CheckboxThemeData(
-      checkColor: MaterialStateProperty.all(Color(0xffeeeeee)),
-      fillColor: MaterialStateProperty.all(Color(0xff3C4EC5)),
+      checkColor: WidgetStateProperty.all(const Color(0xffeeeeee)),
+      fillColor: WidgetStateProperty.all(const Color(0xff3C4EC5)),
     ),
 
     /// Radio theme
     radioTheme: RadioThemeData(
-      fillColor: MaterialStateProperty.all(Color(0xff3C4EC5)),
+      fillColor: WidgetStateProperty.all(const Color(0xff3C4EC5)),
     ),
 
     ///Switch Theme
     switchTheme: SwitchThemeData(
-      trackColor: MaterialStateProperty.resolveWith((state) {
-        const Set<MaterialState> interactiveStates = <MaterialState>{
-          MaterialState.pressed,
-          MaterialState.hovered,
-          MaterialState.focused,
-          MaterialState.selected,
+      trackColor: WidgetStateProperty.resolveWith((state) {
+        const Set<WidgetState> interactiveStates = <WidgetState>{
+          WidgetState.pressed,
+          WidgetState.hovered,
+          WidgetState.focused,
+          WidgetState.selected,
         };
         if (state.any(interactiveStates.contains)) {
-          return Color(0xffabb3ea);
+          return const Color(0xffabb3ea);
         }
         return null;
       }),
-      thumbColor: MaterialStateProperty.resolveWith((state) {
-        const Set<MaterialState> interactiveStates = <MaterialState>{
-          MaterialState.pressed,
-          MaterialState.hovered,
-          MaterialState.focused,
-          MaterialState.selected,
+      thumbColor: WidgetStateProperty.resolveWith((state) {
+        const Set<WidgetState> interactiveStates = <WidgetState>{
+          WidgetState.pressed,
+          WidgetState.hovered,
+          WidgetState.focused,
+          WidgetState.selected,
         };
         if (state.any(interactiveStates.contains)) {
-          return Color(0xff3C4EC5);
+          return const Color(0xff3C4EC5);
         }
         return null;
       }),
@@ -381,31 +381,31 @@ class AppTheme {
 
     /// Slider Theme
     sliderTheme: SliderThemeData(
-      activeTrackColor: Color(0xff3d63ff),
-      inactiveTrackColor: Color(0xff3d63ff).withAlpha(140),
-      trackShape: RoundedRectSliderTrackShape(),
+      activeTrackColor: const Color(0xff3d63ff),
+      inactiveTrackColor: const Color(0xff3d63ff).withAlpha(140),
+      trackShape: const RoundedRectSliderTrackShape(),
       trackHeight: 4.0,
-      thumbColor: Color(0xff3d63ff),
-      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
-      overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
-      tickMarkShape: RoundSliderTickMarkShape(),
+      thumbColor: const Color(0xff3d63ff),
+      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+      overlayShape: const RoundSliderOverlayShape(overlayRadius: 24.0),
+      tickMarkShape: const RoundSliderTickMarkShape(),
       inactiveTickMarkColor: Colors.red[100],
-      valueIndicatorShape: PaddleSliderValueIndicatorShape(),
-      valueIndicatorTextStyle: TextStyle(
+      valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
+      valueIndicatorTextStyle: const TextStyle(
         color: Color(0xffeeeeee),
       ),
     ),
 
     /// Other Colors
     splashColor: Colors.white.withAlpha(100),
-    indicatorColor: Color(0xffeeeeee),
-    highlightColor: Color(0xffeeeeee),
+    indicatorColor: const Color(0xffeeeeee),
+    highlightColor: const Color(0xffeeeeee),
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Color(0xff3C4EC5),
+      seedColor: const Color(0xff3C4EC5),
       brightness: Brightness.light,
     )
-        .copyWith(background: Color(0xffffffff))
-        .copyWith(error: Color(0xfff0323c)),
+        .copyWith(surface: const Color(0xffffffff))
+        .copyWith(error: const Color(0xfff0323c)),
   );
 
   /// -------------------------- Dark Theme  -------------------------------------------- ///
@@ -414,21 +414,21 @@ class AppTheme {
     brightness: Brightness.dark,
 
     /// Primary Color
-    primaryColor: Color(0xff069DEF),
+    primaryColor: const Color(0xff069DEF),
 
     /// Scaffold and Background color
-    scaffoldBackgroundColor: Color(0xff161616),
+    scaffoldBackgroundColor: const Color(0xff161616),
     canvasColor: Colors.transparent,
 
     /// AppBar Theme
-    appBarTheme: AppBarTheme(backgroundColor: Color(0xff161616)),
+    appBarTheme: const AppBarTheme(backgroundColor: Color(0xff161616)),
 
     /// Card Theme
-    cardTheme: CardTheme(color: Color(0xff222327)),
-    cardColor: Color(0xff222327),
+    cardTheme: const CardTheme(color: Color(0xff222327)),
+    cardColor: const Color(0xff222327),
 
     /// Input (Text-Field) Theme
-    inputDecorationTheme: InputDecorationTheme(
+    inputDecorationTheme: const InputDecorationTheme(
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(4)),
         borderSide: BorderSide(width: 1, color: Color(0xff069DEF)),
@@ -444,26 +444,26 @@ class AppTheme {
     ),
 
     /// Divider Color
-    dividerTheme: DividerThemeData(color: Color(0xff363636), thickness: 1),
-    dividerColor: Color(0xff363636),
+    dividerTheme: const DividerThemeData(color: Color(0xff363636), thickness: 1),
+    dividerColor: const Color(0xff363636),
 
     /// Floating Action Theme
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Color(0xff069DEF),
+      backgroundColor: const Color(0xff069DEF),
       splashColor: Colors.white.withAlpha(100),
       highlightElevation: 8,
       elevation: 4,
-      focusColor: Color(0xff069DEF),
-      hoverColor: Color(0xff069DEF),
+      focusColor: const Color(0xff069DEF),
+      hoverColor: const Color(0xff069DEF),
       foregroundColor: Colors.white,
     ),
 
     /// Bottom AppBar Theme
     bottomAppBarTheme:
-        BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
+        const BottomAppBarTheme(color: Color(0xff464c52), elevation: 2),
 
     /// Tab bar Theme
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: const TabBarTheme(
       unselectedLabelColor: Color(0xff495057),
       labelColor: Color(0xff069DEF),
       indicatorSize: TabBarIndicatorSize.label,
@@ -474,27 +474,27 @@ class AppTheme {
 
     ///Switch Theme
     switchTheme: SwitchThemeData(
-      trackColor: MaterialStateProperty.resolveWith((state) {
-        const Set<MaterialState> interactiveStates = <MaterialState>{
-          MaterialState.pressed,
-          MaterialState.hovered,
-          MaterialState.focused,
-          MaterialState.selected,
+      trackColor: WidgetStateProperty.resolveWith((state) {
+        const Set<WidgetState> interactiveStates = <WidgetState>{
+          WidgetState.pressed,
+          WidgetState.hovered,
+          WidgetState.focused,
+          WidgetState.selected,
         };
         if (state.any(interactiveStates.contains)) {
-          return Color(0xffabb3ea);
+          return const Color(0xffabb3ea);
         }
         return null;
       }),
-      thumbColor: MaterialStateProperty.resolveWith((state) {
-        const Set<MaterialState> interactiveStates = <MaterialState>{
-          MaterialState.pressed,
-          MaterialState.hovered,
-          MaterialState.focused,
-          MaterialState.selected,
+      thumbColor: WidgetStateProperty.resolveWith((state) {
+        const Set<WidgetState> interactiveStates = <WidgetState>{
+          WidgetState.pressed,
+          WidgetState.hovered,
+          WidgetState.focused,
+          WidgetState.selected,
         };
         if (state.any(interactiveStates.contains)) {
-          return Color(0xff3C4EC5);
+          return const Color(0xff3C4EC5);
         }
         return null;
       }),
@@ -502,30 +502,30 @@ class AppTheme {
 
     /// Slider Theme
     sliderTheme: SliderThemeData(
-      activeTrackColor: Color(0xff069DEF),
-      inactiveTrackColor: Color(0xff069DEF).withAlpha(100),
-      trackShape: RoundedRectSliderTrackShape(),
+      activeTrackColor: const Color(0xff069DEF),
+      inactiveTrackColor: const Color(0xff069DEF).withAlpha(100),
+      trackShape: const RoundedRectSliderTrackShape(),
       trackHeight: 4.0,
-      thumbColor: Color(0xff069DEF),
-      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
-      overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
-      tickMarkShape: RoundSliderTickMarkShape(),
+      thumbColor: const Color(0xff069DEF),
+      thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+      overlayShape: const RoundSliderOverlayShape(overlayRadius: 24.0),
+      tickMarkShape: const RoundSliderTickMarkShape(),
       inactiveTickMarkColor: Colors.red[100],
-      valueIndicatorShape: PaddleSliderValueIndicatorShape(),
-      valueIndicatorTextStyle: TextStyle(
+      valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
+      valueIndicatorTextStyle: const TextStyle(
         color: Colors.white,
       ),
     ),
 
     ///Other Color
     indicatorColor: Colors.white,
-    disabledColor: Color(0xffa3a3a3),
+    disabledColor: const Color(0xffa3a3a3),
     highlightColor: Colors.white.withAlpha(28),
     splashColor: Colors.white.withAlpha(56),
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Color(0xff069DEF),
+      seedColor: const Color(0xff069DEF),
       brightness: Brightness.dark,
-    ).copyWith(background: Color(0xff161616)).copyWith(error: Colors.orange),
+    ).copyWith(surface: const Color(0xff161616)).copyWith(error: Colors.orange),
   );
 
   static ThemeData createThemeM3(ThemeType themeType, Color seedColor) {
@@ -541,7 +541,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: seedColor,
         brightness: Brightness.dark,
-        onBackground: Color(0xFFDAD9CA),
+        onBackground: const Color(0xFFDAD9CA),
       ),
     );
   }
@@ -559,16 +559,16 @@ class AppTheme {
     if (themeType == ThemeType.light) {
       return lightTheme.copyWith(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xff232245),
+          seedColor: const Color(0xff232245),
           brightness: Brightness.light,
         ),
       );
     } else {
       return darkTheme.copyWith(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xff232245),
+          seedColor: const Color(0xff232245),
           brightness: Brightness.dark,
-          onBackground: Color(0xFFDAD9CA),
+          onBackground: const Color(0xFFDAD9CA),
         ),
       );
     }
@@ -576,7 +576,7 @@ class AppTheme {
   }
 
   static ThemeData getRentalServiceTheme() {
-    return createThemeM3(themeType, Color(0xff2e87a6));
+    return createThemeM3(themeType, const Color(0xff2e87a6));
   }
 
   static resetThemeData() {

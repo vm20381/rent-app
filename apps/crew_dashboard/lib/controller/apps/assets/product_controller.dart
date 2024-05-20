@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
-
 import 'package:captainapp_crew_dashboard/models/product.dart';
 import 'package:captainapp_crew_dashboard/views/apps/assets/products.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductController extends MyController {
   List<Product> products = [];

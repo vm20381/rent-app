@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/constant_data.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
+import 'package:flutter/material.dart';
 
 class MyContainer extends StatelessWidget {
   final Widget? child;
@@ -21,7 +21,7 @@ class MyContainer extends StatelessWidget {
   final bool enableBorderRadius;
 
   const MyContainer({
-    Key? key,
+    super.key,
     this.child,
     this.borderRadius,
     this.padding,
@@ -41,10 +41,10 @@ class MyContainer extends StatelessWidget {
     this.margin,
     this.splashColor,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   const MyContainer.transparent({
-    Key? key,
+    super.key,
     this.child,
     this.borderRadius,
     this.padding,
@@ -64,10 +64,10 @@ class MyContainer extends StatelessWidget {
     this.margin,
     this.splashColor,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   const MyContainer.none({
-    Key? key,
+    super.key,
     this.child,
     this.borderRadius,
     this.padding,
@@ -87,10 +87,10 @@ class MyContainer extends StatelessWidget {
     this.margin,
     this.splashColor,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   const MyContainer.bordered({
-    Key? key,
+    super.key,
     this.child,
     this.borderRadius,
     this.padding,
@@ -110,10 +110,10 @@ class MyContainer extends StatelessWidget {
     this.margin,
     this.splashColor,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   const MyContainer.roundBordered({
-    Key? key,
+    super.key,
     this.child,
     this.borderRadius,
     this.padding,
@@ -133,10 +133,10 @@ class MyContainer extends StatelessWidget {
     this.margin,
     this.splashColor,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   const MyContainer.rounded({
-    Key? key,
+    super.key,
     this.child,
     this.borderRadius,
     this.padding,
@@ -156,7 +156,7 @@ class MyContainer extends StatelessWidget {
     this.margin,
     this.splashColor,
     this.borderColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

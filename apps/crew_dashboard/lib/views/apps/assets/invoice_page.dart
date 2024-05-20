@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/assets/invoice_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
@@ -19,9 +14,14 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class InvoicePage extends StatefulWidget {
-  const InvoicePage({Key? key}) : super(key: key);
+  const InvoicePage({super.key});
 
   @override
   State<InvoicePage> createState() => _InvoicePageState();
@@ -50,7 +50,7 @@ class _InvoicePageState extends State<InvoicePage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Invoice",
                       fontSize: 18,
                       fontWeight: 600,
@@ -92,17 +92,17 @@ class _InvoicePageState extends State<InvoicePage>
                                         height: 16,
                                       ),
                                       MySpacing.width(8),
-                                      MyText.titleMedium("Captain App"),
+                                      const MyText.titleMedium("Captain App"),
                                     ],
                                   ),
-                                  MyText.titleMedium("Invoice"),
+                                  const MyText.titleMedium("Invoice"),
                                 ],
                               ),
                               MySpacing.height(40),
                               MyFlex(
                                 runAlignment: WrapAlignment.spaceBetween,
                                 children: [
-                                  MyFlexItem(
+                                  const MyFlexItem(
                                     sizes: "xxl-6 xl-6 sm-6  ",
                                     child: MyText.bodyMedium(
                                       "Hello, David Geddes",
@@ -118,17 +118,17 @@ class _InvoicePageState extends State<InvoicePage>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            MyText.bodySmall(
+                                            const MyText.bodySmall(
                                               "Order Date :",
                                               fontWeight: 600,
                                             ),
                                             MySpacing.height(8),
-                                            MyText.bodySmall(
+                                            const MyText.bodySmall(
                                               "Order Status :",
                                               fontWeight: 600,
                                             ),
                                             MySpacing.height(8),
-                                            MyText.bodySmall(
+                                            const MyText.bodySmall(
                                               "Order No. :",
                                               fontWeight: 600,
                                             ),
@@ -138,7 +138,7 @@ class _InvoicePageState extends State<InvoicePage>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.end,
                                           children: [
-                                            MyText.bodySmall(
+                                            const MyText.bodySmall(
                                               "May 10, 2023",
                                             ),
                                             MySpacing.height(8),
@@ -153,7 +153,7 @@ class _InvoicePageState extends State<InvoicePage>
                                               ),
                                             ),
                                             MySpacing.height(8),
-                                            MyText.bodySmall(
+                                            const MyText.bodySmall(
                                               "#000047",
                                               fontWeight: 600,
                                             ),
@@ -175,42 +175,42 @@ class _InvoicePageState extends State<InvoicePage>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        MyText.bodyMedium(
+                                        const MyText.bodyMedium(
                                           "Billing Address",
                                           fontWeight: 600,
                                         ),
                                         MySpacing.height(4),
-                                        MyText.bodySmall("Apple Head"),
+                                        const MyText.bodySmall("Apple Head"),
                                         MySpacing.height(4),
-                                        MyText.bodySmall(
+                                        const MyText.bodySmall(
                                           "4006 S Lamar Blvd #650",
                                         ),
                                         MySpacing.height(4),
-                                        MyText.bodySmall(
+                                        const MyText.bodySmall(
                                           "Austin, Austin 78704",
                                         ),
                                         MySpacing.height(4),
-                                        MyText.bodySmall("P: (512) 474-5433"),
+                                        const MyText.bodySmall("P: (512) 474-5433"),
                                       ],
                                     ),
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        MyText.bodyMedium(
+                                        const MyText.bodyMedium(
                                           "Shipping Address",
                                           fontWeight: 600,
                                         ),
                                         MySpacing.height(4),
-                                        MyText.bodySmall("Denish Navadiya"),
+                                        const MyText.bodySmall("Denish Navadiya"),
                                         MySpacing.height(4),
-                                        MyText.bodySmall("75 E Ramapo Ave"),
+                                        const MyText.bodySmall("75 E Ramapo Ave"),
                                         MySpacing.height(4),
-                                        MyText.bodySmall(
+                                        const MyText.bodySmall(
                                           "Mahwah, New Mexico 07430",
                                         ),
                                         MySpacing.height(4),
-                                        MyText.bodySmall("P: (201) 512-1141"),
+                                        const MyText.bodySmall("P: (201) 512-1141"),
                                       ],
                                     ),
                                     QrImageView(
@@ -265,7 +265,7 @@ class _InvoicePageState extends State<InvoicePage>
                                         ),
                                       ),
                                     ],
-                                    rows: [
+                                    rows: const [
                                       DataRow(
                                         cells: [
                                           DataCell(
@@ -360,12 +360,12 @@ class _InvoicePageState extends State<InvoicePage>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      MyText.bodySmall(
+                                      const MyText.bodySmall(
                                         "Sub Total:",
                                         fontWeight: 600,
                                       ),
                                       MySpacing.width(12),
-                                      MyText.bodySmall(
+                                      const MyText.bodySmall(
                                         "Discount (20%):",
                                         fontWeight: 600,
                                       ),
@@ -376,12 +376,12 @@ class _InvoicePageState extends State<InvoicePage>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      MyText.bodySmall(
+                                      const MyText.bodySmall(
                                         "\$820",
                                         fontWeight: 600,
                                       ),
                                       MySpacing.width(12),
-                                      MyText.bodySmall(
+                                      const MyText.bodySmall(
                                         "\$164",
                                         fontWeight: 600,
                                       ),
@@ -390,13 +390,13 @@ class _InvoicePageState extends State<InvoicePage>
                                 ],
                               ),
                               MySpacing.height(12),
-                              MyText(
+                              const MyText(
                                 "\$656 USD",
                                 fontWeight: 700,
                                 fontSize: 22,
                               ),
                               MySpacing.height(22),
-                              MyText.bodySmall(
+                              const MyText.bodySmall(
                                 "Notes:",
                                 fontWeight: 600,
                               ),

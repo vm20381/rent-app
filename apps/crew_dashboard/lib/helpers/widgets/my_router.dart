@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_middleware.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_route.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_route_exception.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_routes.dart';
+import 'package:flutter/material.dart';
 
 class MyRouter {
   static T? getArgs<T>(BuildContext context) {

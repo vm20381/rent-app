@@ -1,15 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/fitness/fitness_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
-
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_breadcrumb_item.dart';
-
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_container.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_flex.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_flex_item.dart';
@@ -19,6 +12,11 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class FitnessScreen extends StatefulWidget {
   const FitnessScreen({super.key});
@@ -64,7 +62,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Fitness",
                       fontSize: 18,
                       fontWeight: 600,
@@ -136,7 +134,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      MyText.bodyMedium(
+                                      const MyText.bodyMedium(
                                         "Activity",
                                         fontWeight: 600,
                                       ),
@@ -156,8 +154,8 @@ class _FitnessScreenState extends State<FitnessScreen>
                                               height: 32,
                                               child: MyText.bodySmall(
                                                 behavior.toString(),
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                                 fontWeight: 600,
                                               ),
                                             );
@@ -173,14 +171,14 @@ class _FitnessScreenState extends State<FitnessScreen>
                                               MyText.labelMedium(
                                                 controller.selectedActivity
                                                     .toString(),
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                               ),
                                               Icon(
                                                 LucideIcons.chevronDown,
                                                 size: 22,
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                               ),
                                             ],
                                           ),
@@ -190,15 +188,14 @@ class _FitnessScreenState extends State<FitnessScreen>
                                   ),
                                   SfCartesianChart(
                                     plotAreaBorderWidth: 0,
-                                    primaryXAxis: CategoryAxis(
-                                      majorGridLines:
-                                          const MajorGridLines(width: 0),
+                                    primaryXAxis: const CategoryAxis(
+                                      majorGridLines: MajorGridLines(width: 0),
                                     ),
-                                    primaryYAxis: NumericAxis(
+                                    primaryYAxis: const NumericAxis(
                                         // majorGridLines:
                                         // const MajorGridLines(width: 0),
                                         ),
-                                    series: <ChartSeries>[
+                                    series: <CartesianSeries>[
                                       SplineSeries<ChartSampleData, String>(
                                         color: const Color(0xff727cf5),
                                         dataLabelSettings:
@@ -236,7 +233,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      MyText.bodyMedium(
+                                      const MyText.bodyMedium(
                                         "Recommended Food",
                                         textAlign: TextAlign.end,
                                         fontWeight: 600,
@@ -256,8 +253,8 @@ class _FitnessScreenState extends State<FitnessScreen>
                                               height: 32,
                                               child: MyText.bodySmall(
                                                 behavior.toString(),
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                                 fontWeight: 600,
                                               ),
                                             );
@@ -273,14 +270,14 @@ class _FitnessScreenState extends State<FitnessScreen>
                                               MyText.labelMedium(
                                                 controller.selectedFood
                                                     .toString(),
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                               ),
                                               Icon(
                                                 LucideIcons.chevronDown,
                                                 size: 22,
-                                                color: theme
-                                                    .colorScheme.onBackground,
+                                                color:
+                                                    theme.colorScheme.onSurface,
                                               ),
                                             ],
                                           ),
@@ -336,7 +333,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Expanded(
+                                            const Expanded(
                                               child: MyText.bodyMedium(
                                                 "Popular Trainer",
                                                 fontWeight: 600,
@@ -345,12 +342,13 @@ class _FitnessScreenState extends State<FitnessScreen>
                                             ),
                                             Row(
                                               children: [
-                                                MyText.bodyMedium(
+                                                const MyText.bodyMedium(
                                                   'ViewAll',
                                                   fontWeight: 600,
                                                 ),
                                                 MySpacing.width(4),
-                                                Icon(LucideIcons.chevronRight),
+                                                const Icon(
+                                                    LucideIcons.chevronRight,),
                                               ],
                                             ),
                                           ],
@@ -389,7 +387,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            MyText.bodyMedium(
+                                            const MyText.bodyMedium(
                                               'Output',
                                               fontWeight: 600,
                                             ),
@@ -411,7 +409,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                                                     child: MyText.bodySmall(
                                                       behavior.toString(),
                                                       color: theme.colorScheme
-                                                          .onBackground,
+                                                          .onSurface,
                                                       fontWeight: 600,
                                                     ),
                                                   );
@@ -429,13 +427,13 @@ class _FitnessScreenState extends State<FitnessScreen>
                                                       controller.selectedOutPut
                                                           .toString(),
                                                       color: theme.colorScheme
-                                                          .onBackground,
+                                                          .onSurface,
                                                     ),
                                                     Icon(
                                                       LucideIcons.chevronDown,
                                                       size: 22,
                                                       color: theme.colorScheme
-                                                          .onBackground,
+                                                          .onSurface,
                                                     ),
                                                   ],
                                                 ),
@@ -495,7 +493,7 @@ class _FitnessScreenState extends State<FitnessScreen>
                                 context,
                               ),
                             ),
-                            MyText.bodyMedium('Schedule', fontWeight: 600),
+                            const MyText.bodyMedium('Schedule', fontWeight: 600),
                             MySpacing.height(8),
                             buildScheduled(
                               'Fitness',
@@ -627,7 +625,7 @@ class _FitnessScreenState extends State<FitnessScreen>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        MyText.bodyMedium(
+        const MyText.bodyMedium(
           'Profile',
           fontWeight: 600,
         ),
@@ -642,13 +640,13 @@ class _FitnessScreenState extends State<FitnessScreen>
             ),
           ),
         ),
-        Center(
+        const Center(
           child: MyText.bodyMedium(
             'Mike Rowe',
             fontWeight: 600,
           ),
         ),
-        Center(
+        const Center(
           child: MyText.bodyMedium(
             '@mikerowe',
             fontWeight: 600,
@@ -668,7 +666,7 @@ class _FitnessScreenState extends State<FitnessScreen>
           ),
         ),
         MySpacing.height(12),
-        MyText.bodyMedium("Calendar", fontWeight: 600),
+        const MyText.bodyMedium("Calendar", fontWeight: 600),
       ],
     );
   }
@@ -786,7 +784,7 @@ class _FitnessScreenState extends State<FitnessScreen>
         text: 'Today Activity',
         textStyle: MyTextStyle.bodySmall(fontWeight: 600),
       ),
-      legend: Legend(
+      legend: const Legend(
         isVisible: true,
         iconHeight: 20,
         iconWidth: 20,

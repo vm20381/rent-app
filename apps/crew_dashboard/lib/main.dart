@@ -1,4 +1,5 @@
 import 'package:captainapp_crew_dashboard/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,6 @@ import 'helpers/storage/local_storage.dart';
 import 'helpers/theme/app_notifier.dart';
 import 'helpers/theme/app_style.dart';
 import 'helpers/theme/theme_customizer.dart';
-
-import 'package:firebase_core/firebase_core.dart';
 // ignore: depend_on_referenced_packages
 
 void main() async {

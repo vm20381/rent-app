@@ -1,9 +1,3 @@
-import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_utils/src/extensions/string_extensions.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/forms/basic_controller.dart';
 import 'package:captainapp_crew_dashboard/controller/forms/validation_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/extensions/string.dart';
@@ -21,9 +15,15 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:feather_icons/feather_icons.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_utils/src/extensions/string_extensions.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ValidationPage extends StatefulWidget {
-  const ValidationPage({Key? key}) : super(key: key);
+  const ValidationPage({super.key});
 
   @override
   State<ValidationPage> createState() => _ValidationPageState();
@@ -81,7 +81,7 @@ class _ValidationPageState extends State<ValidationPage>
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     FeatherIcons.key,
                                     size: 16,
                                   ),
@@ -200,7 +200,7 @@ class _ValidationPageState extends State<ValidationPage>
                                           MySpacing.height(8),
                                           DropdownButtonFormField<Gender>(
                                             dropdownColor:
-                                                theme.colorScheme.background,
+                                                theme.colorScheme.surface,
                                             menuMaxHeight: 200,
                                             items: Gender.values
                                                 .map(

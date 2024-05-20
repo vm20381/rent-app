@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/auth/locked_2_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -11,6 +8,9 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/auth_layout_2.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class LockedPage2 extends StatefulWidget {
   const LockedPage2({super.key});
@@ -50,26 +50,26 @@ class _LockedPage2State extends State<LockedPage2>
                         color: contentTheme.primary,
                       ),
                       MySpacing.width(16),
-                      MyText.bodyMedium(
+                      const MyText.bodyMedium(
                         "Captain App",
                         fontSize: 24,
                         fontWeight: 600,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     height: 40,
                   ),
                   Column(
                     children: [
-                      Center(
+                      const Center(
                         child: MyText.titleLarge(
                           "locked",
                           fontWeight: 700,
                         ),
                       ),
                       MySpacing.height(8),
-                      Center(
+                      const Center(
                         child: MyText(
                           "Hi ! Den",
                         ),
@@ -90,7 +90,7 @@ class _LockedPage2State extends State<LockedPage2>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          MyText.labelMedium(
+                          const MyText.labelMedium(
                             "Password",
                             fontWeight: 600,
                           ),

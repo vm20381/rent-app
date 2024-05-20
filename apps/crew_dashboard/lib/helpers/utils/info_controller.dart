@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
+import 'package:flutter/material.dart';
 
 class Info {
   static message(
@@ -10,7 +10,7 @@ class Info {
     Duration? duration,
     SnackBarBehavior snackBarBehavior = SnackBarBehavior.fixed,
   }) {
-    duration ??= Duration(seconds: 3);
+    duration ??= const Duration(seconds: 3);
     ThemeData theme = AppTheme.theme;
 
     SnackBar snackBar = SnackBar(
@@ -37,7 +37,7 @@ class Info {
     Duration? duration,
     SnackBarBehavior snackBarBehavior = SnackBarBehavior.fixed,
   }) {
-    duration ??= Duration(seconds: 3);
+    duration ??= const Duration(seconds: 3);
     ThemeData theme = AppTheme.theme;
 
     SnackBar snackBar = SnackBar(

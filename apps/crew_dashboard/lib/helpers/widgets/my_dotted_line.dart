@@ -46,7 +46,7 @@ class MyDottedLine extends StatefulWidget {
   final Widget? child;
 
   MyDottedLine({
-    Key? key,
+    super.key,
     this.color = Colors.black,
     this.height,
     this.width,
@@ -55,7 +55,7 @@ class MyDottedLine extends StatefulWidget {
     this.strokeWidth = 1.0,
     this.corner,
     this.child,
-  }) : super(key: key) {
+  }) {
     assert(width != null || height != null || child != null);
   }
 
@@ -163,7 +163,7 @@ class _DottedLinePainter extends CustomPainter {
       double length = isHorizontal ? size.width : size.height;
       double count = (length) / (dottedLength! + space!);
       if (count < 2.0) return;
-      var startOffset = Offset(0, 0);
+      var startOffset = const Offset(0, 0);
       for (int i = 0; i < count.toInt(); i++) {
         canvas.drawLine(
             startOffset,

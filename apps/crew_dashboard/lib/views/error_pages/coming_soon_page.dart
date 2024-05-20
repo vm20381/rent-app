@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/error_pages/coming_soon_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ComingSoonPage extends StatefulWidget {
-  const ComingSoonPage({Key? key}) : super(key: key);
+  const ComingSoonPage({super.key});
 
   @override
   State<ComingSoonPage> createState() => _ComingSoonPageState();
@@ -30,7 +30,7 @@ class _ComingSoonPageState extends State<ComingSoonPage>
 
   void setCountDown() {
     if (mounted) {
-      final reduceSecondsBy = 1;
+      const reduceSecondsBy = 1;
       setState(() {
         final seconds = myDuration.inSeconds - reduceSecondsBy;
         if (seconds < 0) {
@@ -73,12 +73,12 @@ class _ComingSoonPageState extends State<ComingSoonPage>
                       size: 52,
                     ),
                     MySpacing.height(24),
-                    MyText.titleLarge(
+                    const MyText.titleLarge(
                       "Arriving Soon",
                       fontSize: 52,
                     ),
                     MySpacing.height(8),
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Something Started forming, and will take shape soon.",
                     ),
                     MySpacing.height(24),

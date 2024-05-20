@@ -5,7 +5,7 @@ class MyProgressBar extends StatelessWidget {
   final double progress, height, width, radius;
 
   const MyProgressBar(
-      {this.activeColor = Colors.blue,
+      {super.key, this.activeColor = Colors.blue,
       this.inactiveColor = Colors.grey,
       this.progress = 1,
       this.height = 1,

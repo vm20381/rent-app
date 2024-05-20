@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 Text('Welcome ${controller.nameOfUser} to Your App!'),
                 MySpacing.height(16),
-                const Text('This is the home page.'),
+                const Text('This is the home page. Let\'s test Hot Restart!'),
                 MySpacing.height(30),
                 const Text('Remember, read the README.md file!'),
                 // note: after you add example_package to your pubspec.yaml; you'll need to rerun melos bootstrap.

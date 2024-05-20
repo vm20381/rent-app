@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:captainapp_crew_dashboard/helpers/localizations/language.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_notifier.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AppLocalizationsDelegate extends LocalizationsDelegate {
   final BuildContext context;

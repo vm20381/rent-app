@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_utils.dart';
+import 'package:flutter/material.dart';
 
 class CarouselsController extends MyController {
   List<String> dummyTexts =
@@ -21,7 +21,7 @@ class CarouselsController extends MyController {
   @override
   void onInit() {
     super.onInit();
-    timerAnimation = Timer.periodic(Duration(seconds: 5), (Timer timer) {
+    timerAnimation = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
       if (selectedAnimatedCarousel < animatedCarouselSize - 1) {
         selectedAnimatedCarousel++;
       } else {
@@ -30,7 +30,7 @@ class CarouselsController extends MyController {
 
       animatedPageController.animateToPage(
         selectedAnimatedCarousel,
-        duration: Duration(milliseconds: 600),
+        duration: const Duration(milliseconds: 600),
         curve: Curves.ease,
       );
       update();

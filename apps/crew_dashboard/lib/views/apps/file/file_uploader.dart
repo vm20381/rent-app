@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/file_manager/file_uploader_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/ui_mixins.dart';
@@ -18,9 +15,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 class FileUploader extends StatefulWidget {
-  const FileUploader({Key? key}) : super(key: key);
+  const FileUploader({super.key});
 
   @override
   State<FileUploader> createState() => _FileUploaderState();
@@ -49,7 +49,7 @@ class _FileUploaderState extends State<FileUploader>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "File Upload",
                       fontWeight: 600,
                     ),
@@ -75,7 +75,7 @@ class _FileUploaderState extends State<FileUploader>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            MyText.bodyMedium(
+                            const MyText.bodyMedium(
                               "Please upload any file to see a previews",
                               fontSize: 16,
                               fontWeight: 600,
@@ -105,7 +105,7 @@ class _FileUploaderState extends State<FileUploader>
                                           Images.fileManager[1],
                                           height: 200,
                                         ),
-                                        MyContainer(
+                                        const MyContainer(
                                           width: 340,
                                           alignment: Alignment.center,
                                           paddingAll: 0,

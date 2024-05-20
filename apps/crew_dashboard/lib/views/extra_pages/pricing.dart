@@ -1,7 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/extra_pages/pricing_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/utils/my_shadow.dart';
@@ -15,9 +11,13 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_spacing.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/instance_manager.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class Pricing extends StatefulWidget {
-  const Pricing({Key? key}) : super(key: key);
+  const Pricing({super.key});
 
   @override
   State<Pricing> createState() => _PricingState();
@@ -46,7 +46,7 @@ class _PricingState extends State<Pricing>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Pricing",
                       fontSize: 18,
                       fontWeight: 600,
@@ -63,7 +63,7 @@ class _PricingState extends State<Pricing>
               MySpacing.height(flexSpacing),
               Column(
                 children: [
-                  MyText.titleLarge("Pricing", fontWeight: 600),
+                  const MyText.titleLarge("Pricing", fontWeight: 600),
                   MySpacing.height(40),
                   SizedBox(
                     width: 300,
@@ -145,11 +145,11 @@ class _PricingState extends State<Pricing>
                       children: [
                         MySpacing.height(20),
                         controller.currentTabId % 2 == 1
-                            ? MyText.titleLarge(
+                            ? const MyText.titleLarge(
                                 "\$56",
                                 fontSize: 40,
                               )
-                            : MyText.titleLarge(
+                            : const MyText.titleLarge(
                                 "\$150",
                                 fontSize: 40,
                               ),
@@ -218,7 +218,7 @@ class _PricingState extends State<Pricing>
                   width: 110,
                   borderRadiusAll: 12,
                   paddingAll: 0,
-                  child: Center(child: MyText.bodyMedium("Starter")),
+                  child: const Center(child: MyText.bodyMedium("Starter")),
                 ),
               ),
             ],
@@ -244,11 +244,11 @@ class _PricingState extends State<Pricing>
                         children: [
                           MySpacing.height(20),
                           controller.currentTabId % 2 == 1
-                              ? MyText.titleLarge(
+                              ? const MyText.titleLarge(
                                   "\$89",
                                   fontSize: 40,
                                 )
-                              : MyText.titleLarge(
+                              : const MyText.titleLarge(
                                   "\$200",
                                   fontSize: 40,
                                 ),
@@ -357,11 +357,11 @@ class _PricingState extends State<Pricing>
                         children: [
                           MySpacing.height(20),
                           controller.currentTabId % 2 == 1
-                              ? MyText.titleLarge(
+                              ? const MyText.titleLarge(
                                   "\$100",
                                   fontSize: 40,
                                 )
-                              : MyText.titleLarge(
+                              : const MyText.titleLarge(
                                   "\$300",
                                   fontSize: 40,
                                 ),
@@ -431,7 +431,7 @@ class _PricingState extends State<Pricing>
                   width: 110,
                   borderRadiusAll: 12,
                   paddingAll: 0,
-                  child: Center(child: MyText.bodyMedium("Enterprise")),
+                  child: const Center(child: MyText.bodyMedium("Enterprise")),
                 ),
               ),
             ],

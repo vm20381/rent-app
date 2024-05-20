@@ -1,6 +1,6 @@
+import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 import 'package:captainapp_crew_dashboard/models/entity_document.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
 
 class FileDownloadController extends MyController {
   List<EntityDocument> fileList = [];
@@ -46,7 +46,7 @@ class FileDownloadController extends MyController {
         // Optionally initiate a download process for each document
         for (var doc in entityDocuments) {
           downloadDocument(
-              doc); // Assuming you have a function to handle the download
+              doc,); // Assuming you have a function to handle the download
         }
       }
 

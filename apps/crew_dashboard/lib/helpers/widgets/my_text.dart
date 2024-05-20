@@ -1,7 +1,7 @@
-// ignore_for_file: annotate_overrides, overridden_fields
+// ignore_for_file: annotate_overrides, overridden_fields, use_key_in_widget_constructors
 
-import 'package:flutter/material.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
+import 'package:flutter/material.dart';
 
 class MyText extends StatelessWidget {
   //Key
@@ -33,7 +33,7 @@ class MyText extends StatelessWidget {
   final double? textScaleFactor;
   final TextWidthBasis? textWidthBasis;
 
-  MyText(
+  const MyText(
     this.text, {
     this.style,
     this.fontWeight = 500,
@@ -60,7 +60,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.displayLarge(
+  const MyText.displayLarge(
     this.text, {
     this.style,
     this.fontWeight,
@@ -87,7 +87,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.displayMedium(
+  const MyText.displayMedium(
     this.text, {
     this.style,
     this.fontWeight,
@@ -114,7 +114,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.displaySmall(
+  const MyText.displaySmall(
     this.text, {
     this.style,
     this.fontWeight,
@@ -141,7 +141,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.headlineLarge(
+  const MyText.headlineLarge(
     this.text, {
     this.style,
     this.fontWeight = 500,
@@ -168,7 +168,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.headlineMedium(
+  const MyText.headlineMedium(
     this.text, {
     this.style,
     this.fontWeight = 500,
@@ -195,7 +195,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.headlineSmall(
+  const MyText.headlineSmall(
     this.text, {
     this.style,
     this.fontWeight = 500,
@@ -222,7 +222,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.titleLarge(
+  const MyText.titleLarge(
     this.text, {
     this.style,
     this.fontWeight,
@@ -249,7 +249,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.titleMedium(
+  const MyText.titleMedium(
     this.text, {
     this.style,
     this.fontWeight,
@@ -276,7 +276,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.titleSmall(
+  const MyText.titleSmall(
     this.text, {
     this.style,
     this.fontWeight,
@@ -303,7 +303,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.labelLarge(
+  const MyText.labelLarge(
     this.text, {
     this.style,
     this.fontWeight,
@@ -330,7 +330,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.labelMedium(
+  const MyText.labelMedium(
     this.text, {
     this.style,
     this.fontWeight,
@@ -357,7 +357,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.labelSmall(
+  const MyText.labelSmall(
     this.text, {
     this.style,
     this.fontWeight,
@@ -384,7 +384,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.bodyLarge(
+  const MyText.bodyLarge(
     this.text, {
     this.style,
     this.fontWeight,
@@ -411,7 +411,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.bodyMedium(
+  const MyText.bodyMedium(
     this.text, {
     this.style,
     this.fontWeight,
@@ -438,7 +438,7 @@ class MyText extends StatelessWidget {
     this.textWidthBasis,
   });
 
-  MyText.bodySmall(
+  const MyText.bodySmall(
     this.text, {
     this.style,
     this.fontWeight,

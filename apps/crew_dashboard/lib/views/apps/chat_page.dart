@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import 'package:captainapp_crew_dashboard/controller/apps/chat_controller.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/theme/app_theme.dart';
@@ -21,9 +18,12 @@ import 'package:captainapp_crew_dashboard/helpers/widgets/my_text_style.dart';
 import 'package:captainapp_crew_dashboard/helpers/widgets/responsive.dart';
 import 'package:captainapp_crew_dashboard/images.dart';
 import 'package:captainapp_crew_dashboard/views/layouts/layout.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
+  const ChatPage({super.key});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -52,7 +52,7 @@ class _ChatPageState extends State<ChatPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MyText.titleMedium(
+                    const MyText.titleMedium(
                       "Chat",
                       fontSize: 18,
                       fontWeight: 600,
@@ -98,7 +98,7 @@ class _ChatPageState extends State<ChatPage>
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          MyText.labelLarge(
+                                          const MyText.labelLarge(
                                             "Den",
                                           ),
                                           Row(
@@ -112,7 +112,7 @@ class _ChatPageState extends State<ChatPage>
                                                     Clip.antiAliasWithSaveLayer,
                                               ),
                                               MySpacing.width(4),
-                                              MyText.bodyMedium(
+                                              const MyText.bodyMedium(
                                                 "Online",
                                                 fontSize: 12,
                                               ),
@@ -140,7 +140,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 16,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodySmall("New Group"),
+                                                const MyText.bodySmall("New Group"),
                                               ],
                                             ),
                                           ),
@@ -154,7 +154,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 16,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodySmall("Contacts"),
+                                                const MyText.bodySmall("Contacts"),
                                               ],
                                             ),
                                           ),
@@ -168,7 +168,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 16,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodySmall(
+                                                const MyText.bodySmall(
                                                   "Save Message",
                                                 ),
                                               ],
@@ -184,7 +184,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 16,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodySmall(
+                                                const MyText.bodySmall(
                                                   "Invite Friends",
                                                 ),
                                               ],
@@ -200,7 +200,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 16,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodySmall("Help"),
+                                                const MyText.bodySmall("Help"),
                                               ],
                                             ),
                                           ),
@@ -214,7 +214,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 16,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodySmall("Setting"),
+                                                const MyText.bodySmall("Setting"),
                                               ],
                                             ),
                                           ),
@@ -264,10 +264,10 @@ class _ChatPageState extends State<ChatPage>
                                         elevation: 0,
                                         borderRadiusAll: 8,
                                         backgroundColor: theme
-                                            .colorScheme.background
+                                            .colorScheme.surface
                                             .withAlpha(5),
                                         splashColor: theme
-                                            .colorScheme.onBackground
+                                            .colorScheme.onSurface
                                             .withAlpha(10),
                                         child: SizedBox(
                                           height: 60,
@@ -446,7 +446,7 @@ class _ChatPageState extends State<ChatPage>
                                               ),
                                             ),
                                             MySpacing.height(8),
-                                            MyText.bodyLarge(
+                                            const MyText.bodyLarge(
                                               "Amanda Smith",
                                               fontSize: 20,
                                               fontWeight: 600,
@@ -462,7 +462,7 @@ class _ChatPageState extends State<ChatPage>
                                                   size: 20,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodyMedium(
+                                                const MyText.bodyMedium(
                                                   "Los Angeles United States",
                                                 ),
                                               ],
@@ -474,14 +474,14 @@ class _ChatPageState extends State<ChatPage>
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                MyText.bodyMedium("@amanda"),
+                                                const MyText.bodyMedium("@amanda"),
                                                 MySpacing.width(8),
                                                 const MyContainer.roundBordered(
                                                   color: Colors.grey,
                                                   paddingAll: 1,
                                                 ),
                                                 MySpacing.width(8),
-                                                MyText.bodyMedium(
+                                                const MyText.bodyMedium(
                                                   "Designer at google",
                                                   overflow:
                                                       TextOverflow.ellipsis,
@@ -552,7 +552,7 @@ class _ChatPageState extends State<ChatPage>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      MyText.titleMedium("Attached File"),
+                                      const MyText.titleMedium("Attached File"),
                                       MySpacing.height(12),
                                       buildAttachedFile(
                                         "image(1).png",
@@ -621,7 +621,7 @@ class _ChatPageState extends State<ChatPage>
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            MyContainer(
+            const MyContainer(
               paddingAll: 4,
               height: 32,
               width: 32,

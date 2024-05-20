@@ -1,5 +1,5 @@
-import 'package:quill_html_editor/quill_html_editor.dart';
 import 'package:captainapp_crew_dashboard/controller/my_controller.dart';
+import 'package:quill_html_editor/quill_html_editor.dart';
 
 class QuillHtmlEditorController extends MyController {
   final QuillEditorController quillHtmlEditor = QuillEditorController();
