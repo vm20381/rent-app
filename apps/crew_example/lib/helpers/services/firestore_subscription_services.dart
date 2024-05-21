@@ -41,7 +41,7 @@ class TodoItem {
   final String id;
   final String title;
   final String description;
-  final bool isDone;
+  bool isDone;
 
   TodoItem({
     required this.id,
