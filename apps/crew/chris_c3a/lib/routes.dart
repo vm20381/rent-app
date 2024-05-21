@@ -1,3 +1,4 @@
+import 'package:chris_c3a/views/todos/todos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -122,6 +123,11 @@ getPageRoute() {
     GetPage(
       name: '/about',
       page: () => const AboutPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/todos',
+      page: () => const TodosPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];
