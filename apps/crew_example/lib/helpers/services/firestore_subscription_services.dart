@@ -24,6 +24,9 @@ class FirestoreServiceImpl extends GetxService implements FirestoreService {
   }
 }
 
+// Ensure to include the following in main.dart
+  // Get.put<FirestoreService>(FirestoreServiceImpl());
+
 // Example of how to use FirestoreService in a controller
 // class MyController extends GetxController {
 //   final FirestoreService _firestoreService = Get.find<FirestoreService>();
