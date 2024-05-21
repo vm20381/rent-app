@@ -25,16 +25,16 @@ class FirestoreServiceImpl extends GetxService implements FirestoreService {
 }
 
 // Example of how to use FirestoreService in a controller
-class MyController extends GetxController {
-  final FirestoreService _firestoreService = Get.find<FirestoreService>();
+// class MyController extends GetxController {
+//   final FirestoreService _firestoreService = Get.find<FirestoreService>();
 
-  Stream<List<TodoItem>> get myCollectionStream {
-    return _firestoreService.collectionStream<TodoItem>(
-      'myCollection',
-      (data, documentId) => TodoItem.fromFirestore(data, documentId),
-    );
-  }
-}
+//   Stream<List<TodoItem>> get myCollectionStream {
+//     return _firestoreService.collectionStream<TodoItem>(
+//       'myCollection',
+//       (data, documentId) => TodoItem.fromFirestore(data, documentId),
+//     );
+//   }
+// }
 
 // Example model class
 class TodoItem {
