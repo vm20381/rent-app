@@ -7,8 +7,9 @@ import '../../helpers/services/auth_services.dart';
 class HomePageController extends GetxController {
   late String nameOfUser;
   late String serviceMessage;
-  
-  final FirestoreService _firestoreService = Get.find<FirestoreService>();
+
+  final FirestoreSubscriptionService _firestoreService =
+      Get.find<FirestoreSubscriptionService>();
 
   @override
   void onInit() {

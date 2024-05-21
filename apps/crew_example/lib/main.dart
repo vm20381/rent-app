@@ -40,7 +40,7 @@ void main() async {
   // // Get.put(DeepLinkController());
   Get.put(FirebaseFunctionService());
   Get.put(ExamplePackageService());
-  Get.put<FirestoreService>(FirestoreServiceImpl());
+  Get.put<FirestoreSubscriptionService>(FirestoreServiceImpl());
 
   runApp(
     ChangeNotifierProvider<AppNotifier>(
