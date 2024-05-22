@@ -1,10 +1,14 @@
 // A model for a todo list item
-class Todo {
-  String title;
+class ToDo {
+  String task;
   bool isDone;
+  String userId;
+  String userName;
 
-  Todo({
-    required this.title,
+  ToDo({
+    required this.task,
     this.isDone = false,
+    required this.userId,
+    required this.userName,
   });
 }

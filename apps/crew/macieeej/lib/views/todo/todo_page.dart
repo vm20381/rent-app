@@ -1,4 +1,3 @@
-// lib/views/todo/todo_list_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
@@ -54,8 +53,25 @@ class _ToDoListPageState extends State<ToDoListPage> {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: controller.todos.length,
                     itemBuilder: (context, index) {
+                      var todo = controller.todos[index];
                       return ListTile(
-                        title: Text(controller.todos[index]),
+                        leading: Checkbox(
+                          value: todo.isDone,
+                          onChanged: (bool? value) {
+                            if (value != null) {
+                              controller.toggleDone(index);
+                            }
+                          },
+                        ),
+                        title: Text(
+                          todo.task,
+                          style: TextStyle(
+                            decoration: todo.isDone
+                                ? TextDecoration.lineThrough
+                                : TextDecoration.none,
+                          ),
+                        ),
+                        subtitle: Text('Created by: ${todo.userName}'),
                         trailing: IconButton(
                           icon: Icon(Icons.delete),
                           onPressed: () => controller.removeTodoAt(index),
