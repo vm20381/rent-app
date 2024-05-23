@@ -8,12 +8,12 @@ class Todo extends IdentifierModel {
   bool isDone;
 
   // Constructor
-  Todo(
-    super.id, {
+  Todo({
+    String? id,
     required this.title,
     required this.description,
     this.isDone = false,
-  });
+  }) : super(id ?? '');
 
   // creates a copy of this todo with the given fields replaced
   Todo copyWith({
@@ -23,7 +23,7 @@ class Todo extends IdentifierModel {
     bool? isDone,
   }) {
     return Todo(
-      id ?? this.id,
+      id: id ?? this.id,
       title: title ?? this.title,
       description: description ?? this.description,
       isDone: isDone ?? this.isDone,
@@ -37,7 +37,6 @@ class Todo extends IdentifierModel {
         isDone = map['isDone'] ?? false;
 
   Map<String, dynamic> toMap() => {
-        'id': id,
         'title': title,
         'description': description,
         'isDone': isDone,

@@ -29,8 +29,12 @@ class TodosPageController extends MyController {
     return _todos;
   }
 
-  Future<void> addTodo(Todo todo) {
-    return _todosCollection.add(todo.toMap());
+  Future<void> addTodo(Todo todo) async {
+    DocumentReference docRef = await _todosCollection.add(todo.toMap());
+    // Update the Todo object with the ID from Firestore and add it back to Firestore
+    todo = todo.copyWith(id: docRef.id);
+    // Update id field in firestore
+    await _todosCollection.doc(docRef.id).set(todo.toMap());
   }
 
   Future<void> updateTodo(Todo todo) {

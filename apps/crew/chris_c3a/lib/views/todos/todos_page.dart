@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '/views/layouts/layout.dart';
 import '../../controllers/todos/todos_page_controller.dart';
 import '../../helpers/widgets/my_spacing.dart';
+import '../../widgets/todos/todo_add.dart';
 
 class TodosPage extends StatefulWidget {
   const TodosPage({super.key});
@@ -31,6 +32,11 @@ class _TodosPageState extends State<TodosPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('Todos Page'),
+            MySpacing.height(30),
+
+            // AddTodo widget
+            AddTodo(),
+
             MySpacing.height(30),
             // TodosList widget
             const TodosList(),
