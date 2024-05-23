@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vm20381/views/auction_views/add_auction_item_page.dart';
+import 'package:vm20381/views/auction_views/auction_item_detail.dart';
+import 'package:vm20381/views/auction_views/auction_items_page.dart';
 import 'helpers/services/auth_services.dart';
 import 'views/auth/locked.dart';
 import 'views/auth/login.dart';
 import 'views/error_pages/error_404.dart';
 import 'views/home/home_page.dart';
 import 'views/me/edit_user_profile.dart';
+import '/views/new_page/new_page.dart'; //Added route for new page
+
 
 // class AuthMiddleware extends GetMiddleware {
 //   final AuthService _authService = Get.find<AuthService>();
@@ -117,6 +122,22 @@ getPageRoute() {
       page: () => const EditUserProfile(),
       middlewares: [AuthMiddleware()],
     ),
+    GetPage(
+    name: '/new_page',
+    page: () => NewPage(),
+    ), //Route for new_page created
+    GetPage(
+    name: '/add_auction_item',
+    page: () => AddAuctionItemPage(),
+    ), //Route for add_auction_item created
+    GetPage(
+    name: '/auction_items',
+    page: () => AuctionItemsPage(),
+    ), //Route for auction_items created
+    GetPage(
+    name: '/auction_item_detail',
+    page: () => AuctionItemDetailPage(),
+    ), //Route for auction_item_detail created
   ];
   return routes
       .map(
@@ -129,3 +150,4 @@ getPageRoute() {
       )
       .toList();
 }
+
