@@ -139,6 +139,14 @@ class _LeftBarState extends State<LeftBar>
                       route: '/my-profile',
                       isCondensed: isCondensed,
                     ),
+                    //-----------------Todos-----------------//
+                    LabelWidget(label: 'Apps'.tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.list,
+                      title: "Todos",
+                      route: '/todos',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
