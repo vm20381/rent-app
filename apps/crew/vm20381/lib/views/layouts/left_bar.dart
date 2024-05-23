@@ -131,6 +131,26 @@ class _LeftBarState extends State<LeftBar>
                       route: '/my-profile',
                       isCondensed: isCondensed,
                     ),
+                     // Add the new page navigation item here
+                    LabelWidget(label: "New".tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.badgeDollarSign, // Choose an appropriate icon
+                      title: "New Page",
+                      route: '/new_page', // Ensure this matches your route name
+                      isCondensed: isCondensed, 
+                    ),
+                    NavigationItem(   //Left bar navigation for add_auction_item
+                      iconData: LucideIcons.plusCircle,
+                      title: "Add Auction Item",
+                      route: '/add_auction_item',
+                      isCondensed: isCondensed,
+                    ),
+                    NavigationItem(   //Left bar navigation for auction_items
+                      iconData: LucideIcons.gavel,
+                      title: "Listed Auction Items",
+                      route: '/auction_items',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
