@@ -4,78 +4,98 @@ import 'package:vm20381/helpers/utils/spring_scroll_behaviour.dart';
 import '/controllers/auction_controllers/auction_items_controller.dart';
 import '/views/layouts/layout.dart';
 
-
-//Page to display any listed auction items
-
-class AuctionItemsPage extends StatefulWidget {
-  const AuctionItemsPage({Key? key}) : super(key: key);
+// Page to display any listed auction items
+/*
+class AuctionItemsPage extends StatelessWidget {
+ 
 
   @override
   _AuctionItemsPageState createState() => _AuctionItemsPageState();
 }
+*/
 
-class _AuctionItemsPageState extends State<AuctionItemsPage> {
-  late AuctionItemsController controller;
+class AuctionItemsPage extends StatelessWidget {
+  const AuctionItemsPage({super.key});
 
+  /*
   @override
   void initState() {
     super.initState();
     controller = Get.put(AuctionItemsController());
     controller.fetchAuctionItems();
   }
+  */
 
   @override
   Widget build(BuildContext context) {
+    final AuctionItemsController controller = Get.put(AuctionItemsController()); // Moved outside the build method
+    print("Building AuctionItemsPage");
     return Scaffold(
       appBar: AppBar(
-        title: Text('Auction Items'),
+        title: const Text('Auction Items'),
       ),
       body: Layout(
-        child: GetBuilder<AuctionItemsController>(        // rebuilds the widget when the controller's state changes
-          init: controller,              //initialize the controller
-          builder: (controller) {
-            print("Building UI...");
-            if (controller.isLoading == true) {         //If the controller is still loading, display a loading indicator
+        child: Obx(() {
+        //builder: (controller) {
+            if (controller.isLoading.value) {
+              //If the controller is still loading, display a loading indicator
               print("Loading");
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (controller.auctionItems.isEmpty) {
               print("No auction items available.");
-              return Center(child: Text('No auction items available.'));   //If there are no auction items, display a message
+              return const Center(
+                child: Text(
+                  'No auction items available.',
+                ),
+              ); //If there are no auction items, display a message
             } else {
-              print("Auction items available: ${controller.auctionItems.length}");
-              return ScrollConfiguration(
-                behavior: SpringScrollBehavior(),
+              print(
+                "Auction items available: ${controller.auctionItems.length}",
+              );
+              return SingleChildScrollView(
+                physics: BouncingScrollPhysics(
+                  parent: const AlwaysScrollableScrollPhysics(),
+                  decelerationRate: ScrollDecelerationRate.values[1],
+                ),
                 child: Column(
-                  children: [
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: controller.auctionItems.length,      //Display the list of auction items
-                        itemBuilder: (context, index) {                 //For each item, display its description, current bid, and a button to place a bid
-                          final item = controller.auctionItems[index];
-                          print("Displaying item: ${item.description}");
-                          return Card(
-                            child: ListTile(
-                              title: Text(item.description),
-                              subtitle: Text('Current Bid: \$${item.currentBid}'),
-                              trailing: ElevatedButton(
-                                onPressed: () {
-                                  // Navigate to a detailed page where users can place bids
-                                  Get.toNamed('/auction_item_detail', arguments: item);
-                                },
-                                child: Text('Bid'),
+                  children: controller.auctionItems.map((item) {
+                    print("Displaying item: ${item.description}");
+                    return Card(
+                      child: ListTile(
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(item.description),
+                            SizedBox(height: 8.0),
+                            if (item.imageUrls.isNotEmpty)
+                              Center(
+                                child: Image.network(
+                                  item.imageUrls[0], // Display the first image
+                                  height: 200,
+                                  fit: BoxFit.contain,
+                                  alignment: Alignment.center,
+                                ),
                               ),
-                            ),
-                          );
-                        },
+                              SizedBox(height: 8.0),
+                              Text('Current Bid: \$${item.currentBid}'),
+                          ],
+                        ),
+                        trailing: ElevatedButton(
+                          onPressed: () {
+                            // Navigate to a detailed page where users can place bids
+                            Get.toNamed('/auction_item_detail', arguments: item,);
+                          },
+                          child: const Text('Bid'),
+                        ),
                       ),
-                    ),
-                  ],
+                    );
+                  }).toList(),
                 ),
               );
             }
-          },
+          }),
         ),
-      ),
+      
     );
   }
 }
