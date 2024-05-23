@@ -16,14 +16,13 @@ class ToDo {
     required this.userName,
   });
 
-  factory ToDo.fromDocument(DocumentSnapshot doc) {
-    Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+  factory ToDo.fromFirestore(Map<String, dynamic> data, String documentId) {
     return ToDo(
-      id: doc.id,
-      task: data['task'],
-      isDone: data['isDone'],
-      userId: data['userId'],
-      userName: data['userName'],
+      id: documentId,
+      task: data['task'] ?? '',
+      isDone: data['isDone'] ?? false,
+      userId: data['userId'] ?? '',
+      userName: data['userName'] ?? 'Unknown',
     );
   }
 
