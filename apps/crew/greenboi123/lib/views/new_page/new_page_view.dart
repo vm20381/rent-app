@@ -28,8 +28,8 @@ class _NewPageState extends State<NewPage> {
           return Container(
             child: Center(
               child: ElevatedButton(
-                onPressed: controller.navigateToNewPage,
-                child: Text('Navigate to New Page'),
+                onPressed: controller.navigateToHomePage,
+                child: Text('Navigate to Home Page'),
               ),
             ),
           );

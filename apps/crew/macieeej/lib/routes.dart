@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:macieeej/views/newpage/new_page.dart';
+import 'package:macieeej/views/todo/todo_page.dart';
 import 'helpers/services/auth_services.dart';
 import 'views/auth/locked.dart';
 import 'views/auth/login.dart';
@@ -121,6 +122,11 @@ getPageRoute() {
     GetPage(
       name: '/new-page', // Replace 'new-page' with the desired route name
       page: () => const NewPage(), // Replace 'NewPage' with the actual page widget
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/todo', // Replace 'new-page' with the desired route name
+      page: () => const ToDoListPage(), // Replace 'NewPage' with the actual page widget
       middlewares: [AuthMiddleware()],
     ),
   ];

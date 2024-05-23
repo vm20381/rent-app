@@ -6,6 +6,7 @@ import 'views/auth/login.dart';
 import 'views/error_pages/error_404.dart';
 import 'views/home/home_page.dart';
 import 'views/me/edit_user_profile.dart';
+import 'views/second_circle/circle_page.dart';
 
 // class AuthMiddleware extends GetMiddleware {
 //   final AuthService _authService = Get.find<AuthService>();
@@ -116,6 +117,10 @@ getPageRoute() {
       name: '/my-profile',
       page: () => const EditUserProfile(),
       middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/circle_page',
+      page: () => CirclePage(),
     ),
   ];
   return routes
