@@ -131,10 +131,10 @@ class _LeftBarState extends State<LeftBar>
                       route: '/my-profile',
                       isCondensed: isCondensed,
                     ),
-                    LabelWidget(label: "me".tr()),
+                    LabelWidget(label: "My Pages".tr()),
                     //-----------------SecondCircle-----------------//
                     NavigationItem(
-                      iconData: LucideIcons.user,
+                      iconData: LucideIcons.circle,
                       title: "circle_page".tr(),
                       route: '/circle_page',
                       isCondensed: isCondensed,
