@@ -1,23 +1,28 @@
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:macieeej/helpers/services/auth_services.dart';
+import 'package:macieeej/helpers/services/firebase_subscription_services.dart';
 import '../../models/todo.dart';
 
 
 class ToDoListController extends GetxController {
   var todos = <ToDo>[].obs;
   final AuthService authService = Get.find<AuthService>();
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirestoreSubscriptionService _firestoreSubService = Get.find<FirestoreSubscriptionService>();
 
   @override
   void onInit() {
     super.onInit();
-    fetchTodos();
+    _subscribeToTodoItems();
   }
 
-  Future<void> fetchTodos() async {
-    QuerySnapshot snapshot = await _firestore.collection('todo_items').get();
-    todos.value = snapshot.docs.map((doc) => ToDo.fromDocument(doc)).toList();
+  void _subscribeToTodoItems() {
+    _firestoreSubService.collectionStream<ToDo>(
+      'todo_items',
+      (data, documentId) => ToDo.fromFirestore(data, documentId),
+    ).listen((todoItems) {
+      todos.value = todoItems;
+    });
   }
 
   Future<void> addTodo(String task) async {
@@ -29,29 +34,24 @@ class ToDoListController extends GetxController {
         userId: user.uid,
         userName: user.displayName ?? 'Unknown',
       );
-      DocumentReference docRef = await _firestore.collection('todo_items').add(todo.toMap());
-      todo.id = docRef.id;
-      todos.add(todo);
+      await FirebaseFirestore.instance.collection('todo_items').add(todo.toMap());
     }
   }
 
   Future<void> removeTodoAt(int index) async {
     String todoId = todos[index].id;
-    await _firestore.collection('todo_items').doc(todoId).delete();
-    todos.removeAt(index);
+    await FirebaseFirestore.instance.collection('todo_items').doc(todoId).delete();
   }
 
   Future<void> toggleDone(int index) async {
     ToDo todo = todos[index];
     todo.isDone = !todo.isDone;
-    await _firestore.collection('todo_items').doc(todo.id).update(todo.toMap());
-    todos[index] = todo;
+    await FirebaseFirestore.instance.collection('todo_items').doc(todo.id).update(todo.toMap());
   }
 
   Future<void> editTodo(int index, String newTask) async {
     ToDo todo = todos[index];
     todo.task = newTask;
-    await _firestore.collection('todo_items').doc(todo.id).update(todo.toMap());
-    todos[index] = todo;
+    await FirebaseFirestore.instance.collection('todo_items').doc(todo.id).update(todo.toMap());
   }
 }
