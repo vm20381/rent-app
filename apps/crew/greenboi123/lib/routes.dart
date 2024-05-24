@@ -7,6 +7,8 @@ import 'views/error_pages/error_404.dart';
 import 'views/home/home_page.dart';
 import 'views/me/edit_user_profile.dart';
 import 'views/new_page/new_page_view.dart';
+import 'views/to_do_list/to_do_list_view.dart';
+
 
 // class AuthMiddleware extends GetMiddleware {
 //   final AuthService _authService = Get.find<AuthService>();
@@ -121,6 +123,11 @@ getPageRoute() {
     GetPage(
       name: '/new_page',
       page: () => const NewPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/to_do_list',
+      page: () => ToDoList(),
       middlewares: [AuthMiddleware()],
     ),
   ];

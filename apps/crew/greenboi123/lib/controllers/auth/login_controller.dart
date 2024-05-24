@@ -11,7 +11,7 @@ class LoginController extends MyController {
 
   bool showPassword = false, loading = false, isChecked = false;
 
-  final String _dummyEmail = "";
+  final String _dummyEmail = "felix@captainapp.co.uk";
   final String _dummyPassword = "iamthecaptainnow";
 
   final authService = Get.find<AuthService>();
