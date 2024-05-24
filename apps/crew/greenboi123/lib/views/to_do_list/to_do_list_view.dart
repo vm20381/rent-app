@@ -19,7 +19,7 @@ class ToDoList extends StatelessWidget {
             }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
 
             final todoItems = snapshot.data ?? [];
@@ -40,10 +40,22 @@ class ToDoList extends StatelessWidget {
                       itemCount: todoItems.length,
                       itemBuilder: (context, index) {
                         final todoItem = todoItems[index];
+                        final textStyle = todoItem.isDone
+                            ? const TextStyle(
+                                decoration: TextDecoration.lineThrough,
+                              )
+                            : const TextStyle();
+
                         return Material(
                           child: ListTile(
-                            title: Text(todoItem.title),
-                            subtitle: Text(todoItem.description),
+                            title: Text(
+                              todoItem.title,
+                              style: textStyle,
+                            ),
+                            subtitle: Text(
+                              todoItem.description,
+                              style: textStyle,
+                            ),
                             trailing: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -60,13 +72,13 @@ class ToDoList extends StatelessWidget {
                                   },
                                 ),
                                 IconButton(
-                                  icon: Icon(Icons.edit),
+                                  icon: const Icon(Icons.edit),
                                   onPressed: () {
                                     _showEditTodoDialog(context, todoItem);
                                   },
                                 ),
                                 IconButton(
-                                  icon: Icon(Icons.delete),
+                                  icon: const Icon(Icons.delete),
                                   onPressed: () {
                                     _myController.deleteTodoItem(todoItem.id);
                                   },
@@ -95,19 +107,19 @@ class ToDoList extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Add To-Do Item'),
+          title: const Text('Add To-Do Item'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: titleController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Title',
                 ),
               ),
               TextField(
                 controller: descriptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Description',
                 ),
               ),
@@ -115,13 +127,13 @@ class ToDoList extends StatelessWidget {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text('Add'),
+              child: const Text('Add'),
               onPressed: () {
                 final title = titleController.text;
                 final description = descriptionController.text;
@@ -151,19 +163,19 @@ class ToDoList extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Edit To-Do Item'),
+          title: const Text('Edit To-Do Item'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: titleController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Title',
                 ),
               ),
               TextField(
                 controller: descriptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Description',
                 ),
               ),
@@ -171,13 +183,13 @@ class ToDoList extends StatelessWidget {
           ),
           actions: [
             TextButton(
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
             ),
             TextButton(
-              child: Text('Save'),
+              child: const Text('Save'),
               onPressed: () {
                 final title = titleController.text;
                 final description = descriptionController.text;
@@ -199,5 +211,6 @@ class ToDoList extends StatelessWidget {
     );
   }
 }
+
 
 
