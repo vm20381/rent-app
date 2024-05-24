@@ -37,6 +37,7 @@ class Todo extends IdentifierModel {
         isDone = map['isDone'] ?? false;
 
   Map<String, dynamic> toMap() => {
+        'id': id,
         'title': title,
         'description': description,
         'isDone': isDone,

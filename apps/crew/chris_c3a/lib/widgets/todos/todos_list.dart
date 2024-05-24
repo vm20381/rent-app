@@ -34,7 +34,12 @@ class TodosList extends StatelessWidget {
                     final todo = todos[index];
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: TodoItem(todo: todo),
+                      child: TodoItem(
+                        todo: todo,
+                        onChangedCheckBox: (bool newValue) =>
+                            controller.updateTodo(todo.id, newValue),
+                        onDelete: () => controller.deleteTodo(todo.id),
+                      ),
                     );
                   },
                 ),
