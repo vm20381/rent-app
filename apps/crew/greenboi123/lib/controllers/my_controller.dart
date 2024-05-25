@@ -1,6 +1,5 @@
 import 'package:get/get_state_manager/get_state_manager.dart';
-
-import '../helpers/theme/theme_customizer.dart';
+import 'package:greenboi123/helpers/theme/theme_customizer.dart';
 
 abstract class MyController extends GetxController {
   @override

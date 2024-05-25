@@ -7,6 +7,10 @@ import 'views/error_pages/error_404.dart';
 import 'views/home/home_page.dart';
 import 'views/me/edit_user_profile.dart';
 import 'views/new_page/new_page_view.dart';
+import 'views/to_do_list/to_do_list_view.dart';
+import 'views/chat/chat_view.dart';
+import 'views/complex_chat/complex_chat_view.dart';
+
 
 // class AuthMiddleware extends GetMiddleware {
 //   final AuthService _authService = Get.find<AuthService>();
@@ -121,6 +125,21 @@ getPageRoute() {
     GetPage(
       name: '/new_page',
       page: () => const NewPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/to_do_list',
+      page: () => ToDoList(),
+      middlewares: [AuthMiddleware()],
+    ),
+      GetPage(
+      name: '/chat',
+      page: () => ChatPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+      GetPage(
+      name: '/complex_chat',
+      page: () => ComplexChatPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];
