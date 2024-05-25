@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:macieeej/views/chat/chat_page.dart';
 import 'package:macieeej/views/newpage/new_page.dart';
 import 'package:macieeej/views/todo/todo_page.dart';
 import 'helpers/services/auth_services.dart';
@@ -127,6 +128,11 @@ getPageRoute() {
     GetPage(
       name: '/todo', // Replace 'new-page' with the desired route name
       page: () => const ToDoListPage(), // Replace 'NewPage' with the actual page widget
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/chat', // Replace 'new-page' with the desired route name
+      page: () => const ChatPage(), // Replace 'NewPage' with the actual page widget
       middlewares: [AuthMiddleware()],
     ),
   ];
