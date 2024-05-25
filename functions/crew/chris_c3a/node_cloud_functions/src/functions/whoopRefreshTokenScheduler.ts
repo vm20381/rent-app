@@ -11,15 +11,12 @@ interface TokenResponse {
 }
 
 const clientId = functions.config().whoopapi.client_id;
-const clientSecret = functions.config().whoopAPI.client_secret;
+const clientSecret = functions.config().whoopapi.client_secret;
 const tokenUrl = "https://api.prod.whoop.com/oauth/oauth2/token";
 
 // run every 30 minutes to fetch a new access token
 exports.refreshToken = functions.pubsub.schedule("every 30 minutes").onRun(async (context) => {
   const refreshToken: string | undefined = await getStoredRefreshToken();
-  // const clientId = "your_client_id";
-  // const clientSecret = "your_client_secret";
-  // const tokenUrl = "https://example.com/oauth/token";
 
   const response: Response = await fetch(tokenUrl, {
     method: "POST",
