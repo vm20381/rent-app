@@ -695,9 +695,11 @@ Widget messages() {
       shrinkWrap: true,
       itemCount: controller.chat.length,
       itemBuilder: (BuildContext context, int index) {
+        // Split the firstName string and take the first part
+        String firstName = controller.chat[index].firstName.split(' ')[0];
+
         if (controller.chat[index].fromMe == false) {
           return Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
@@ -713,37 +715,45 @@ Widget messages() {
                   ),
                   MySpacing.height(4),
                   MyText.bodySmall(
-                    '${Utils.getTimeStringFromDateTime(
-                      controller.chat[index].sendAt,
-                      showSecond: false,
-                    )}',
+                    firstName, // Display only the first name
                     muted: true,
                     fontWeight: 600,
-                    fontSize: 8,
+                    fontSize: 10,
                   ),
                 ],
               ),
               MySpacing.width(12),
-              Wrap(
-                alignment: WrapAlignment.start,
-                children: [
-                  MyContainer.none(
-                    paddingAll: 8,
-                    margin: MySpacing.only(
-                      top: 10,
-                      right: MediaQuery.of(context).size.width * 0.20,
+              Flexible( // Use Flexible here to ensure the Column doesn't take more space than available
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, // Align to the left
+                  children: [
+                    MyContainer.none(
+                      paddingAll: 8,
+                      margin: MySpacing.only(
+                        top: 10,
+                        right: MediaQuery.of(context).size.width * 0.20,
+                      ),
+                      alignment: Alignment.bottomLeft,
+                      borderRadiusAll: 4,
+                      color: contentTheme.secondary.withAlpha(30),
+                      child: MyText.titleMedium(
+                        controller.chat[index].message, // Use the message property
+                        fontSize: 12,
+                        color: contentTheme.secondary,
+                      ),
                     ),
-                    alignment: Alignment.bottomRight,
-                    borderRadiusAll: 4,
-                    color: contentTheme.secondary.withAlpha(30),
-                    child: MyText.titleMedium(
-                      controller.chat[index].message, // Use the message property
-                      fontSize: 12,
-                      overflow: TextOverflow.ellipsis,
-                      color: contentTheme.secondary,
+                    MySpacing.height(4),
+                    MyText.bodySmall(
+                      '${Utils.getTimeStringFromDateTime(
+                        controller.chat[index].sendAt,
+                        showSecond: false,
+                      )}',
+                      muted: true,
+                      fontWeight: 600,
+                      fontSize: 8,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           );
@@ -753,8 +763,8 @@ Widget messages() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: Wrap(
-                  alignment: WrapAlignment.end,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     MyContainer(
                       paddingAll: 8,
@@ -769,6 +779,16 @@ Widget messages() {
                         fontWeight: 600,
                         color: contentTheme.primary,
                       ),
+                    ),
+                    MySpacing.height(4),
+                    MyText.bodySmall(
+                      '${Utils.getTimeStringFromDateTime(
+                        controller.chat[index].sendAt,
+                        showSecond: false,
+                      )}',
+                      fontSize: 8,
+                      muted: true,
+                      fontWeight: 600,
                     ),
                   ],
                 ),
@@ -787,11 +807,8 @@ Widget messages() {
                   ),
                   MySpacing.height(4),
                   MyText.bodySmall(
-                    '${Utils.getTimeStringFromDateTime(
-                      controller.chat[index].sendAt,
-                      showSecond: false,
-                    )}',
-                    fontSize: 8,
+                    firstName, // Display only the first name
+                    fontSize: 10,
                     muted: true,
                     fontWeight: 600,
                   ),
@@ -809,5 +826,9 @@ Widget messages() {
     ),
   );
 }
+
+
+
+
 
 }
