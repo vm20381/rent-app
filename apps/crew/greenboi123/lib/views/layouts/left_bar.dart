@@ -147,6 +147,22 @@ class _LeftBarState extends State<LeftBar>
                       route: '/to_do_list', // replace with your preferred route
                       isCondensed: isCondensed,
                     ),
+                    //-----------------Chat-----------------//
+                    LabelWidget(label: "Chat".tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.messageSquare,
+                      title: "chat".tr(),
+                      route: '/chat',
+                      isCondensed: isCondensed,
+                    ),
+                    //-----------------Chat-----------------//
+                    LabelWidget(label: "Complex Chat".tr()),
+                    NavigationItem(
+                      iconData: LucideIcons.messageSquare,
+                      title: "Complex Chat".tr(),
+                      route: '/complex_chat',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
