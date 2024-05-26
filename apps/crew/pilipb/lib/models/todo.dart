@@ -7,6 +7,7 @@ class ToDo {
   String userId;
   String userName;
   String? imageUrl; // Optional field for image URL
+  DateTime dateAdded; // Field for the date the todo was added
 
   ToDo({
     required this.id,
@@ -15,6 +16,7 @@ class ToDo {
     required this.userId,
     required this.userName,
     this.imageUrl,
+    required this.dateAdded, // Initialize dateAdded in the constructor
   });
 
   factory ToDo.fromFirestore(Map<String, dynamic> data, String documentId) {
@@ -25,6 +27,7 @@ class ToDo {
       userId: data['userId'] ?? '',
       userName: data['userName'] ?? 'Unknown',
       imageUrl: data['imageUrl'], // Retrieve image URL from Firestore document
+      dateAdded: (data['dateAdded'] as Timestamp).toDate(), // Convert Firestore Timestamp to DateTime
     );
   }
 
@@ -35,7 +38,9 @@ class ToDo {
       'userId': userId,
       'userName': userName,
       'imageUrl': imageUrl, // Include image URL in Firestore document
+      'dateAdded': Timestamp.fromDate(dateAdded), // Convert DateTime to Firestore Timestamp
     };
   }
 }
+
 

@@ -56,11 +56,12 @@ class _ToDoListPageState extends State<ToDoListPage> {
     }
   }
 
-  void _showEditDialog(int index) {
-    if (index < 0 || index >= controller.todos.length) {
-      return; // Prevents out-of-bounds access
+  void _showEditDialog(String id) {
+    var todo = controller.todos.firstWhere((t) => t.id == id);
+    if (todo == null) {
+      print('Todo with id $id not found');
+      return; // Exit if no todo found with the given id
     }
-    var todo = controller.todos[index];
     _editTextController.text = todo.task;
     showDialog(
       context: context,
@@ -85,7 +86,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
               child: Text("Save"),
               onPressed: () {
                 if (_editTextController.text.isNotEmpty) {
-                  controller.editTodo(index, _editTextController.text);
+                  controller.editTodo(id, _editTextController.text);
                   Navigator.of(context).pop();
                 }
               },
@@ -149,20 +150,20 @@ class _ToDoListPageState extends State<ToDoListPage> {
                   ),
                 ),
                 Obx(() {
-                  if (controller.todos.isEmpty) {
-                    return Center(child: Text('No to-dos available.'));
-                  }
+                  // Sort todos by date added in descending order
+                  var sortedTodos = List<ToDo>.from(controller.todos)..sort((a, b) => b.dateAdded.compareTo(a.dateAdded));
+
                   return ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: controller.todos.length,
+                    itemCount: sortedTodos.length,
                     itemBuilder: (context, index) {
-                      var todo = controller.todos[index];
+                      var todo = sortedTodos[index];
                       Widget leadingWidget = Checkbox(
                         value: todo.isDone,
                         onChanged: (bool? value) {
                           if (value != null) {
-                            controller.toggleDone(index);
+                            controller.toggleDone(todo.id);
                           }
                         },
                       );
@@ -217,11 +218,14 @@ class _ToDoListPageState extends State<ToDoListPage> {
                           children: [
                             IconButton(
                               icon: Icon(Icons.edit),
-                              onPressed: () => _showEditDialog(index),
+                              onPressed: () => _showEditDialog(todo.id),
                             ),
                             IconButton(
                               icon: Icon(Icons.delete),
-                              onPressed: () => controller.removeTodoAt(index),
+                              onPressed: () {
+                              
+                                controller.removeTodoAt(todo.id);
+                              },
                             ),
                             IconButton(
                               icon: Icon(Icons.download),
