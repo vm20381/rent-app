@@ -123,6 +123,12 @@ class _LeftBarState extends State<LeftBar>
                       route: '/',
                       isCondensed: isCondensed,
                     ),
+                    NavigationItem(
+                      iconData: LucideIcons.dumbbell,
+                      title: "My Fitness",
+                      route: '/fitness',
+                      isCondensed: isCondensed,
+                    ),
                     //-----------------About-----------------//
                     LabelWidget(label: 'about'.tr()),
                     NavigationItem(

@@ -1,3 +1,4 @@
+import 'package:chris_c3a/views/fitness/fitness_page.dart';
 import 'package:chris_c3a/views/todos/todos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -128,6 +129,11 @@ getPageRoute() {
     GetPage(
       name: '/todos',
       page: () => const TodosPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/fitness',
+      page: () => const FitnessPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];
