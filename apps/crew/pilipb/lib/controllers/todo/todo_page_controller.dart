@@ -8,6 +8,7 @@ import 'package:pilipb/models/todo.dart';
 import 'package:pilipb/views/home/home_page.dart';
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:uuid/uuid.dart';
 
 class ToDoListController extends GetxController {
   var todos = <ToDo>[].obs;
@@ -52,12 +53,14 @@ class ToDoListController extends GetxController {
         await storageRef.putData(imageData); // Perform the actual upload
         imageUrl = await storageRef.getDownloadURL(); // Get the URL after upload
       }
+      var uuid = Uuid();
       ToDo todo = ToDo(
-        id: '',
+        id: uuid.v4(),  // Generate a unique ID
         task: task,
         userId: user.uid,
         userName: user.displayName ?? 'Unknown',
         imageUrl: imageUrl,
+        dateAdded: DateTime.now(),
       );
 
       DocumentReference docRef = await FirebaseFirestore.instance
@@ -66,29 +69,36 @@ class ToDoListController extends GetxController {
     }
   }
 
-  Future<void> removeTodoAt(int index) async {
-    String todoId = todos[index].id;
+  Future<void> removeTodoAt(String id) async {
+    // find the todo item by id and remove it
     await FirebaseFirestore.instance
         .collection('pb_todo')
-        .doc(todoId)
+        .doc(id)
         .delete();
   }
 
-  Future<void> toggleDone(int index) async {
-    ToDo todo = todos[index];
-    todo.isDone = !todo.isDone;
-    await FirebaseFirestore.instance
-        .collection('pb_todo')
-        .doc(todo.id)
-        .update(todo.toMap());
+  Future<void> toggleDone(String id) async {
+    var docRef = FirebaseFirestore.instance.collection('pb_todo').doc(id);
+    var snapshot = await docRef.get();
+    if (snapshot.exists) {
+      var todo = ToDo.fromFirestore(snapshot.data()!, snapshot.id);
+      todo.isDone = !todo.isDone;
+      await docRef.update(todo.toMap());
+    } else {
+      print("No todo found with id: $id");
+    }
   }
 
-  Future<void> editTodo(int index, String newTask) async {
-    ToDo todo = todos[index];
-    todo.task = newTask;
-    await FirebaseFirestore.instance
-        .collection('pb_todo')
-        .doc(todo.id)
-        .update(todo.toMap());
+  Future<void> editTodo(String id, String newTask) async {
+    var docRef = FirebaseFirestore.instance.collection('pb_todo').doc(id);
+    var snapshot = await docRef.get();
+    if (snapshot.exists) {
+      var todo = ToDo.fromFirestore(snapshot.data()!, snapshot.id);
+      todo.task = newTask;
+      await docRef.update(todo.toMap());
+    } else {
+      print("No todo found with id: $id");
+    }
   }
 }
+
