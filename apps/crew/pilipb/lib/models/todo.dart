@@ -6,6 +6,7 @@ class ToDo {
   bool isDone;
   String userId;
   String userName;
+  String? imageUrl; // Optional field for image URL
 
   ToDo({
     required this.id,
@@ -13,6 +14,7 @@ class ToDo {
     this.isDone = false,
     required this.userId,
     required this.userName,
+    this.imageUrl,
   });
 
   factory ToDo.fromFirestore(Map<String, dynamic> data, String documentId) {
@@ -22,6 +24,7 @@ class ToDo {
       isDone: data['isDone'] ?? false,
       userId: data['userId'] ?? '',
       userName: data['userName'] ?? 'Unknown',
+      imageUrl: data['imageUrl'], // Retrieve image URL from Firestore document
     );
   }
 
@@ -31,6 +34,8 @@ class ToDo {
       'isDone': isDone,
       'userId': userId,
       'userName': userName,
+      'imageUrl': imageUrl, // Include image URL in Firestore document
     };
   }
 }
+

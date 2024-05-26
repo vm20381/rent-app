@@ -1,8 +1,14 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:pilipb/controllers/todo/todo_page_controller.dart';
 import 'package:pilipb/views/layouts/layout.dart';
+import 'package:pilipb/models/todo.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class ToDoListPage extends StatefulWidget {
   const ToDoListPage({Key? key}) : super(key: key);
@@ -15,11 +21,37 @@ class _ToDoListPageState extends State<ToDoListPage> {
   late ToDoListController controller;
   final TextEditingController _textController = TextEditingController();
   final TextEditingController _editTextController = TextEditingController();
+  Image? _imagePreview;
+  Uint8List? imageBytes;  // Declare imageBytes at class level
 
   @override
   void initState() {
     super.initState();
     controller = ToDoListController();
+  }
+
+  Future<Uint8List?> _pickImage() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      try {
+        final bytes = await pickedFile.readAsBytes();
+        final base64Image = base64Encode(bytes);
+        final image = Image.memory(base64Decode(base64Image));
+
+        setState(() {
+          _imagePreview = image;
+        });
+
+        // Pass the bytes to the controller method, now optionally
+        return bytes;
+        // controller.addTodo("Your task description", bytes);
+      } catch (e) {
+        print('Failed to load image: $e');
+      }
+    } else {
+      print('No image selected.');
+      imageBytes = null;  // Ensure imageBytes is null if no image is picked
+    }
   }
 
   void _showEditDialog(int index) {
@@ -74,18 +106,44 @@ class _ToDoListPageState extends State<ToDoListPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: TextField(
-                    controller: _textController,
-                    decoration: InputDecoration(
-                      labelText: 'Add a new to-do',
-                      border: OutlineInputBorder(),
-                    ),
-                    onSubmitted: (value) {
-                      if (value.isNotEmpty) {
-                        controller.addTodo(value);
-                        _textController.clear();
-                      }
-                    },
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _textController,
+                          decoration: InputDecoration(
+                            labelText: 'Add a new to-do',
+                            border: OutlineInputBorder(),
+                          ),
+                          onSubmitted: (value) {
+                            if (value.isNotEmpty) {
+                              controller.addTodo(value, imageBytes); // Use imageBytes conditionally
+                              _textController.clear();
+                              setState(() {
+                                _imagePreview = null;
+                                imageBytes = null; // Set imageBytes back to null
+                              });
+                            }
+                          },
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.camera_alt),
+                        onPressed: () async {
+                          imageBytes = await _pickImage();
+                        },
+                      ),
+                      if (_imagePreview != null)
+                        Container(
+                          width: 50,
+                          height: 50,
+                          margin: EdgeInsets.only(left: 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: _imagePreview,
+                          ),
+                        ),
+                    ],
                   ),
                 ),
                 Obx(() {
@@ -129,6 +187,16 @@ class _ToDoListPageState extends State<ToDoListPage> {
                             ),
                           ],
                         ),
+                        onTap: () {
+                          if (todo.imageUrl != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ImageDetailScreen(imageUrl: todo.imageUrl!),
+                              ),
+                            );
+                          }
+                        },
                       );
                     },
                   );
@@ -137,6 +205,39 @@ class _ToDoListPageState extends State<ToDoListPage> {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class ImageDetailScreen extends StatelessWidget {
+  final String imageUrl;
+
+  ImageDetailScreen({required this.imageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Image Detail'),
+      ),
+      body: Center(
+        child: Image.network(
+          imageUrl,
+          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+            if (loadingProgress == null) return child;
+            return Center(
+              child: CircularProgressIndicator(
+                value: loadingProgress.expectedTotalBytes != null
+                    ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                    : null,
+              ),
+            );
+          },
+          errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+            return Text('Image not available');
+          },
+        ),
       ),
     );
   }
