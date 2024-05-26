@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:pilipb/helpers/services/firebase_subscription_services.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -39,6 +40,7 @@ void main() async {
   // // Get.put(DeepLinkController());
   Get.put(FirebaseFunctionService());
   // Get.put(ExamplePackageService());
+  Get.put<FirestoreSubscriptionService>(FirestoreServiceImpl());
 
   runApp(
     ChangeNotifierProvider<AppNotifier>(

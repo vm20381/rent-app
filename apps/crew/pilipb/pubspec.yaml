@@ -56,6 +56,9 @@ dependencies:
   quill_html_editor: ^2.2.8
   flutter_map: 
   latlong2: ^0.9.1
+  google_maps_flutter: ^2.6.1
+  uuid: ^4.4.0
+
   # example_package: 
 
 dev_dependencies:
