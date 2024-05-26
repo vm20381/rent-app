@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:html';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -221,6 +222,16 @@ class _ToDoListPageState extends State<ToDoListPage> {
                             IconButton(
                               icon: Icon(Icons.delete),
                               onPressed: () => controller.removeTodoAt(index),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.download),
+                              onPressed: todo.imageUrl != null && todo.imageUrl!.isNotEmpty
+                                ? () {
+                                    // go to url in new tab
+                                    window.open(todo.imageUrl!, 'download');
+                                  }
+                                : null, // Disables the button when imageUrl is null or empty
+                              color: todo.imageUrl != null && todo.imageUrl!.isNotEmpty ? null : Colors.grey,
                             ),
                           ],
                         ),
