@@ -32,11 +32,21 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage>
     with SingleTickerProviderStateMixin, UIMixin {
   late ChatController controller;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
     controller = Get.put(ChatController());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _scrollToBottom();
+    });
+  }
+
+  void _scrollToBottom() {
+    if (_scrollController.hasClients) {
+      _scrollController.jumpTo(_scrollController.position.extentTotal);
+    }
   }
 
   @override
@@ -343,227 +353,48 @@ class _ChatPageState extends State<ChatPage>
                       MyFlexItem(
                         sizes: "xxl-6 xl-6 ",
                         child: MyCard(
-                            shadow: MyShadow(elevation: 0.5),
-                            child: Column(
-                              children: [
-                                messages(),
-                                MySpacing.height(8),
-                                Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: MyContainer(
-                                    color: contentTheme.primary.withAlpha(20),
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: TextFormField(
-                                            controller:
-                                                controller.messageController,
-                                            autocorrect: false,
-                                            style: MyTextStyle.bodySmall(),
-                                            decoration: InputDecoration(
-                                              hintText: "Type message here",
-                                              hintStyle: MyTextStyle.bodySmall(
-                                                xMuted: true,
-                                              ),
-                                              border: outlineInputBorder,
-                                              enabledBorder: outlineInputBorder,
-                                              focusedBorder: focusedInputBorder,
-                                              contentPadding:
-                                                  MySpacing.xy(16, 16),
-                                              isCollapsed: true,
-                                            ),
-                                          ),
-                                        ),
-                                        MySpacing.width(16),
-                                        InkWell(
-                                          onTap: () {
-                                            controller.sendMessage();
-                                          },
-                                          child: const Icon(
-                                            LucideIcons.send,
-                                            size: 20,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        MyFlexItem(
-                          sizes: "xxl-3 xl-3",
-                          child: MyFlex(
-                            contentPadding: false,
+                          shadow: MyShadow(elevation: 0.5),
+                          child: Column(
                             children: [
-                              MyFlexItem(
-                                child: MyCard(
-                                  shadow: MyShadow(elevation: 0.5),
-                                  borderRadiusAll: 4,
-                                  paddingAll: 0,
-                                  child: Stack(
+                              messages(),
+                              MySpacing.height(8),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: MyContainer(
+                                  color: contentTheme.primary.withAlpha(20),
+                                  child: Row(
                                     children: [
-                                      Container(
-                                        height: 100,
-                                        decoration: const BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(4),
-                                            topLeft: Radius.circular(4),
-                                          ),
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xff8360c3),
-                                              Color(0xff6a82fb),
-                                              Color(0xff00b4db),
-                                            ],
-                                            tileMode: TileMode.clamp,
+                                      Expanded(
+                                        child: TextFormField(
+                                          controller:
+                                              controller.messageController,
+                                          autocorrect: false,
+                                          style: MyTextStyle.bodySmall(),
+                                          decoration: InputDecoration(
+                                            hintText: "Type message here",
+                                            hintStyle: MyTextStyle.bodySmall(
+                                              xMuted: true,
+                                            ),
+                                            border: outlineInputBorder,
+                                            enabledBorder: outlineInputBorder,
+                                            focusedBorder: focusedInputBorder,
+                                            contentPadding:
+                                                MySpacing.xy(16, 16),
+                                            isCollapsed: true,
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: MySpacing.xy(16, 44),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            MyContainer.rounded(
-                                              paddingAll: 4,
-                                              child: MyContainer.rounded(
-                                                paddingAll: 0,
-                                                height: 100,
-                                                clipBehavior:
-                                                    Clip.antiAliasWithSaveLayer,
-                                                child: Image.asset(
-                                                  Images.avatars[1],
-                                                  fit: BoxFit.cover,
-                                                  height: 100,
-                                                ),
-                                              ),
-                                            ),
-                                            MySpacing.height(8),
-                                            MyText.bodyLarge(
-                                              "Amanda Smith",
-                                              fontSize: 20,
-                                              fontWeight: 600,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                            MySpacing.height(8),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                const Icon(
-                                                  LucideIcons.mapPin,
-                                                  size: 20,
-                                                ),
-                                                MySpacing.width(8),
-                                                MyText.bodyMedium(
-                                                  "Los Angeles United States",
-                                                ),
-                                              ],
-                                            ),
-                                            MySpacing.height(16),
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                MyText.bodyMedium("@amanda"),
-                                                MySpacing.width(8),
-                                                const MyContainer.roundBordered(
-                                                  color: Colors.grey,
-                                                  paddingAll: 1,
-                                                ),
-                                                MySpacing.width(8),
-                                                MyText.bodyMedium(
-                                                  "Designer at google",
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.center,
-                                                ),
-                                              ],
-                                            ),
-                                            MySpacing.height(16),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                MyButton(
-                                                  onPressed: () {},
-                                                  elevation: 0,
-                                                  padding: MySpacing.xy(20, 16),
-                                                  backgroundColor:
-                                                      contentTheme.primary,
-                                                  borderRadiusAll: AppStyle
-                                                      .buttonRadius.medium,
-                                                  child: MyText.bodySmall(
-                                                    'Message',
-                                                    color:
-                                                        contentTheme.onPrimary,
-                                                  ),
-                                                ),
-                                                MySpacing.width(16),
-                                                MyButton(
-                                                  onPressed: () {},
-                                                  elevation: 0,
-                                                  padding: MySpacing.xy(12, 16),
-                                                  backgroundColor:
-                                                      contentTheme.primary,
-                                                  borderRadiusAll: AppStyle
-                                                      .buttonRadius.medium,
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    children: [
-                                                      Icon(
-                                                        LucideIcons.share2,
-                                                        color:
-                                                            contentTheme.light,
-                                                        size: 16,
-                                                      ),
-                                                      MySpacing.width(8),
-                                                      MyText.bodySmall(
-                                                        'Share Profile',
-                                                        color: contentTheme
-                                                            .onPrimary,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                             
-
-                                              ],
-                                            ),
-                                          ],
+                                      MySpacing.width(16),
+                                      InkWell(
+                                        onTap: () {
+                                          controller.sendMessage();
+                                          _scrollToBottom();
+                                        },
+                                        child: const Icon(
+                                          LucideIcons.send,
+                                          size: 20,
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              MyFlexItem(
-                                child: MyCard(
-                                  shadow: MyShadow(elevation: 0.5),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      MyText.titleMedium("Attached File"),
-                                      MySpacing.height(12),
-                                      buildAttachedFile(
-                                        "image(1).png",
-                                        10485760,
-                                      ),
-                                      MySpacing.height(12),
-                                      buildAttachedFile("apk.Zip", 2306867),
-                                      MySpacing.height(12),
-                                      buildAttachedFile("text.ppt", 1572864),
-                                      MySpacing.height(12),
-                                      buildAttachedFile("Images.jpg", 1048576),
                                     ],
                                   ),
                                 ),
@@ -571,42 +402,192 @@ class _ChatPageState extends State<ChatPage>
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    // SizedBox(
-                    //   height: 500,
-                    //   child: MyContainer.bordered(
-                    //     child: ListView.builder(
-                    //       itemCount: controller.sendChat.length,
-                    //       shrinkWrap: true,
-                    //       itemBuilder: (context, index) {
-                    //         return Container(
-                    //           decoration: const BoxDecoration(
-                    //             color: Colors.greenAccent,
-                    //             borderRadius: BorderRadius.only(
-                    //               topLeft: Radius.circular(12),
-                    //               topRight: Radius.circular(12),
-                    //               bottomLeft: Radius.circular(
-                    //                 12,
-                    //               ),
-                    //             ),
-                    //           ),
-                    //           child: Padding(
-                    //             padding: const EdgeInsets.all(8),
-                    //             child: Text(controller.sendChat[index].msg!),
-                    //           ),
-                    //         );
-                    //       },
-                    //     ),
-                    //   ),
-                    // ),
-                  ],
-                ),
+                      ),
+                      MyFlexItem(
+                        sizes: "xxl-3 xl-3",
+                        child: MyFlex(
+                          contentPadding: false,
+                          children: [
+                            MyFlexItem(
+                              child: MyCard(
+                                shadow: MyShadow(elevation: 0.5),
+                                borderRadiusAll: 4,
+                                paddingAll: 0,
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      height: 100,
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(4),
+                                          topLeft: Radius.circular(4),
+                                        ),
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff8360c3),
+                                            Color(0xff6a82fb),
+                                            Color(0xff00b4db),
+                                          ],
+                                          tileMode: TileMode.clamp,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: MySpacing.xy(16, 44),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          MyContainer.rounded(
+                                            paddingAll: 4,
+                                            child: MyContainer.rounded(
+                                              paddingAll: 0,
+                                              height: 100,
+                                              clipBehavior:
+                                                  Clip.antiAliasWithSaveLayer,
+                                              child: Image.asset(
+                                                Images.avatars[1],
+                                                fit: BoxFit.cover,
+                                                height: 100,
+                                              ),
+                                            ),
+                                          ),
+                                          MySpacing.height(8),
+                                          MyText.bodyLarge(
+                                            "Amanda Smith",
+                                            fontSize: 20,
+                                            fontWeight: 600,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          MySpacing.height(8),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              const Icon(
+                                                LucideIcons.mapPin,
+                                                size: 20,
+                                              ),
+                                              MySpacing.width(8),
+                                              MyText.bodyMedium(
+                                                "Los Angeles United States",
+                                              ),
+                                            ],
+                                          ),
+                                          MySpacing.height(16),
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              MyText.bodyMedium("@amanda"),
+                                              MySpacing.width(8),
+                                              const MyContainer.roundBordered(
+                                                color: Colors.grey,
+                                                paddingAll: 1,
+                                              ),
+                                              MySpacing.width(8),
+                                              MyText.bodyMedium(
+                                                "Designer at google",
+                                                overflow:
+                                                    TextOverflow.ellipsis,
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ],
+                                          ),
+                                          MySpacing.height(16),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              MyButton(
+                                                onPressed: () {},
+                                                elevation: 0,
+                                                padding: MySpacing.xy(20, 16),
+                                                backgroundColor:
+                                                    contentTheme.primary,
+                                                borderRadiusAll: AppStyle
+                                                    .buttonRadius.medium,
+                                                child: MyText.bodySmall(
+                                                  'Message',
+                                                  color:
+                                                      contentTheme.onPrimary,
+                                                ),
+                                              ),
+                                              MySpacing.width(16),
+                                              MyButton(
+                                                onPressed: () {},
+                                                elevation: 0,
+                                                padding: MySpacing.xy(12, 16),
+                                                backgroundColor:
+                                                    contentTheme.primary,
+                                                borderRadiusAll: AppStyle
+                                                    .buttonRadius.medium,
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Icon(
+                                                      LucideIcons.share2,
+                                                      color:
+                                                          contentTheme.light,
+                                                      size: 16,
+                                                    ),
+                                                    MySpacing.width(8),
+                                                    MyText.bodySmall(
+                                                      'Share Profile',
+                                                      color: contentTheme
+                                                          .onPrimary,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            MyFlexItem(
+                              child: MyCard(
+                                shadow: MyShadow(elevation: 0.5),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    MyText.titleMedium("Attached File"),
+                                    MySpacing.height(12),
+                                    buildAttachedFile(
+                                      "image(1).png",
+                                      10485760,
+                                    ),
+                                    MySpacing.height(12),
+                                    buildAttachedFile("apk.Zip", 2306867),
+                                    MySpacing.height(12),
+                                    buildAttachedFile("text.ppt", 1572864),
+                                    MySpacing.height(12),
+                                    buildAttachedFile("Images.jpg", 1048576),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            ],
-          );
-        },
-      ),
+            ),
+          ],
+        );
+      }),
     );
   }
 
@@ -687,148 +668,144 @@ class _ChatPageState extends State<ChatPage>
     );
   }
 
-Widget messages() {
-  return SizedBox(
-    height: 600,
-    child: ListView.separated(
-      padding: MySpacing.x(12),
-      shrinkWrap: true,
-      itemCount: controller.chat.length,
-      itemBuilder: (BuildContext context, int index) {
-        // Split the firstName string and take the first part
-        String firstName = controller.chat[index].firstName.split(' ')[0];
+  Widget messages() {
+    return SizedBox(
+      height: 600,
+      child: ListView.separated(
+        controller: _scrollController,
+        padding: MySpacing.x(12),
+        shrinkWrap: true,
+        itemCount: controller.chat.length,
+        itemBuilder: (BuildContext context, int index) {
+          // Split the firstName string and take the first part
+          String firstName = controller.chat[index].firstName.split(' ')[0];
 
-        if (controller.chat[index].fromMe == false) {
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                children: [
-                  MyContainer.rounded(
-                    height: 32,
-                    width: 32,
-                    paddingAll: 0,
-                    child: Image.asset(
-                      Images.avatars[1],
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  MySpacing.height(4),
-                  MyText.bodySmall(
-                    firstName, // Display only the first name
-                    muted: true,
-                    fontWeight: 600,
-                    fontSize: 10,
-                  ),
-                ],
-              ),
-              MySpacing.width(12),
-              Flexible( // Use Flexible here to ensure the Column doesn't take more space than available
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start, // Align to the left
+          if (controller.chat[index].fromMe == false) {
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
                   children: [
-                    MyContainer.none(
-                      paddingAll: 8,
-                      margin: MySpacing.only(
-                        top: 10,
-                        right: MediaQuery.of(context).size.width * 0.20,
-                      ),
-                      alignment: Alignment.bottomLeft,
-                      borderRadiusAll: 4,
-                      color: contentTheme.secondary.withAlpha(30),
-                      child: MyText.titleMedium(
-                        controller.chat[index].message, // Use the message property
-                        fontSize: 12,
-                        color: contentTheme.secondary,
+                    MyContainer.rounded(
+                      height: 32,
+                      width: 32,
+                      paddingAll: 0,
+                      child: Image.asset(
+                        Images.avatars[1],
+                        fit: BoxFit.cover,
                       ),
                     ),
                     MySpacing.height(4),
                     MyText.bodySmall(
-                      '${Utils.getTimeStringFromDateTime(
-                        controller.chat[index].sendAt,
-                        showSecond: false,
-                      )}',
+                      firstName, // Display only the first name
                       muted: true,
                       fontWeight: 600,
-                      fontSize: 8,
+                      fontSize: 10,
                     ),
                   ],
                 ),
-              ),
-            ],
-          );
-        } else {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    MyContainer(
-                      paddingAll: 8,
-                      margin: MySpacing.only(
-                        top: 10,
-                        left: MediaQuery.of(context).size.width * 0.20,
+                MySpacing.width(12),
+                Flexible( // Use Flexible here to ensure the Column doesn't take more space than available
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start, // Align to the left
+                    children: [
+                      MyContainer.none(
+                        paddingAll: 8,
+                        margin: MySpacing.only(
+                          top: 10,
+                          right: MediaQuery.of(context).size.width * 0.20,
+                        ),
+                        alignment: Alignment.bottomLeft,
+                        borderRadiusAll: 4,
+                        color: contentTheme.secondary.withAlpha(30),
+                        child: MyText.titleMedium(
+                          controller.chat[index].message, // Use the message property
+                          fontSize: 12,
+                          color: contentTheme.secondary,
+                        ),
                       ),
-                      color: theme.colorScheme.primary.withAlpha(30),
-                      child: MyText.bodyMedium(
-                        controller.chat[index].message, // Use the message property
-                        fontSize: 12,
+                      MySpacing.height(4),
+                      MyText.bodySmall(
+                        '${Utils.getTimeStringFromDateTime(
+                          controller.chat[index].sendAt,
+                          showSecond: false,
+                        )}',
+                        muted: true,
                         fontWeight: 600,
-                        color: contentTheme.primary,
+                        fontSize: 8,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          } else {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      MyContainer(
+                        paddingAll: 8,
+                        margin: MySpacing.only(
+                          top: 10,
+                          left: MediaQuery.of(context).size.width * 0.20,
+                        ),
+                        color: theme.colorScheme.primary.withAlpha(30),
+                        child: MyText.bodyMedium(
+                          controller.chat[index].message, // Use the message property
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: contentTheme.primary,
+                        ),
+                      ),
+                      MySpacing.height(4),
+                      MyText.bodySmall(
+                        '${Utils.getTimeStringFromDateTime(
+                          controller.chat[index].sendAt,
+                          showSecond: false,
+                        )}',
+                        fontSize: 8,
+                        muted: true,
+                        fontWeight: 600,
+                      ),
+                    ],
+                  ),
+                ),
+                MySpacing.width(12),
+                Column(
+                  children: [
+                    MyContainer.rounded(
+                      height: 32,
+                      width: 32,
+                      paddingAll: 0,
+                      child: Image.asset(
+                        Images.avatars[8],
+                        fit: BoxFit.cover,
                       ),
                     ),
                     MySpacing.height(4),
                     MyText.bodySmall(
-                      '${Utils.getTimeStringFromDateTime(
-                        controller.chat[index].sendAt,
-                        showSecond: false,
-                      )}',
-                      fontSize: 8,
+                      firstName, // Display only the first name
+                      fontSize: 10,
                       muted: true,
                       fontWeight: 600,
                     ),
                   ],
                 ),
-              ),
-              MySpacing.width(12),
-              Column(
-                children: [
-                  MyContainer.rounded(
-                    height: 32,
-                    width: 32,
-                    paddingAll: 0,
-                    child: Image.asset(
-                      Images.avatars[8],
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  MySpacing.height(4),
-                  MyText.bodySmall(
-                    firstName, // Display only the first name
-                    fontSize: 10,
-                    muted: true,
-                    fontWeight: 600,
-                  ),
-                ],
-              ),
-            ],
+              ],
+            );
+          }
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(
+            height: 12,
           );
-        }
-      },
-      separatorBuilder: (BuildContext context, int index) {
-        return const SizedBox(
-          height: 12,
-        );
-      },
-    ),
-  );
-}
-
-
-
-
-
+        },
+      ),
+    );
+  }
 }
