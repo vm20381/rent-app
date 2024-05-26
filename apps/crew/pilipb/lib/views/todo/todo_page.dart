@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:pilipb/controllers/todo/todo_page_controller.dart';
 import 'package:pilipb/views/layouts/layout.dart';
 import 'package:pilipb/models/todo.dart';
@@ -156,15 +157,51 @@ class _ToDoListPageState extends State<ToDoListPage> {
                     itemCount: controller.todos.length,
                     itemBuilder: (context, index) {
                       var todo = controller.todos[index];
+                      Widget leadingWidget = Checkbox(
+                        value: todo.isDone,
+                        onChanged: (bool? value) {
+                          if (value != null) {
+                            controller.toggleDone(index);
+                          }
+                        },
+                      );
+
+                      // Check if the todo item has an image and create a thumbnail
+                      if (todo.imageUrl != null && todo.imageUrl!.isNotEmpty) {
+                        leadingWidget = Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // show the image as a thumbnail
+                            Image.network(
+                              todo.imageUrl!,
+                              width: 50,
+                              height: 50,
+                              fit: BoxFit.cover,
+                            ),
+                            leadingWidget, // Checkbox
+                          ],
+                        );
+                      } else {
+                        // Display a default logo when there is no image
+                        leadingWidget = Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Opacity(
+                              opacity: 0.2,
+                              child: Icon(
+                                // insert camera icon
+                                LucideIcons.camera,
+                                size: 50,
+                                
+                              ),
+                            ),
+                            leadingWidget, // Checkbox
+                          ],
+                        );
+                      }
+
                       return ListTile(
-                        leading: Checkbox(
-                          value: todo.isDone,
-                          onChanged: (bool? value) {
-                            if (value != null) {
-                              controller.toggleDone(index);
-                            }
-                          },
-                        ),
+                        leading: leadingWidget,
                         title: Text(
                           todo.task,
                           style: TextStyle(
@@ -188,7 +225,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
                           ],
                         ),
                         onTap: () {
-                          if (todo.imageUrl != null) {
+                          if (todo.imageUrl != null && todo.imageUrl!.isNotEmpty) {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
