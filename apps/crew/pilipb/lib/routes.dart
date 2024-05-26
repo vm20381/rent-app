@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pilipb/views/about/about_page.dart';
+import 'package:pilipb/views/todo/todo_page.dart';
 import 'helpers/services/auth_services.dart';
 import 'views/auth/locked.dart';
 import 'views/auth/login.dart';
@@ -127,6 +128,11 @@ getPageRoute() {
     GetPage(
       name: '/canopy',
       page: () => const CanopyPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/todo',
+      page: () => const ToDoListPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];

@@ -145,6 +145,13 @@ class _LeftBarState extends State<LeftBar>
                       route: '/canopy',
                       isCondensed: isCondensed,
                     ),
+                    //-----------------Todo-----------------//
+                    NavigationItem(
+                      iconData: LucideIcons.checkSquare,
+                      title: "todo".tr(),
+                      route: '/todo',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
