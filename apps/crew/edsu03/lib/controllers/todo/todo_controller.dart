@@ -11,6 +11,11 @@ class ToDoPageController extends GetxController {
   final FirestoreSubscriptionService _firestoreSubService = Get.find<FirestoreSubscriptionService>();
   var todos = <TodoItem>[].obs;
   //RxString userRole = ''.obs;
+  @override
+  void onInit() {
+    super.onInit();
+    _subscribeToTodoItems();
+  }
 
   void _subscribeToTodoItems() {
     _firestoreSubService.collectionStream<TodoItem>(
@@ -21,11 +26,35 @@ class ToDoPageController extends GetxController {
     });
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-    _subscribeToTodoItems();
+    Future<void> addTodo(String title, String description) async {
+    final user = authService.user;
+    if (user != null) {
+      TodoItem todo = TodoItem(
+        id: '',
+        title: title,
+        description: description,
+        isDone: false,
+      );
+      await FirebaseFirestore.instance.collection('todos').add(todo.toFirestore());
+    }
   }
+
+  Future<void> removeTodo(int index) async {
+    String todoId = todos[index].id;
+    await FirebaseFirestore.instance.collection('todos').doc(todoId).delete();
+  }
+
+    Future<void> toggleDone(int index) async {
+    TodoItem todo = todos[index];
+    todo.isDone = !todo.isDone;
+    await FirebaseFirestore.instance.collection('todos').doc(todo.id).update(todo.toFirestore());
+  }
+
+
+  void editTodo() {
+
+  }
+
 }
 
 

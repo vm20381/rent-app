@@ -17,6 +17,7 @@ class NewPageController extends GetxController {
 
   @override
   void onInit() {
+    super.onInit();
     authService.userRoles.listen((claims) {
       if (claims == null) {
         userRole.value = '';

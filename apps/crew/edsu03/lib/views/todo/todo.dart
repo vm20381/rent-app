@@ -15,7 +15,7 @@ class ToDoPage extends StatefulWidget {
 
 class _ToDoPageState extends State<ToDoPage> {
   late ToDoPageController controller;
-
+  final TextEditingController todoTextController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -36,19 +36,75 @@ class _ToDoPageState extends State<ToDoPage> {
                   children: <Widget>[
                     Expanded(
                       child: TextField(
-                        controller: TextEditingController(),
+                        controller: todoTextController,
                         decoration: const InputDecoration(
                           labelText: 'Enter a todo item',
                         ),
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () => (),//_addTodoItem(_controller.text),
+                      onPressed: () => {
+                        if (todoTextController.text.isNotEmpty) {
+                          controller.addTodo(todoTextController.text, ''),
+                          todoTextController.clear(),
+                        }
+                      },
                       child: const Text('Add'),
                     ),
+                        
                   ],
                 ),
               ),
+              Obx(() {
+                if (controller.todos.isEmpty) {
+                  return Center(child: Text('No to-dos available.'));
+                }
+                return ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: controller.todos.length,
+                  itemBuilder: (context, index) {
+                    var todo = controller.todos[index];
+                    return ListTile(
+                      leading: Checkbox(
+                        checkColor: Colors.white,
+                        activeColor: Colors.green,
+                        value: todo.isDone,
+                        onChanged: (bool? value) {
+                          if (value != null) {
+                            controller.toggleDone(index);
+                          }
+                        },
+
+                      ),
+                      title: Text(
+                        todo.title,
+                        style: TextStyle(
+                          decoration: todo.isDone
+                              ? TextDecoration.lineThrough
+                              : TextDecoration.none,
+                        ),
+                      ),
+                      //subtitle: const Text('created by'),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.edit),
+                            onPressed: () => controller.editTodo(),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete),
+                            onPressed: () => controller.removeTodo(index),
+      
+
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              }),
             ]
           );
         },
