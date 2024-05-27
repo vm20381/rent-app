@@ -1,19 +1,18 @@
 import 'dart:convert';
 import 'package:macieeej/helpers/services/json_decoder.dart';
-import 'package:macieeej/models/identifier_model.dart';
 import 'package:flutter/services.dart';
 
 class Chat {
-  final String id, firstName, message, sendMessage, receiveMessage;
+  final String id, senderName, receiverName, message, receiveMessage;
   final DateTime sendAt;
   final bool fromMe;
 
   Chat({
     required this.id,
-    required this.firstName,
+    required this.senderName,
+    required this.receiverName,
     required this.message,
     required this.sendAt,
-    required this.sendMessage,
     required this.receiveMessage,
     required this.fromMe,
   });
@@ -21,10 +20,10 @@ class Chat {
   factory Chat.fromFirestore(Map<String, dynamic> data, String documentId) {
     return Chat(
       id: documentId,
-      firstName: data['first_name'] ?? '',
+      senderName: data['sender_name'] ?? '',
+      receiverName: data['receiver_name'] ?? '',
       message: data['message'] ?? '',
       sendAt: DateTime.parse(data['send_at']),
-      sendMessage: data['send_message'] ?? '',
       receiveMessage: data['receive_message'] ?? '',
       fromMe: data['from_me'] ?? true,
     );
@@ -32,10 +31,10 @@ class Chat {
 
   Map<String, dynamic> toFirestore() {
     return {
-      'first_name': firstName,
+      'sender_name': senderName,
+      'receiver_name': receiverName,
       'message': message,
       'send_at': sendAt.toIso8601String(),
-      'send_message': sendMessage,
       'receive_message': receiveMessage,
       'from_me': fromMe,
     };
@@ -44,19 +43,19 @@ class Chat {
   static Chat fromJSON(Map<String, dynamic> json) {
     JSONDecoder decoder = JSONDecoder(json);
 
-    String firstName = decoder.getString('first_name');
+    String senderName = decoder.getString('sender_name');
+    String receiverName = decoder.getString('receiver_name');
     String message = decoder.getString('message');
     DateTime sendAt = decoder.getDateTime('send_at');
-    String sendMessage = decoder.getString('send_message');
     String receiveMessage = decoder.getString('receive_message');
     bool fromMe = decoder.getBool('from_me');
 
     return Chat(
       id: decoder.getId,
-      firstName: firstName,
+      senderName: senderName,
+      receiverName: receiverName,
       message: message,
       sendAt: sendAt,
-      sendMessage: sendMessage,
       receiveMessage: receiveMessage,
       fromMe: fromMe,
     );

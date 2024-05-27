@@ -1,4 +1,5 @@
 import 'package:edsu03/views/new_page/new_page_view.dart';
+import 'package:edsu03/views/todo/todo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'helpers/services/auth_services.dart';
@@ -121,6 +122,11 @@ getPageRoute() {
     GetPage(
       name: '/new_page/new_page_view',
       page: () => const NewPage(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: '/todo/todo',
+      page: () => const ToDoPage(),
       middlewares: [AuthMiddleware()],
     ),
   ];

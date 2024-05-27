@@ -1,3 +1,4 @@
+import 'package:edsu03/helpers/services/firestore_subscription_services.dart';
 import 'package:example_package/example_package.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,8 @@ void main() async {
   // // Get.put(DeepLinkController());
   Get.put(FirebaseFunctionService());
   Get.put(ExamplePackageService());
-
+  Get.put<FirestoreSubscriptionService>(FirestoreServiceImpl());
+  //Get.put<FirestoreService>(FirestoreServiceImpl());
   runApp(
     ChangeNotifierProvider<AppNotifier>(
       create: (context) => AppNotifier(),
