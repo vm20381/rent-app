@@ -436,7 +436,7 @@ class _FitnessPageState extends State<FitnessPage>
             child: MyContainer.rounded(
               paddingAll: 0,
               height: 100,
-              child: Image.asset(Images.avatars[2]),
+              child: Image.asset('assets/images/chris/IMG_7313.png'),
             ),
           ),
         ),

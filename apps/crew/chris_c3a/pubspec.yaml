@@ -91,6 +91,7 @@ flutter:
         # - assets/data/
         - assets/images/shopping_images/
         - assets/images/food/
+        - assets/images/chris/
         # - assets/icon/
 
     # An image asset can refer to one or more resolution-specific "variants", see
