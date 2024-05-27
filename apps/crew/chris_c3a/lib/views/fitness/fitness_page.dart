@@ -17,6 +17,8 @@ import 'package:get/get.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:chris_c3a/widgets/fitness/recovery_overview.dart';
+import 'package:intl/intl.dart';
 
 class FitnessPage extends StatefulWidget {
   const FitnessPage({super.key});
@@ -129,104 +131,135 @@ class _FitnessPageState extends State<FitnessPage>
                             ),
                           ),
                           MyFlexItem(
-                            sizes: 'lg-8',
-                            child: MyContainer(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      MyText.bodyMedium(
-                                        "Activity",
-                                        fontWeight: 600,
+                            child: Obx(() {
+                              final latestRecoveryData =
+                                  controller.recoveryData.value?[0];
+                              return Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Recovery Overview for ${DateFormat('MMMM dd, yyyy').format(latestRecoveryData?.createdAt ?? DateTime.now())}',
+                                      style: const TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      PopupMenuButton(
-                                        onSelected:
-                                            controller.onSelectedActivity,
-                                        itemBuilder: (BuildContext context) {
-                                          return [
-                                            "Year",
-                                            "Month",
-                                            "Week",
-                                            "Day",
-                                            "Hours",
-                                          ].map((behavior) {
-                                            return PopupMenuItem(
-                                              value: behavior,
-                                              height: 32,
-                                              child: MyText.bodySmall(
-                                                behavior.toString(),
-                                                color:
-                                                    theme.colorScheme.onSurface,
-                                                fontWeight: 600,
-                                              ),
-                                            );
-                                          }).toList();
-                                        },
-                                        color: theme.cardTheme.color,
-                                        child: MyContainer(
-                                          padding: MySpacing.xy(12, 8),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: <Widget>[
-                                              MyText.labelMedium(
-                                                controller.selectedActivity
-                                                    .toString(),
-                                                color:
-                                                    theme.colorScheme.onSurface,
-                                              ),
-                                              Icon(
-                                                LucideIcons.chevronDown,
-                                                size: 22,
-                                                color:
-                                                    theme.colorScheme.onSurface,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SfCartesianChart(
-                                    plotAreaBorderWidth: 0,
-                                    primaryXAxis: const CategoryAxis(
-                                      majorGridLines: MajorGridLines(width: 0),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    primaryYAxis: const NumericAxis(
-                                        // majorGridLines:
-                                        // const MajorGridLines(width: 0),
-                                        ),
-                                    series: <CartesianSeries>[
-                                      SplineSeries<ChartSampleData, String>(
-                                        color: const Color(0xff727cf5),
-                                        dataLabelSettings:
-                                            const DataLabelSettings(
-                                          borderWidth: 100,
-                                          showZeroValue: true,
-                                        ),
-                                        dataSource: controller.activityChart,
-                                        xValueMapper:
-                                            (ChartSampleData data, _) => data.x,
-                                        yValueMapper:
-                                            (ChartSampleData data, _) => data.y,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
+                                    MySpacing.height(12),
+                                    RecoveryOverviewWidget(
+                                      recoveryData: latestRecoveryData,
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }),
                           ),
                           MyFlexItem(
-                            sizes: 'lg-4',
-                            child: MyContainer(
-                              child: SizedBox(
-                                height: 338,
-                                child: _buildAngleRadialBarChart(),
-                              ),
-                            ),
+                            sizes: 'lg-8',
+                            child: Obx(() {
+                              return buildRecoveryChart();
+                            }),
                           ),
+                          // MyFlexItem(
+                          //   sizes: 'lg-8',
+                          //   child: MyContainer(
+                          //     child: Column(
+                          //       children: [
+                          //         Row(
+                          //           mainAxisAlignment:
+                          //               MainAxisAlignment.spaceBetween,
+                          //           children: [
+                          //             MyText.bodyMedium(
+                          //               "Activity",
+                          //               fontWeight: 600,
+                          //             ),
+                          //             PopupMenuButton(
+                          //               onSelected:
+                          //                   controller.onSelectedActivity,
+                          //               itemBuilder: (BuildContext context) {
+                          //                 return [
+                          //                   "Year",
+                          //                   "Month",
+                          //                   "Week",
+                          //                   "Day",
+                          //                   "Hours",
+                          //                 ].map((behavior) {
+                          //                   return PopupMenuItem(
+                          //                     value: behavior,
+                          //                     height: 32,
+                          //                     child: MyText.bodySmall(
+                          //                       behavior.toString(),
+                          //                       color:
+                          //                           theme.colorScheme.onSurface,
+                          //                       fontWeight: 600,
+                          //                     ),
+                          //                   );
+                          //                 }).toList();
+                          //               },
+                          //               color: theme.cardTheme.color,
+                          //               child: MyContainer(
+                          //                 padding: MySpacing.xy(12, 8),
+                          //                 child: Row(
+                          //                   mainAxisAlignment:
+                          //                       MainAxisAlignment.spaceBetween,
+                          //                   children: <Widget>[
+                          //                     MyText.labelMedium(
+                          //                       controller.selectedActivity
+                          //                           .toString(),
+                          //                       color:
+                          //                           theme.colorScheme.onSurface,
+                          //                     ),
+                          //                     Icon(
+                          //                       LucideIcons.chevronDown,
+                          //                       size: 22,
+                          //                       color:
+                          //                           theme.colorScheme.onSurface,
+                          //                     ),
+                          //                   ],
+                          //                 ),
+                          //               ),
+                          //             ),
+                          //           ],
+                          //         ),
+                          //         SfCartesianChart(
+                          //           plotAreaBorderWidth: 0,
+                          //           primaryXAxis: const CategoryAxis(
+                          //             majorGridLines: MajorGridLines(width: 0),
+                          //           ),
+                          //           primaryYAxis: const NumericAxis(
+                          //               // majorGridLines:
+                          //               // const MajorGridLines(width: 0),
+                          //               ),
+                          //           series: <CartesianSeries>[
+                          //             SplineSeries<ChartSampleData, String>(
+                          //               color: const Color(0xff727cf5),
+                          //               dataLabelSettings:
+                          //                   const DataLabelSettings(
+                          //                 borderWidth: 100,
+                          //                 showZeroValue: true,
+                          //               ),
+                          //               dataSource: controller.activityChart,
+                          //               xValueMapper:
+                          //                   (ChartSampleData data, _) => data.x,
+                          //               yValueMapper:
+                          //                   (ChartSampleData data, _) => data.y,
+                          //             ),
+                          //           ],
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ),
+                          // ),
+                          // MyFlexItem(
+                          //   sizes: 'lg-4',
+                          //   child: MyContainer(
+                          //     child: SizedBox(
+                          //       height: 338,
+                          //       child: _buildAngleRadialBarChart(),
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
@@ -248,6 +281,39 @@ class _FitnessPageState extends State<FitnessPage>
           );
         },
       ),
+    );
+  }
+
+  SfCartesianChart buildRecoveryChart() {
+    return SfCartesianChart(
+      primaryXAxis: DateTimeAxis(
+        edgeLabelPlacement: EdgeLabelPlacement.shift,
+        dateFormat: DateFormat.yMd(),
+        intervalType: DateTimeIntervalType.auto,
+      ),
+      title: const ChartTitle(text: 'Recovery Data (Last 7 days)'),
+      legend: const Legend(isVisible: true, position: LegendPosition.bottom),
+      series: <CartesianSeries>[
+        LineSeries<ChartSampleData, DateTime>(
+          name: 'Recovery Score',
+          dataSource: controller.getRecoveryChartData(),
+          xValueMapper: (ChartSampleData data, _) => data.x,
+          yValueMapper: (ChartSampleData data, _) => data.y,
+        ),
+        LineSeries<ChartSampleData, DateTime>(
+          name: 'Resting Heart Rate',
+          dataSource: controller.getRecoveryChartData(),
+          xValueMapper: (ChartSampleData data, _) => data.x,
+          yValueMapper: (ChartSampleData data, _) => data.secondSeriesYValue,
+        ),
+        LineSeries<ChartSampleData, DateTime>(
+          name: 'HRV RMSSD',
+          dataSource: controller.getRecoveryChartData(),
+          xValueMapper: (ChartSampleData data, _) => data.x,
+          yValueMapper: (ChartSampleData data, _) => data.thirdSeriesYValue,
+        ),
+        // Add more series as needed
+      ],
     );
   }
 

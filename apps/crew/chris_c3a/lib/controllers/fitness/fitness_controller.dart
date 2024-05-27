@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:chris_c3a/controllers/my_controller.dart';
 import 'package:chris_c3a/models/fitness/body_measurement.dart';
+import 'package:chris_c3a/models/fitness/recovery_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -65,6 +66,7 @@ class FitnessController extends MyController {
 
   // BodyMeasurement? bodyMeasurement;
   Rx<BodyMeasurement?> bodyMeasurement = Rx<BodyMeasurement?>(null);
+  Rx<List<RecoveryData>?> recoveryData = Rx<List<RecoveryData>?>(null);
 
   @override
   void onInit() {
@@ -100,6 +102,7 @@ class FitnessController extends MyController {
     ];
 
     getBodyMeasurements();
+    getRecoveryData();
     super.onInit();
   }
 
@@ -136,6 +139,49 @@ class FitnessController extends MyController {
     }
 
     print(response.body);
+  }
+
+  void getRecoveryData() async {
+    String? apiKey = await getAccessToken();
+    var url = Uri.parse(
+      'https://api.prod.whoop.com/developer/v1/recovery',
+    );
+
+    var response = await http.get(
+      url,
+      headers: {
+        'Authorization': 'Bearer $apiKey',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body);
+      List<RecoveryData> recoveryDataList = (data['records'] as List)
+          .map((record) => RecoveryData.fromJson(record))
+          .toList();
+      recoveryData.value = recoveryDataList;
+      print(recoveryDataList);
+      update();
+    } else {
+      print('Error: ${response.statusCode}');
+    }
+
+    print(response.body);
+  }
+
+  List<ChartSampleData> getRecoveryChartData() {
+    return recoveryData.value
+            ?.map(
+              (data) => ChartSampleData(
+                x: data.createdAt, // Assuming createdAt is a DateTime
+                y: data.recoveryScore,
+                secondSeriesYValue: data.restingHeartRate,
+                thirdSeriesYValue: data.hrvRmssdMilli,
+                // Add more fields as necessary
+              ),
+            )
+            .toList() ??
+        [];
   }
 
   final List<ChartSampleData> activityChart = <ChartSampleData>[

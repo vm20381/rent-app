@@ -2,7 +2,7 @@
 	"name": "functions",
 	"scripts": {
 		"lint": "cross-env TS_CONFIG_PATHS=tsconfig.json,tsconfig.dev.json eslint --ext .js,.ts .",
-		"lint-fix": "cross-env TS_CONFIG_PATHS=tsconfig.json,tsconfig.dev.json ./node_modules/.bin/eslint --fix 'src/**/*.ts'",
+		"lint-fix": "cross-env TS_CONFIG_PATHS=tsconfig.json,tsconfig.dev.json npx eslint --fix 'src/**/*.ts'",
 		"build": "tsc",
 		"build:watch": "tsc --watch",
 		"serve": "npm run build && firebase emulators:start --only functions",
