@@ -88,156 +88,10 @@ class _ChatPageState extends State<ChatPage>
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                children: [
-                                  MyContainer.rounded(
-                                    paddingAll: 0,
-                                    height: 44,
-                                    width: 44,
-                                    child: Image.asset(
-                                      Images.avatars[3],
-                                    ),
-                                  ),
-                                  MySpacing.width(12),
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        MyText.labelLarge(
-                                          "Den",
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            MyContainer.rounded(
-                                              paddingAll: 4,
-                                              color: contentTheme.success,
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                            ),
-                                            MySpacing.width(4),
-                                            MyText.bodyMedium(
-                                              "Online",
-                                              fontSize: 12,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  MySpacing.width(16),
-                                  MySpacing.height(22),
-                                  MyContainer.none(
-                                    paddingAll: 8,
-                                    borderRadiusAll: 5,
-                                    child: PopupMenuButton(
-                                      offset: const Offset(-165, 10),
-                                      position: PopupMenuPosition.under,
-                                      itemBuilder: (BuildContext context) => [
-                                        PopupMenuItem(
-                                          padding: MySpacing.xy(16, 8),
-                                          height: 10,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.users,
-                                                size: 16,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodySmall("New Group"),
-                                            ],
-                                          ),
-                                        ),
-                                        PopupMenuItem(
-                                          padding: MySpacing.xy(16, 8),
-                                          height: 10,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.contact,
-                                                size: 16,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodySmall("Contacts"),
-                                            ],
-                                          ),
-                                        ),
-                                        PopupMenuItem(
-                                          padding: MySpacing.xy(16, 8),
-                                          height: 10,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.bookmark,
-                                                size: 16,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodySmall(
-                                                "Save Message",
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        PopupMenuItem(
-                                          padding: MySpacing.xy(16, 8),
-                                          height: 10,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.userPlus,
-                                                size: 16,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodySmall(
-                                                "Invite Friends",
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        PopupMenuItem(
-                                          padding: MySpacing.xy(16, 8),
-                                          height: 10,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.helpCircle,
-                                                size: 16,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodySmall("Help"),
-                                            ],
-                                          ),
-                                        ),
-                                        PopupMenuItem(
-                                          padding: MySpacing.xy(16, 8),
-                                          height: 10,
-                                          child: Row(
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.settings,
-                                                size: 16,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodySmall("Setting"),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                      child: const Icon(
-                                        LucideIcons.moreVertical,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              
                               MySpacing.height(16),
                               TextField(
-                                onTap: () {},
+                                controller: controller.newContactController,
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   filled: true,
@@ -245,13 +99,17 @@ class _ChatPageState extends State<ChatPage>
                                     LucideIcons.search,
                                     size: 20,
                                   ),
-                                  hintText: "People, Groups & Messages...",
+                                  hintText: "Enter username to add",
                                   border: const OutlineInputBorder(
                                     borderSide: BorderSide.none,
                                   ),
                                   contentPadding: MySpacing.all(16),
                                 ),
+                                onSubmitted: (value) {
+                                  controller.addNewContact();
+                                },
                               ),
+                              
                               MySpacing.height(20),
                               MyText.titleMedium(
                                 "CONTACTS",
@@ -410,152 +268,7 @@ class _ChatPageState extends State<ChatPage>
                         child: MyFlex(
                           contentPadding: false,
                           children: [
-                            MyFlexItem(
-                              child: MyCard(
-                                shadow: MyShadow(elevation: 0.5),
-                                borderRadiusAll: 4,
-                                paddingAll: 0,
-                                child: Stack(
-                                  children: [
-                                    Container(
-                                      height: 100,
-                                      decoration: const BoxDecoration(
-                                        borderRadius: BorderRadius.only(
-                                          topRight: Radius.circular(4),
-                                          topLeft: Radius.circular(4),
-                                        ),
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color(0xff8360c3),
-                                            Color(0xff6a82fb),
-                                            Color(0xff00b4db),
-                                          ],
-                                          tileMode: TileMode.clamp,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: MySpacing.xy(16, 44),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          MyContainer.rounded(
-                                            paddingAll: 4,
-                                            child: MyContainer.rounded(
-                                              paddingAll: 0,
-                                              height: 100,
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                              child: Image.asset(
-                                                Images.avatars[1],
-                                                fit: BoxFit.cover,
-                                                height: 100,
-                                              ),
-                                            ),
-                                          ),
-                                          MySpacing.height(8),
-                                          MyText.bodyLarge(
-                                            "Amanda Smith",
-                                            fontSize: 20,
-                                            fontWeight: 600,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                          MySpacing.height(8),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              const Icon(
-                                                LucideIcons.mapPin,
-                                                size: 20,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodyMedium(
-                                                "Los Angeles United States",
-                                              ),
-                                            ],
-                                          ),
-                                          MySpacing.height(16),
-                                          Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              MyText.bodyMedium("@amanda"),
-                                              MySpacing.width(8),
-                                              const MyContainer.roundBordered(
-                                                color: Colors.grey,
-                                                paddingAll: 1,
-                                              ),
-                                              MySpacing.width(8),
-                                              MyText.bodyMedium(
-                                                "Designer at google",
-                                                overflow:
-                                                    TextOverflow.ellipsis,
-                                                textAlign: TextAlign.center,
-                                              ),
-                                            ],
-                                          ),
-                                          MySpacing.height(16),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              MyButton(
-                                                onPressed: () {},
-                                                elevation: 0,
-                                                padding: MySpacing.xy(20, 16),
-                                                backgroundColor:
-                                                    contentTheme.primary,
-                                                borderRadiusAll: AppStyle
-                                                    .buttonRadius.medium,
-                                                child: MyText.bodySmall(
-                                                  'Message',
-                                                  color:
-                                                      contentTheme.onPrimary,
-                                                ),
-                                              ),
-                                              MySpacing.width(16),
-                                              MyButton(
-                                                onPressed: () {},
-                                                elevation: 0,
-                                                padding: MySpacing.xy(12, 16),
-                                                backgroundColor:
-                                                    contentTheme.primary,
-                                                borderRadiusAll: AppStyle
-                                                    .buttonRadius.medium,
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    Icon(
-                                                      LucideIcons.share2,
-                                                      color:
-                                                          contentTheme.light,
-                                                      size: 16,
-                                                    ),
-                                                    MySpacing.width(8),
-                                                    MyText.bodySmall(
-                                                      'Share Profile',
-                                                      color: contentTheme
-                                                          .onPrimary,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            
                             MyFlexItem(
                               child: MyCard(
                                 shadow: MyShadow(elevation: 0.5),

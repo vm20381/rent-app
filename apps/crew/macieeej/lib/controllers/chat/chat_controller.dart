@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:macieeej/helpers/services/auth_services.dart';
 import 'package:macieeej/helpers/services/firebase_subscription_services.dart';
+import 'package:macieeej/models/chat_user.dart';
 import '../../models/chat.dart';
 
 class UserChat {
@@ -24,11 +25,33 @@ class ChatController extends GetxController {
   final AuthService authService = Get.find<AuthService>();
   final FirestoreSubscriptionService _firestoreSubService = Get.find<FirestoreSubscriptionService>();
   final TextEditingController messageController = TextEditingController();
+  final TextEditingController newContactController = TextEditingController();
 
   @override
   void onInit() {
     super.onInit();
     _subscribeToChatMessages();
+    _initializeChatUsers();
+  }
+
+  void _initializeChatUsers() async {
+    final user = authService.user?.displayName ?? '';
+    final userList = await FirebaseFirestore.instance.collection('users').get();
+    final users = userList.docs
+        .map((doc) => UserModel.fromFirestore(doc.data()))
+        .where((userModel) => userModel.username != user)
+        .toList();
+
+    final Map<String, UserChat> usersMap = {};
+    for (var userModel in users) {
+      usersMap[userModel.username] = UserChat(
+        senderName: userModel.username,
+        lastSendMessage: '',
+        lastSendAt: DateTime.now(),
+      );
+    }
+
+    chatUsers.value = usersMap.values.toList();
   }
 
   void _subscribeToChatMessages() {
@@ -60,20 +83,47 @@ class ChatController extends GetxController {
     });
   }
 
+  Future<void> addNewContact() async {
+    final username = newContactController.text.trim();
+    if (username.isEmpty) return;
+
+    final userDoc = await FirebaseFirestore.instance.collection('users').where('username', isEqualTo: username).get();
+    if (userDoc.docs.isEmpty) {
+      await FirebaseFirestore.instance.collection('users').add({'username': username});
+    }
+    _initializeChatUsers();
+  }
+
   void _updateChatUsers() {
+    final user = authService.user?.displayName ?? '';
     Map<String, UserChat> usersMap = {};
 
     for (var message in chat) {
-      if (!usersMap.containsKey(message.senderName)) {
-        usersMap[message.senderName] = UserChat(
-          senderName: message.senderName,
-          lastSendMessage: message.message,
-          lastSendAt: message.sendAt,
-        );
-      } else {
-        if (message.sendAt.isAfter(usersMap[message.senderName]!.lastSendAt)) {
-          usersMap[message.senderName]!.lastSendMessage = message.message;
-          usersMap[message.senderName]!.lastSendAt = message.sendAt;
+      if (message.senderName != user && message.receiverName != user) {
+        if (!usersMap.containsKey(message.senderName)) {
+          usersMap[message.senderName] = UserChat(
+            senderName: message.senderName,
+            lastSendMessage: message.message,
+            lastSendAt: message.sendAt,
+          );
+        } else {
+          if (message.sendAt.isAfter(usersMap[message.senderName]!.lastSendAt)) {
+            usersMap[message.senderName]!.lastSendMessage = message.message;
+            usersMap[message.senderName]!.lastSendAt = message.sendAt;
+          }
+        }
+      } else if (message.receiverName != user) {
+        if (!usersMap.containsKey(message.receiverName)) {
+          usersMap[message.receiverName] = UserChat(
+            senderName: message.receiverName,
+            lastSendMessage: message.message,
+            lastSendAt: message.sendAt,
+          );
+        } else {
+          if (message.sendAt.isAfter(usersMap[message.receiverName]!.lastSendAt)) {
+            usersMap[message.receiverName]!.lastSendMessage = message.message;
+            usersMap[message.receiverName]!.lastSendAt = message.sendAt;
+          }
         }
       }
     }
