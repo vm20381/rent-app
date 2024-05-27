@@ -254,7 +254,7 @@ class _ChatPageState extends State<ChatPage>
                               ),
                               MySpacing.height(20),
                               MyText.titleMedium(
-                                "CONTACT",
+                                "CONTACTS",
                                 color: contentTheme.title,
                                 muted: true,
                                 fontWeight: 600,
@@ -268,7 +268,9 @@ class _ChatPageState extends State<ChatPage>
                                   itemCount: controller.chatUsers.length,
                                   itemBuilder: (context, index) {
                                     return MyButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        controller.selectedContact.value = controller.chatUsers[index].senderName;
+                                      },
                                       elevation: 0,
                                       borderRadiusAll: 8,
                                       backgroundColor: theme
@@ -307,7 +309,7 @@ class _ChatPageState extends State<ChatPage>
                                                 children: [
                                                   MyText.labelLarge(
                                                     controller.chatUsers[index]
-                                                        .firstName,
+                                                        .senderName,
                                                   ),
                                                   SizedBox(
                                                     width: 200,
@@ -356,7 +358,7 @@ class _ChatPageState extends State<ChatPage>
                           shadow: MyShadow(elevation: 0.5),
                           child: Column(
                             children: [
-                              messages(),
+                              Obx(() => messages()),
                               MySpacing.height(8),
                               Align(
                                 alignment: Alignment.bottomCenter,
@@ -675,12 +677,12 @@ class _ChatPageState extends State<ChatPage>
         controller: _scrollController,
         padding: MySpacing.x(12),
         shrinkWrap: true,
-        itemCount: controller.chat.length,
+        itemCount: controller.filteredChatMessages.length,
         itemBuilder: (BuildContext context, int index) {
           // Split the firstName string and take the first part
-          String firstName = controller.chat[index].firstName.split(' ')[0];
+          String firstName = controller.filteredChatMessages[index].senderName.split(' ')[0];
 
-          if (controller.chat[index].fromMe == false) {
+          if (controller.filteredChatMessages[index].fromMe == false) {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -719,7 +721,7 @@ class _ChatPageState extends State<ChatPage>
                         borderRadiusAll: 4,
                         color: contentTheme.secondary.withAlpha(30),
                         child: MyText.titleMedium(
-                          controller.chat[index].message, // Use the message property
+                          controller.filteredChatMessages[index].message, // Use the message property
                           fontSize: 12,
                           color: contentTheme.secondary,
                         ),
@@ -727,7 +729,7 @@ class _ChatPageState extends State<ChatPage>
                       MySpacing.height(4),
                       MyText.bodySmall(
                         '${Utils.getTimeStringFromDateTime(
-                          controller.chat[index].sendAt,
+                          controller.filteredChatMessages[index].sendAt,
                           showSecond: false,
                         )}',
                         muted: true,
@@ -756,7 +758,7 @@ class _ChatPageState extends State<ChatPage>
                         ),
                         color: theme.colorScheme.primary.withAlpha(30),
                         child: MyText.bodyMedium(
-                          controller.chat[index].message, // Use the message property
+                          controller.filteredChatMessages[index].message, // Use the message property
                           fontSize: 12,
                           fontWeight: 600,
                           color: contentTheme.primary,
@@ -765,7 +767,7 @@ class _ChatPageState extends State<ChatPage>
                       MySpacing.height(4),
                       MyText.bodySmall(
                         '${Utils.getTimeStringFromDateTime(
-                          controller.chat[index].sendAt,
+                          controller.filteredChatMessages[index].sendAt,
                           showSecond: false,
                         )}',
                         fontSize: 8,

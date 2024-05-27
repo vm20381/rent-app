@@ -6,12 +6,12 @@ import 'package:macieeej/helpers/services/firebase_subscription_services.dart';
 import '../../models/chat.dart';
 
 class UserChat {
-  final String firstName;
+  final String senderName;
   String lastSendMessage;
   DateTime lastSendAt;
 
   UserChat({
-    required this.firstName,
+    required this.senderName,
     required this.lastSendMessage,
     required this.lastSendAt,
   });
@@ -20,6 +20,7 @@ class UserChat {
 class ChatController extends GetxController {
   var chat = <Chat>[].obs;
   var chatUsers = <UserChat>[].obs;
+  var selectedContact = ''.obs;
   final AuthService authService = Get.find<AuthService>();
   final FirestoreSubscriptionService _firestoreSubService = Get.find<FirestoreSubscriptionService>();
   final TextEditingController messageController = TextEditingController();
@@ -42,12 +43,12 @@ class ChatController extends GetxController {
         chatMessages = chatMessages.map((message) {
           return Chat(
             id: message.id,
-            firstName: message.firstName,
+            senderName: message.senderName,
+            receiverName: message.receiverName,
             message: message.message,
             sendAt: message.sendAt,
-            sendMessage: message.sendMessage,
             receiveMessage: message.receiveMessage,
-            fromMe: message.firstName == displayName,
+            fromMe: message.senderName == displayName,
           );
         }).toList();
       }
@@ -63,16 +64,16 @@ class ChatController extends GetxController {
     Map<String, UserChat> usersMap = {};
 
     for (var message in chat) {
-      if (!usersMap.containsKey(message.firstName)) {
-        usersMap[message.firstName] = UserChat(
-          firstName: message.firstName,
+      if (!usersMap.containsKey(message.senderName)) {
+        usersMap[message.senderName] = UserChat(
+          senderName: message.senderName,
           lastSendMessage: message.message,
           lastSendAt: message.sendAt,
         );
       } else {
-        if (message.sendAt.isAfter(usersMap[message.firstName]!.lastSendAt)) {
-          usersMap[message.firstName]!.lastSendMessage = message.message;
-          usersMap[message.firstName]!.lastSendAt = message.sendAt;
+        if (message.sendAt.isAfter(usersMap[message.senderName]!.lastSendAt)) {
+          usersMap[message.senderName]!.lastSendMessage = message.message;
+          usersMap[message.senderName]!.lastSendAt = message.sendAt;
         }
       }
     }
@@ -80,8 +81,17 @@ class ChatController extends GetxController {
     chatUsers.value = usersMap.values.toList();
   }
 
+  List<Chat> get filteredChatMessages {
+    final user = authService.user?.displayName ?? '';
+    return chat.where((message) {
+      final isCurrentUserSender = message.senderName == user && message.receiverName == selectedContact.value;
+      final isCurrentUserReceiver = message.receiverName == user && message.senderName == selectedContact.value;
+      return isCurrentUserSender || isCurrentUserReceiver;
+    }).toList();
+  }
+
   Future<void> sendMessage() async {
-    if (messageController.text.trim().isEmpty) {
+    if (messageController.text.trim().isEmpty || selectedContact.value.isEmpty) {
       return;
     }
 
@@ -89,10 +99,10 @@ class ChatController extends GetxController {
     if (user != null) {
       Chat message = Chat(
         id: '',
-        firstName: user.displayName ?? 'Unknown',
+        senderName: user.displayName ?? 'Unknown',
+        receiverName: selectedContact.value,
         message: messageController.text.trim(),
         sendAt: DateTime.now(),
-        sendMessage: messageController.text.trim(),
         receiveMessage: '',
         fromMe: true,
       );
