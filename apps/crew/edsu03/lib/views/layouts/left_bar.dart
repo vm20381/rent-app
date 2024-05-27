@@ -139,6 +139,12 @@ class _LeftBarState extends State<LeftBar>
                       route: '/new_page/new_page_view',
                       isCondensed: isCondensed,
                     ),
+                    NavigationItem(
+                      iconData: LucideIcons.vote,
+                      title: "todo".tr(),
+                      route: '/todo/todo',
+                      isCondensed: isCondensed,
+                    ),
                   ],
                 ),
               ),
