@@ -17,7 +17,7 @@ const clientSecret = functions.config().whoopapi.client_secret;
 const tokenUrl = "https://api.prod.whoop.com/oauth/oauth2/token";
 
 // run every 30 minutes to fetch a new access token
-export const whoopRefreshTokenScheduler = functions.pubsub.schedule("every 30 minutes").onRun(async (context) => {
+export const whoopRefreshTokenScheduler = functions.region("europe-west1").pubsub.schedule("every 30 minutes").onRun(async (context) => {
   const refreshToken: string | undefined = await getStoredRefreshToken();
 
   const response: Response = await fetch(tokenUrl, {

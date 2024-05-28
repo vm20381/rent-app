@@ -5,10 +5,10 @@ import 'package:chris_c3a/models/fitness/body_measurement.dart';
 import 'package:chris_c3a/models/fitness/recovery_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-import 'package:http/http.dart' as http;
-import 'package:get/get.dart';
 
 class ChartSampleData {
   ChartSampleData({
@@ -106,67 +106,50 @@ class FitnessController extends MyController {
     super.onInit();
   }
 
-  // Get the access token from the database
-  Future<String?> getAccessToken() async {
-    final QuerySnapshot<Map<String, dynamic>> snapshot =
-        await _whoopTokensCollection.limit(1).get()
-            as QuerySnapshot<Map<String, dynamic>>;
-    if (snapshot.docs.isNotEmpty) {
-      return snapshot.docs.first.data()['access_token'] as String?;
-    }
-    return null;
-  }
-
   void getBodyMeasurements() async {
-    String? apiKey = await getAccessToken();
-    print(apiKey);
-    var url = Uri.parse(
-      'https://api.prod.whoop.com/developer/v1/user/measurement/body',
-    );
-    var response = await http.get(
-      url,
-      headers: {
-        'Authorization': 'Bearer $apiKey',
-      },
-    );
+    try {
+      var url = Uri.parse(
+        'https://europe-west1-captainapp-crew-2024.cloudfunctions.net/getBodyMeasurements',
+      );
+      var response = await http.get(url);
 
-    if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
-      bodyMeasurement.value = BodyMeasurement.fromJson(data);
-      update();
-    } else {
-      print('Error: ${response.statusCode}');
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body);
+        bodyMeasurement.value = BodyMeasurement.fromJson(data['data']);
+        update();
+        print("Data from cloud function: $data");
+      } else {
+        print('No data received from the function');
+      }
+    } catch (e) {
+      print('Error calling function: $e');
     }
-
-    print(response.body);
   }
 
   void getRecoveryData() async {
-    String? apiKey = await getAccessToken();
-    var url = Uri.parse(
-      'https://api.prod.whoop.com/developer/v1/recovery',
-    );
+    try {
+      var url = Uri.parse(
+        'https://europe-west1-captainapp-crew-2024.cloudfunctions.net/getRecoveryData',
+      );
+      var response = await http.get(url);
 
-    var response = await http.get(
-      url,
-      headers: {
-        'Authorization': 'Bearer $apiKey',
-      },
-    );
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body);
+        print(data);
+        List<RecoveryData> recoveryDataList = (data['data']['records'] as List)
+            .map((record) => RecoveryData.fromJson(record))
+            .toList();
+        recoveryData.value = recoveryDataList;
+        print(recoveryDataList);
+        update();
+      } else {
+        print('Error: ${response.statusCode}');
+      }
 
-    if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
-      List<RecoveryData> recoveryDataList = (data['records'] as List)
-          .map((record) => RecoveryData.fromJson(record))
-          .toList();
-      recoveryData.value = recoveryDataList;
-      print(recoveryDataList);
-      update();
-    } else {
-      print('Error: ${response.statusCode}');
+      print(response.body);
+    } catch (e) {
+      print('Error calling cloud function: $e');
     }
-
-    print(response.body);
   }
 
   List<ChartSampleData> getRecoveryChartData() {
